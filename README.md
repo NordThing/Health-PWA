@@ -6,7 +6,7 @@ Because it´s free and have the capabilites you need to track your daily workout
 
 ## FIRST THINGS FIRST
 This is a FREE and OPEN SOURCE training APP build on PWA and using the GNU 3.0 licensing model. This is a PWA it´s a web-based and platform-independent software. 
-The software is built from scratch without any framework. So the source is build from pure HTML,CSS,PHP and JS. 
+The software is built from scratch without any framework. So the source is build from pure HTML,CSS,PHP and JS. If there is a need to use any framework we will do so. 
 
 ### ROADMAP
 First public release containing
