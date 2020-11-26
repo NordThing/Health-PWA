@@ -1,5 +1,8 @@
 # Health-PWA
-Building a Fitness Health PWA
+Building a Fitness Health PWA for a learning journey with PWAs
+
+## Why should I use Health-PWA 
+Because it´s free and have the capabilites you need to track your daily workouts.
 
 ## FIRST THINGS FIRST
 This is a FREE and OPEN SOURCE training APP build on PWA and using the GNU 3.0 licensing model. This is a PWA it´s a web-based and platform-independent software. 
