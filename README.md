@@ -1,11 +1,11 @@
 # Health-PWA
 Building a Fitness Health PWA
 
-#FIRST THINGS FIRST
+## FIRST THINGS FIRST
 This is a FREE and OPEN SOURCE training APP build on PWA and using the GNU 3.0 licensing model. This is a PWA it´s a web-based and platform-independent software. 
 The software is built from scratch without any framework. So the source is build from pure HTML,CSS,PHP and JS. 
 
-#ROADMAP 
+### ROADMAP
 First public release containing
 2021-01-01 
 1. Loginpage
@@ -13,9 +13,9 @@ First public release containing
 3. Activitystream
 4. Weekly activity goal
 
-#WHERE TO HOST?
+### WHERE TO HOST?
 
-#NAMIN FOR THE WEBSITE
+### NAMIN FOR THE WEBSITE
 BodyGame.com - taken
 body24.com - taken
 kropp24.se -taken
