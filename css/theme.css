@@ -26,3 +26,7 @@
   --background: #272727;
   --testing: #f44336;
 }
+
+.container {
+  display: flex;
+}
