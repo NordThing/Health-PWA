@@ -1,1 +1,29 @@
+/* Color variables that could be used */
+:root {
+  --primary: #77CFB7;
+  --primary-dark: #459e88;
+  --secondary: #CF778E;
+  --secondary-dark: #9c4961;
+  --on-primary: #000000;
+  --on-secondary: #ffffff;
+  --on-background: #000000;
+  --on-surface: #ffffff;
+  --surface: #ffffff;
+  --background: #ffffff;
+  --testing: #f44336;  
+}
+
+:root[data-theme="dark"] {
+  --primary: #CF778E;
+  --primary-dark: #9c4961;
+  --secondary: #77CFB7;
+  --secondary-dark: #459e88;
+  --on-primary: #000000;
+  --on-secondary: #000000;
+  --on-background: #ffffff;
+  --on-surface: #ffffff;
+  --surface: #121212;
+  --background: #272727;
+  --testing: #f44336;
+}
 
