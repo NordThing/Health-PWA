@@ -10,6 +10,8 @@
   --on-surface: #ffffff;
   --surface: #ffffff;
   --background: #ffffff;
+  --error: #f44336;
+  --on-error: #ffffff;
   --testing: #f44336;  
 }
 
@@ -24,12 +26,22 @@
   --on-surface: #ffffff;
   --surface: #121212;
   --background: #272727;
+  --error: #f44336;
+  --on-error: #000000;
   --testing: #f44336;
 }
 
 /* Ensure proper sizing */
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* HERE IS THE SECTIONS WITHOUT CLASSES - IF NO CLASS THESE ARE USED */
+
+html { 
+  height: 100%; 
 }
 
 body {
@@ -37,19 +49,11 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   
+  min-height:100%;
   margin: auto;
   
   background-color: var(--background);
   color: var(--primary);
-}
-
-span {
-  display: inline-block;
-  width: 50px;
-  height: 5px;
-  background-color: var(--secondary);
-  margin-bottom: 30px;
-  text-align: center;
 }
 
 h1 {
@@ -88,6 +92,18 @@ h3 {
   margin: 0;
 }
 
+h4 {
+  font-size: 13px;
+  font-family: "Montserrat";
+  font-weight: 200;
+
+  text-align: center;
+  line-height: 26px;
+
+  padding: 0;
+  margin: 0;
+}
+
 button {
   cursor: pointer;
   background: transparent;
@@ -97,19 +113,82 @@ button {
   outline: none;
 }
 
+
 /* THIS IS FOR FLEXBOX LAYOUT 
   FLEXBOX USED FOR SIMPLE ONE DIMENSION LAYOUTS */
 
   .row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+/* HERE STARTS THE REAL CONTENT AND STYLING FOR THE SITE */
+
+/* THE CONTAINER HAVE THE DISPLAY PROPERTY OF GRID SO A GRID LAYOUT CAN BE USED */
+.container {
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 23px;
   width: 100%;
+  padding-top: 0px;
+  background-color: var(--background);
+  border: 2px solid var(--testing);
 }
 
-.column {
+/* THIS IS THE HEADER - SEE IF THIS SHOULD ALWAYS BE FIXED OR NOT */
+.header {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: var(--testing);
+  
+  height: 50px;
+  width: 100vw;
+  border: 2px solid var(--testing);
+}
+
+/* THIS IS THE MAIN CONTENT */
+.main {
+  background-color: var(--background);
+}
+
+.circle {
   display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  
+  border: 2px solid var(--testing);
+  border-radius: 50%;
+  
+  height: 270px;
+  width: 270px;
+}
+
+.time {
+  font-family: "Roboto Mono";
+  font-weight: 300;
+  font-size: 48px;
+}
+
+/* THIS IS THE FOOTER */
+.footer {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: var(--testing);
+
+  height: 50px;
+  width: 100vw;
+  border: 2px solid var(--testing);
 }
