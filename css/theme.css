@@ -1,16 +1,17 @@
 /* Color variables that could be used */
 :root {
-  --primary: #2E4600;
-  --primary-dark: #486B00;
-  --secondary: #7D4427;
-  --secondary-dark: #A2C523;
+  --primary: #fa990e;
+  --primary-dark: #fecc47;
+  --secondary: #5b8d27;
+  --secondary-dark: #114b0b;
   --on-primary: #000000;
-  --on-secondary: #ffffff;
+  --on-secondary: #000000;
   --on-background: #000000;
-  --on-surface: #ffffff;
-  --surface: #ffffff;
-  --background: #ffffff;
-  --error: #f44336;  
+  --on-surface: #000000;
+  --surface: #a4dbe4;
+  --background: #a4dbe4;
+  --error: #ba000d;
+  --on-error: #ffffff;
   --testing: #f44336;  
 }
 
