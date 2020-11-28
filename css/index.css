@@ -129,6 +129,7 @@ button {
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
+    border: 2px solid var(--testing);
    }
 
 /* HERE STARTS THE REAL CONTENT AND STYLING FOR THE SITE */
