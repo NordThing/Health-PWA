@@ -204,6 +204,15 @@ button {
   width: 100%;
 }
 
+#playButton {
+  display: block;
+}
+
+#pauseButton {
+  display: none;
+}
+
+
 /* THIS IS THE FOOTER */
 .footer {
   display: flex;
