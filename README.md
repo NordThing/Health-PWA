@@ -47,7 +47,7 @@ This project is live and hosted on www.dailyactivitytracker.com Here you create 
 Look in the Contribute.MD if you want to contribute to this project
 
 # License
-
+In short, when you submit code changes, your submissions are understood to be under the same [GNU 3.0 License] that covers the project. Feel free to contact the maintainers if that's a concern.
 
 
 ### WHERE TO HOST?
