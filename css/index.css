@@ -137,11 +137,14 @@ button {
 .container {
   display: grid;
   justify-items: center;
+  
   grid-row-gap: 23px;
+  grid-template-rows: auto 1 fr auto;
+  
   width: 100%;
   padding-top: 0px;
   background-color: var(--background);
-  border: 2px solid var(--testing);
+  border: 2px solid var(--secondary);
 }
 
 /* THIS IS THE HEADER - SEE IF THIS SHOULD ALWAYS BE FIXED OR NOT */
