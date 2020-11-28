@@ -130,6 +130,7 @@ button {
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
+    border: 2px solid var(--testing); /* This is for Test */
   }
 
 /* HERE STARTS THE REAL CONTENT AND STYLING FOR THE SITE */
