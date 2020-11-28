@@ -206,10 +206,11 @@ button {
 }
 
 #playButton {
-  
+  width: 10vw;
 }
 
 #pauseButton {
+  width: 10vw;
   display: none;
 }
 
