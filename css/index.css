@@ -187,10 +187,6 @@ button {
 
 /* THIS IS THE FOOTER */
 .footer {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  
   background-color: var(--primary);
   color: var(--on-primary);
 
