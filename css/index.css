@@ -151,6 +151,9 @@ button {
 
 /* THIS IS THE HEADER - SEE IF THIS SHOULD ALWAYS BE FIXED OR NOT */
 .header {  
+  display: flex;
+  flex-direction: row;
+
   background-color: var(--primary);
   color: var(--on-primary);
   
@@ -185,6 +188,9 @@ button {
 
 /* THIS IS THE FOOTER */
 .footer {
+  display: flex;
+  flex-direction: column;
+
   background-color: var(--primary);
   color: var(--on-primary);
 
