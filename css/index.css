@@ -198,6 +198,13 @@ button {
   color: var(--secondary-dark);
 }
 
+.controls {
+  display: flex;
+  justify-content: space-between;
+
+  width: 150px;
+}
+
 /* THIS IS THE FOOTER */
 .footer {
   display: flex;
