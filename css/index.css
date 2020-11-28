@@ -214,6 +214,10 @@ button {
   display: none;
 }
 
+#resetButton {
+  width: 10vw;
+}
+
 
 /* THIS IS THE FOOTER */
 .footer {
