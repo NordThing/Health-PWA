@@ -149,11 +149,7 @@ button {
 }
 
 /* THIS IS THE HEADER - SEE IF THIS SHOULD ALWAYS BE FIXED OR NOT */
-.header {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  
+.header {  
   background-color: var(--primary);
   color: var(--on-primary);
   
