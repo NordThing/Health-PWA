@@ -1,8 +1,8 @@
 /* Color variables that could be used */
 :root {
-  --primary: #77CFB7;
+  --primary: #77cfb7;
   --primary-dark: #459e88;
-  --secondary: #CF778E;
+  --secondary: #cf778e;
   --secondary-dark: #9c4961;
   --on-primary: #000000;
   --on-secondary: #ffffff;
@@ -16,9 +16,9 @@
 }
 
 :root[data-theme="dark"] {
-  --primary: #CF778E;
+  --primary: #cf778e;
   --primary-dark: #9c4961;
-  --secondary: #77CFB7;
+  --secondary: #77cfb7;
   --secondary-dark: #459e88;
   --on-primary: #000000;
   --on-secondary: #000000;

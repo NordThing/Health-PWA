@@ -1,20 +1,54 @@
 # Health-PWA
-Building a Fitness Health PWA for a learning journey with PWAs
+Daily Activity Tracker. 
+It can track your activity and your weight.
 
-## Why should I use Health-PWA 
-Because it´s free and have the capabilites you need to track your daily workouts.
+# Motivation
+We like to move our bodys but sometime the weight doesn't change. I have been a big fan using 
+ENDOMONDO but it has come to an end 2020-12-31. So this will be a replacement and also making things 
+FREE that YOU earlier had to PAY for. This project will ALWAYS be FREE but we are very glad for sponsors. 
 
-## FIRST THINGS FIRST
-This is a FREE and OPEN SOURCE training APP build on PWA and using the GNU 3.0 licensing model. This is a PWA it´s a web-based and platform-independent software. 
-The software is built from scratch without any framework. So the source is build from pure HTML,CSS,PHP and JS. If there is a need to use any framework we will do so. 
+# Build status
+We are still in an early-stage of development. 
 
-### ROADMAP
-First public release containing
-2021-01-01 
-1. Loginpage
-2. Timetracker available offline and online
-3. Activitystream
-4. Weekly activity goal
+# Code style
+We like nice looking code so please we are trying to following the HTML Style Guide from https://google.github.io/styleguide/htmlcssguide.html
+
+Comments are very warm welcomed also so it could be easy to follow along.
+
+# Screenshots
+Here we can put logo and demo screenshot when we have it!
+
+# Tech/framework used
+* HTML
+* CSS
+* JAVASCRIPT
+
+# Features
+* FREE
+* Stopwatch
+* Weekly goals
+* Weight tracker
+* Platform-independent
+* Web-based
+
+# Installation
+If you would like to try out this on your local computer you can clone this repo and put it on your own setup webserver.
+
+# API Reference
+No APIs
+
+# Tests 
+No TEST defined
+
+# How to use? 
+This project is live and hosted on www.dailyactivitytracker.com Here you create a user and track your progress.
+
+# Contribute
+Look in the Contribute.MD if you want to contribute to this project
+
+# License
+
+
 
 ### WHERE TO HOST?
 
