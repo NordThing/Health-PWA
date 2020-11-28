@@ -150,7 +150,8 @@ button {
   align-items: center;
   justify-content: center;
   
-  background-color: var(--testing);
+  background-color: var(--primary);
+  color: var(--on-primary);
   
   height: 50px;
   width: 100vw;
@@ -186,7 +187,8 @@ button {
   align-items: center;
   justify-content: center;
   
-  background-color: var(--testing);
+  background-color: var(--primary);
+  color: var(--on-primary);
 
   height: 50px;
   width: 100vw;
