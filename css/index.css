@@ -142,9 +142,9 @@ button {
   grid-template-rows: auto 1fr auto;
   
   width: 100%;
+  height: 100vh;
   padding-top: 0px;
   background-color: var(--background);
-  border: 2px solid var(--secondary);
 }
 
 /* THIS IS THE HEADER - SEE IF THIS SHOULD ALWAYS BE FIXED OR NOT */
@@ -158,7 +158,6 @@ button {
   
   height: 50px;
   width: 100vw;
-  border: 2px solid var(--testing);
 }
 
 /* THIS IS THE MAIN CONTENT */
@@ -171,7 +170,7 @@ button {
   align-items: center;
   justify-content: center;
   
-  border: 2px solid var(--testing);
+  border: 2px solid var(--secondary-dark);
   border-radius: 50%;
   
   height: 270px;
@@ -182,6 +181,8 @@ button {
   font-family: "Roboto Mono";
   font-weight: 300;
   font-size: 48px;
+
+  color: var(--secondary-dark);
 }
 
 /* THIS IS THE FOOTER */
@@ -195,5 +196,4 @@ button {
 
   height: 50px;
   width: 100vw;
-  border: 2px solid var(--testing);
-}
+ }
