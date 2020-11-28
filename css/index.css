@@ -117,7 +117,6 @@ button {
 
 /* THIS IS FOR FLEXBOX LAYOUT 
   FLEXBOX USED FOR SIMPLE ONE DIMENSION LAYOUTS */
-
   .row {
     display: flex;
     flex-direction: row;
@@ -173,6 +172,7 @@ button {
 .header-settings {
   text-align: right;
 }
+
 /* THIS IS THE MAIN CONTENT */
 .main {
   background-color: var(--background);

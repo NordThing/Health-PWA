@@ -102,6 +102,7 @@
 .on-primary {
   height: 100px;
   background-color: var(--on-primary);
+  color: "#ffffff";
 }
 
 .on-secondary {
