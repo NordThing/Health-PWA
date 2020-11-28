@@ -51,6 +51,7 @@ In short, when you submit code changes, your submissions are understood to be un
 
 
 ### WHERE TO HOST?
+Cheap and reliable webhotel 
 
 ### NAMIN FOR THE WEBSITE
 BodyGame.com - taken
