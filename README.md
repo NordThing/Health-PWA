@@ -23,11 +23,16 @@ Here we can put logo and demo screenshot when we have it!
 * CSS
 * JAVASCRIPT
 
-# Features
+# Functional features
 * FREE
 * Stopwatch
 * Weekly goals
 * Weight tracker
+
+# Non-functional features
+* FREE
+* No installation
+* Available offline
 * Platform-independent
 * Web-based
 
