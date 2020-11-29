@@ -3,9 +3,9 @@ Daily Activity Tracker.
 It can track your activity and your weight.
 
 # Motivation
-We like to move our bodys but sometime the weight doesn't change. I have been a big fan using 
-ENDOMONDO but it has come to an end 2020-12-31. So this will be a replacement and also making things 
-FREE that YOU earlier had to PAY for. This project will ALWAYS be FREE but we are very glad for sponsors. 
+This project will ALWAYS be FREE but we are very glad for sponsors. 
+I have been a big fan using ENDOMONDO but it has come to an end 2020-12-31. This will be a BETTER replacement and also making things 
+FREE.  
 
 # Build status
 We are still in an early-stage of development. 
