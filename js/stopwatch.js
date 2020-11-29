@@ -3,7 +3,7 @@ var Stopwatch = function(options) {
     var offset, clock, interval;
     var timer = getTimerEl("time");
     initButton("playButton", start);
-    initButton("pauseButton", stop);
+    initButton("pauseButton", pause);
     initButton("resetButton", reset);
 
     // default options
@@ -37,7 +37,7 @@ var Stopwatch = function(options) {
         }
     }
 
-    function stop() {
+    function pause() {
         if (interval) {
             clearInterval(interval);
             interval = null;
@@ -47,8 +47,15 @@ var Stopwatch = function(options) {
     }
 
     function reset() {
-        clock = 0;
-        render();
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        } else {
+            clock = 0;
+            render();
+        }
+        playButton.style.display = "unset";
+        pauseButton.style.display = "none";
     }
 
     function update() {
