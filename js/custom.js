@@ -7,3 +7,8 @@ window.onload = () => {
                .register('./sw.js');
     }
   }
+
+  //DISABLE RIGHT CLICKING
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+    });
