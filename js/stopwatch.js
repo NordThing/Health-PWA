@@ -47,13 +47,10 @@ var Stopwatch = function(options) {
     }
 
     function reset() {
-        if (interval) {
-            clearInterval(interval);
-            interval = null;
-        } else {
-            clock = 0;
-            render();
-        }
+        clearInterval(interval);
+        interval = null;
+        clock = 0;
+        render();
         playButton.style.display = "unset";
         pauseButton.style.display = "none";
     }
