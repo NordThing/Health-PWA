@@ -33,7 +33,7 @@ var Stopwatch = function(options) {
             offset   = Date.now();
             interval = setInterval(update, options.delay);
             playButton.style.display = "none";
-            pauseButton.style.display = "flex";
+            pauseButton.style.display = "unset";
         }
     }
 
@@ -41,8 +41,8 @@ var Stopwatch = function(options) {
         if (interval) {
             clearInterval(interval);
             interval = null;
+            playButton.style.display = "unset";
             pauseButton.style.display = "none";
-            playButton.style.display = "flex";
         }
     }
 

@@ -205,12 +205,14 @@ button {
 }
 
 #playButton {
-  width: 36px;
+    position: absolute;
+    width: 36px;
 }
 
 #pauseButton {
-  width: 36px;
-  display: none;
+    position: absolute;
+    width: 36px;
+    display: none;
 }
 
 #resetButton {
