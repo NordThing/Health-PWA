@@ -46,31 +46,10 @@ No APIs
 No TEST defined
 
 # How to use? 
-This project is live and hosted on www.dailyactivitytracker.com Here you create a user and track your progress.
+This project is live and hosted on www.WeAreTryingToFindSomeThingReallyGoodForThis.com Here you create a user and track your progress.
 
 # Contribute
 Look in the Contribute.MD if you want to contribute to this project
 
 # License
 In short, when you submit code changes, your submissions are understood to be under the same [GNU 3.0 License] that covers the project. Feel free to contact the maintainers if that's a concern.
-
-
-### WHERE TO HOST?
-Cheap and reliable webhotel 
-
-### NAMIN FOR THE WEBSITE
-BodyGame.com - taken
-body24.com - taken
-kropp24.se -taken
-myshape.com - taken
-bodify.com - taken
-mybody.com - taken
-bodycard.com - taken
-lifestream.com - taken
-bodystream.com - taken 
-fitiverse.com - taken
-healt24.com - taken
-life24.com - taken
-outofshape.com - tkane
-mybodyplan.com - taken
-
