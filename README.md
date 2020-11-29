@@ -59,3 +59,4 @@ Maximotracker.com
 Hiddenworkout.com
 LevelWorkout.com
 TrackerSnap.com
+MinimalTracker.com
