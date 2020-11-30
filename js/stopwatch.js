@@ -5,8 +5,6 @@ var Stopwatch = function(options) {
     var playButtonCol = document.getElementById("playButtonCol");
     var mainCont = document.getElementById("main");
     var modal = document.getElementById("saveModal");
-    initButton("playButton2", start);
-    initButton("pauseButton2", pause);
     initButton("playButton", start);
     initButton("pauseButton", pause);
     initButton("resetButton", reset);
@@ -20,7 +18,13 @@ var Stopwatch = function(options) {
 
     // private functions
     function getTimerEl(id) {
-        return document.getElementById(id);
+        var timerEl = document.getElementById(id);
+        timerEl.addEventListener("keydown", function (e) {
+            if (e.keyCode === 13) {
+                start();
+            }
+        });
+        return timerEl;
     }
 
     function initButton(id, handler) {
