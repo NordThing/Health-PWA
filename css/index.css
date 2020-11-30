@@ -206,12 +206,10 @@ button {
 }
 
 #playButton {
-    position: absolute;
     width: 36px;
 }
 
 #pauseButton {
-    position: absolute;
     width: 36px;
     display: none;
 }
