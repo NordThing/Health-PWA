@@ -2,6 +2,9 @@ var Stopwatch = function(options) {
 
     var offset, clock, interval;
     var timer = getTimerEl("time");
+    var playButtonCol = document.getElementById("playButtonCol");
+    var mainCont = document.getElementById("main");
+    var modal = document.getElementById("saveModal");
     initButton("playButton2", start);
     initButton("pauseButton2", pause);
     initButton("playButton", start);
@@ -34,8 +37,9 @@ var Stopwatch = function(options) {
         if (!interval) {
             offset   = Date.now();
             interval = setInterval(update, options.delay);
-            playButton2.style.display = "none";
-            pauseButton2.style.display = "none";    
+            if (playButtonCol) {
+                playButtonCol.classList.add("single-button");
+            }
             playButton.style.display = "none";
             pauseButton.style.display = "unset";
             resetButton.style.display ="none";
@@ -46,23 +50,39 @@ var Stopwatch = function(options) {
         if (interval) {
             clearInterval(interval);
             interval = null;
-            playButton2.style.display = "unset";
+            if (playButtonCol) {
+                playButtonCol.classList.remove("single-button");
+            }
+            playButton.style.display = "unset";
             resetButton.style.display = "unset";
             pauseButton.style.display = "none";
         }
     }
 
     function reset() {
+        toggleSaveDataPopup(clock);
         clearInterval(interval);
         interval = null;
-        clock = 0;
-        render();
-        playButton2.style.display = "none";
-        pauseButton2.style.display = "none";
+        if (playButtonCol) {
+            playButtonCol.classList.add("single-button");
+        }
         playButton.style.display = "unset";
         pauseButton.style.display = "none";
         resetButton.style.display = "none";
+        clock = 0;
+        render();
+    }
 
+    function toggleSaveDataPopup(time) {
+        if (mainCont && time > 0) {
+            mainCont.classList.add("main-blur");
+            if (modal) {
+                modal.style.display = "block";
+            }
+        } else {
+            modal.style.display = "none";
+            mainCont.classList.remove("main-blur");
+        }
     }
 
     function update() {
