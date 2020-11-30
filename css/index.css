@@ -300,9 +300,10 @@ button {
     border: 1px solid #888;
     width: 20%;
 }
- /* THIS IS USED WHEN THE APP IS LAUNCHED AS A STANDALONE APP AS PWA */
- @media all and (display-mode: standalone) {
-  body {
-    background-color: yellow;
-  }
+
+/* THIS IS USED WHEN THE APP IS LAUNCHED AS A STANDALONE APP AS PWA */
+@media all and (display-mode: standalone) {
+    body {
+        background-color: yellow;
+    }
 }
