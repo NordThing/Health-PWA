@@ -201,6 +201,7 @@ button {
   display: flex;
   justify-content: space-between;
 
+  margin-top: 23px;
   width: 100%;
 }
 
