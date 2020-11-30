@@ -263,3 +263,10 @@ button {
  .footer-weight {
   text-align: center;
  }
+
+ /* THIS IS USED WHEN THE APP IS LAUNCHED AS A STANDALONE APP AS PWA */
+ @media all and (display-mode: standalone) {
+  body {
+    background-color: yellow;
+  }
+}
