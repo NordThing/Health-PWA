@@ -135,14 +135,14 @@ button {
 
 /* FLOATING ACTION BUTTON BEFORE ALL CONTENT */
 .fab {
-  width: 60px;
-  height: 60px;
-  background-color: var(--primary);
+  width: 56px;
+  height: 56px;
+  background-color: var(--secondary-dark);
+  color: var(--primary-dark);
   border-radius: 50%;
   transition: all 0.1s ease-in-out;
 
-  font-size: 50px;
-  color: white;
+  color: var(--primary-dark);
   text-align: center;
   line-height: 70px;
 
@@ -156,7 +156,7 @@ button {
 
 .fab a {
  text-decoration: none;
- color: var(--on-secondary)
+ color: white;
 }
 
 .fab:hover {
