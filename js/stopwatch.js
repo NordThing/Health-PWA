@@ -2,6 +2,8 @@ var Stopwatch = function(options) {
 
     var offset, clock, interval;
     var timer = getTimerEl("time");
+    initButton("playButton2", start);
+    initButton("pauseButton2", pause);
     initButton("playButton", start);
     initButton("pauseButton", pause);
     initButton("resetButton", reset);
@@ -32,8 +34,11 @@ var Stopwatch = function(options) {
         if (!interval) {
             offset   = Date.now();
             interval = setInterval(update, options.delay);
+            playButton2.style.display = "none";
+            pauseButton2.style.display = "none";    
             playButton.style.display = "none";
             pauseButton.style.display = "unset";
+            resetButton.style.display ="none";
         }
     }
 
@@ -41,7 +46,8 @@ var Stopwatch = function(options) {
         if (interval) {
             clearInterval(interval);
             interval = null;
-            playButton.style.display = "unset";
+            playButton2.style.display = "unset";
+            resetButton.style.display = "unset";
             pauseButton.style.display = "none";
         }
     }
@@ -51,8 +57,12 @@ var Stopwatch = function(options) {
         interval = null;
         clock = 0;
         render();
+        playButton2.style.display = "none";
+        pauseButton2.style.display = "none";
         playButton.style.display = "unset";
         pauseButton.style.display = "none";
+        resetButton.style.display = "none";
+
     }
 
     function update() {
