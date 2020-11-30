@@ -149,6 +149,7 @@ button {
   position: fixed;
   left: 50%;
   bottom: 17px;
+  transform: translate(-50%);
 
   z-index: 4;
 }
