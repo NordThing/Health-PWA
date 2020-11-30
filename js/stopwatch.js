@@ -1,6 +1,6 @@
 var Stopwatch = function(options) {
 
-    var offset, clock, interval;
+    var offset, clock, interval, stopWatchStarted;
     var timer = getTimerEl("time");
     var playButtonCol = document.getElementById("playButtonCol");
     var mainCont = document.getElementById("main");
@@ -46,6 +46,7 @@ var Stopwatch = function(options) {
                     interval = setInterval(countdownUpdate, options.delay);
                 }
             } else {
+                stopWatchStarted = true;
                 offset   = Date.now();
                 interval = setInterval(timerUpdate, options.delay);
             }
@@ -59,7 +60,7 @@ var Stopwatch = function(options) {
     }
     
     function isCountdownMode() {
-        return timer.innerHTML !== "00:00:00";
+        return timer.innerHTML !== "00:00:00" && !stopWatchStarted;
     }
 
     function pause() {
@@ -79,6 +80,7 @@ var Stopwatch = function(options) {
         toggleSaveDataPopup(clock > 0);
         clearInterval(interval);
         interval = null;
+        stopWatchStarted = false;
         if (playButtonCol) {
             playButtonCol.classList.add("single-button");
         }
