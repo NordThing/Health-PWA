@@ -293,19 +293,23 @@ button {
  }
 
  .footer-overview {
-   text-align: center;
+   margin: 10px;
+   text-align: left;
  }
 
  .footer-calendar {
-  text-align: center;
+  margin: 10px;
+  text-align: left;
  }
 
  .footer-activity {
-  text-align: center;
+  margin: 10px;
+  text-align: right;
  }
 
  .footer-weight {
-  text-align: center;
+  margin: 10px;
+  text-align: right;
  }
 
 /** Modal **/
