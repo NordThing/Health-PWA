@@ -35,8 +35,16 @@ var Stopwatch = function(options) {
 
     function start() {
         if (!interval) {
-            offset   = Date.now();
-            interval = setInterval(update, options.delay);
+            if (isCountdownMode()) {
+                var split = timer.innerHTML.split(":");
+                if (split.length === 3) {
+                    offset = getCountdownOffset(split[0], split[1], split[2]);
+                    interval = setInterval(countdownUpdate, options.delay);
+                }
+            } else {
+                offset   = Date.now();
+                interval = setInterval(timerUpdate, options.delay);
+            }
             if (playButtonCol) {
                 playButtonCol.classList.add("single-button");
             }
@@ -44,6 +52,10 @@ var Stopwatch = function(options) {
             pauseButton.style.display = "unset";
             resetButton.style.display ="none";
         }
+    }
+    
+    function isCountdownMode() {
+        return timer.innerHTML !== "00:00:00";
     }
 
     function pause() {
@@ -60,7 +72,7 @@ var Stopwatch = function(options) {
     }
 
     function reset() {
-        toggleSaveDataPopup(clock);
+        toggleSaveDataPopup(clock > 0);
         clearInterval(interval);
         interval = null;
         if (playButtonCol) {
@@ -73,8 +85,8 @@ var Stopwatch = function(options) {
         render();
     }
 
-    function toggleSaveDataPopup(time) {
-        if (mainCont && time > 0) {
+    function toggleSaveDataPopup(show) {
+        if (mainCont && show) {
             mainCont.classList.add("main-blur");
             if (modal) {
                 modal.style.display = "block";
@@ -85,9 +97,20 @@ var Stopwatch = function(options) {
         }
     }
 
-    function update() {
+    function timerUpdate() {
         clock += delta();
         render();
+    }
+
+    function countdownUpdate() {
+        var now = new Date().getTime();
+        clock = offset - now;
+        render();
+        if (clock <= 0) {
+            clearInterval(interval);
+            reset();
+            toggleSaveDataPopup(true);
+        }
     }
 
     function render() {
@@ -97,14 +120,14 @@ var Stopwatch = function(options) {
     }
 
     function delta() {
-        var now = Date.now(),
-            d   = now - offset;
+        var now = Date.now();
+        var d = now - offset;
 
         offset = now;
         return d;
     }
 
-    function msToHMS( ms ) {
+    function msToHMS(ms) {
         var seconds = ms / 1000;
         var hours = parseInt( seconds / 3600 );
         seconds = seconds % 3600;
@@ -113,6 +136,15 @@ var Stopwatch = function(options) {
         return hours.toString().padStart(2,'0') + ":"
             + minutes.toString().padStart(2,'0') + ":"
             + Math.floor(seconds).toString().padStart(2,'0');
+    }
+
+    function getCountdownOffset(hrs, min, sec) {
+        var now = new Date().getTime();
+        var h = parseInt(hrs, 10);
+        var m = parseInt(min, 10);
+        var s = parseInt(sec, 10);
+        var ms = ((h*60*60+m*60+s)*1000);
+        return now + ms;
     }
 
     // public API
