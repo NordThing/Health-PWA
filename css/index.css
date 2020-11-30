@@ -155,6 +155,7 @@ button {
 
   background-color: var(--primary);
   color: var(--on-primary);
+  box-shadow: 0 3px 3px -3px rgba(0,0,0,.5);
   
   height: 50px;
   width: 100vw;
@@ -249,7 +250,6 @@ button {
 
  .footer-overview {
    text-align: center;
-
  }
 
  .footer-calendar {
