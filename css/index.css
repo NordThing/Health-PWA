@@ -161,14 +161,17 @@ button {
 }
 
 .header-profile-picture {
+  margin:10px;
   text-align:left;
 }
 
 .header-app-icon {
+  margin:10px;
   text-align: center;
 }
 
 .header-settings {
+  margin:10px;
   text-align: right;
 }
 
