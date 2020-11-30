@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="js/popupHandler.js"></script>
     <title>Health-PWA</title>
     <!-- PUT JAVASCRIPT AT THE BOTTOM BEFORE THE BODY TAG -->
@@ -41,35 +42,7 @@
     <!-- MAIN CONTENT -->
     <main id="main">
         <div class="main">
-            <!-- CIRCLE FOR THE CLOCK - MAYBE HAVE THIS CONFIGURABLE TO MAKE IT CUSTOMISABLE -->
-            <div class="row">
-                <div class="column">
-                    <div class="circle">
-                        <span contenteditable="true" id="time" class="time"/>
-                    </div>
-                </div>    
-            </div>
-            <!-- THIS IS THE CONTROL FOR STOPWATCH FUNCTIONALITY -->
-            <div class="row">
-                <div class="controls">
-                    <div id="playButtonCol" class="column">
-                        <button class="buttonPlay">
-                            <i id="playButton" class="material-icons">play_circle_filled</i>
-                            <i id="pauseButton" class="material-icons">pause_circle_filled</i>
-                        </button>
-                    </div>
-                    <div class="column">
-                        <button class="buttonReset">
-                            <i id="resetButton" class="material-icons">stop_circle</i>
-                        </button>
-                    </div>
-                </div>    
-            </div>
-            <div>
-                <!-- <object data="stopwatch.html"> -->
-                    <!-- Your browser doesn’t support the object tag. -->
-                <!-- </object> -->
-            </div>
+            <stopwatch></stopwatch>
         </div>
     </main>
     <!-- The Save Modal -->
@@ -103,8 +76,7 @@
                 </div>
                 <div class="column">
                     <div class="footer-weight">
-                        <i class="material-icons">addchart</i>
-                    </div>
+                        <i class="material-icons">addchart</i> </div>
                 </div>
             </div>
         </div>    
@@ -112,5 +84,6 @@
 </div>
 <script src="js/custom.js"></script>
 <script src="js/stopwatch.js"></script>
+<script src="js/timer.js"></script>
 </body>
 </html>
