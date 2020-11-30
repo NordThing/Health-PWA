@@ -223,6 +223,7 @@ button {
 .footer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   background-color: var(--primary);
   color: var(--on-primary);
