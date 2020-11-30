@@ -19,12 +19,14 @@ var Stopwatch = function(options) {
     // private functions
     function getTimerEl(id) {
         var timerEl = document.getElementById(id);
-        timerEl.addEventListener("keydown", function (e) {
-            if (e.keyCode === 13) {
-                start();
-            }
-        });
-        return timerEl;
+        if (timerEl) {
+            timerEl.addEventListener("keydown", function (e) {
+                if (e.keyCode === 13) {
+                    start();
+                }
+            });
+            return timerEl;
+        }
     }
 
     function initButton(id, handler) {

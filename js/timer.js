@@ -1,56 +1,3 @@
-let interval = null;
-let offset = null;
-let options = {
-    delay: 1
-};
-const start = () => {
-    if (!interval) {
-        if (isCountdownMode()) {
-            var split = timer.innerHTML.split(":");
-            if (split.length === 3) {
-                offset = getCountdownOffset(split[0], split[1], split[2]);
-                interval = setInterval(countdownUpdate, options.delay);
-            }
-        } else {
-            offset   = Date.now();
-            interval = setInterval(timerUpdate, options.delay);
-        }
-        if (playButtonCol) {
-            playButtonCol.classList.add("single-button");
-        }
-        playButton.style.display = "none";
-        pauseButton.style.display = "unset";
-        resetButton.style.display ="none";
-    }
-}
-const isCountdownMode = () => {
-    return false;
-}
-const timerUpdate = () => {
-    // clock += delta();
-    // const time = msToHMS(clock);
-    app.data.hrs = '01';
-}
-const delta = () => {
-    var now = Date.now();
-    var d = now - offset;
-
-    offset = now;
-    return d;
-}
-const msToHMS = (ms) => {
-    var seconds = ms / 1000;
-    var hours = parseInt( seconds / 3600 );
-    seconds = seconds % 3600;
-    var minutes = parseInt( seconds / 60 );
-    seconds = seconds % 60;
-    return [
-        hours.toString().padStart(2,'0'),
-        minutes.toString().padStart(2,'0'),
-        Math.floor(seconds).toString().padStart(2,'0')
-    ];
-}
-// ---------------- Init App -------------------------- //
 const app = Vue.createApp({});
 app.component('stopwatch', {
 	data: function () { 
@@ -58,6 +5,7 @@ app.component('stopwatch', {
 		    state: "started",
 		    startTime: Date.now(),
 		    currentTime: Date.now(),
+            clock: null,
 		    interval: null
 		}
 	},
@@ -97,6 +45,7 @@ app.component('stopwatch', {
 		    this.$data.state = "started";
 		    this.$data.startTime = Date.now();
 		    this.$data.currentTime = Date.now();
+            this.$data.clock = null;
 		},
         stop: function() {
 		    this.$data.state = "stopped";
@@ -119,7 +68,12 @@ app.component('stopwatch', {
             resetButton.style.display ="unset";
 		},
         start: function () {
-		    this.$data.state = "started";
+            if (this.$data.state === "paused") {
+                this.$data.state = "started";
+            } else {
+                this.reset();
+                this.$data.clock = Date.now();
+            }
             this.interval = setInterval(this.updateCurrentTime, 1000);
             if (playButtonCol) {
                 playButtonCol.classList.add("single-button");
@@ -128,9 +82,10 @@ app.component('stopwatch', {
             pauseButton.style.display = "unset";
             resetButton.style.display ="none";
         },
-		updateCurrentTime: function(time) {
+		updateCurrentTime: function() {
 		    if (this.$data.state == "started") {
-		        this.currentTime = Date.now();
+                this.currentTime = this.$data.clock;
+                this.$data.clock = Date.now();
 		    }
 		}        
 	},
