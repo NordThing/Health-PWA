@@ -3,7 +3,7 @@ Daily Activity Tracker.
 It can track your activity and your weight.
 
 # Motivation
-This project will ALWAYS be FREE but we are very glad for sponsors. 
+This project will hopefully ALWAYS be FREE but we are very glad for sponsors.  
 I have been a big fan using ENDOMONDO but it has come to an end 2020-12-31. This will be a BETTER replacement and also making things 
 FREE.  
 

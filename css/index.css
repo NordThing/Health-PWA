@@ -133,6 +133,37 @@ button {
 
 /* HERE STARTS THE REAL CONTENT AND STYLING FOR THE SITE */
 
+/* FLOATING ACTION BUTTON BEFORE ALL CONTENT */
+.fab {
+  width: 56px;
+  height: 56px;
+  background-color: var(--secondary-dark);
+  color: var(--primary-dark);
+  border-radius: 50%;
+  transition: all 0.1s ease-in-out;
+
+  color: var(--primary-dark);
+  text-align: center;
+  line-height: 70px;
+
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translate(-50%);
+
+  z-index: 4;
+}
+
+.fab a {
+ text-decoration: none;
+ color: white;
+}
+
+.fab:hover {
+ box-shadow: 0 6px 14px 0 #666;
+ transform: scale(1.05);
+}
+
 /* THE CONTAINER HAVE THE DISPLAY PROPERTY OF GRID SO A GRID LAYOUT CAN BE USED */
 .container {
   display: grid;
@@ -262,19 +293,23 @@ button {
  }
 
  .footer-overview {
-   text-align: center;
+   margin: 10px;
+   text-align: left;
  }
 
  .footer-calendar {
-  text-align: center;
+  margin: 10px;
+  text-align: left;
  }
 
  .footer-activity {
-  text-align: center;
+  margin: 10px;
+  text-align: right;
  }
 
  .footer-weight {
-  text-align: center;
+  margin: 10px;
+  text-align: right;
  }
 
 /** Modal **/
