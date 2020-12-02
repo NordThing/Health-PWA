@@ -4,22 +4,22 @@
             <div class="row">
                 <div class="column">
                     <div class="footer-overview">
-                        <i class="material-icons">dvr</i>
+                        <a href="overview.php"><i class="material-icons">dvr</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-calendar">
-                        <i class="material-icons">calendar_today</i>
+                        <a href="calendar.php"><i class="material-icons">calendar_today</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-activity">
-                        <i class="material-icons">timer</i>
+                        <a href="stopwatch.php"><i class="material-icons">timer</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-weight">
-                        <i class="material-icons">addchart</i>
+                        <a href="weight-tracker.php"><i class="material-icons">addchart</i></a>
                     </div>
                 </div>
             </div>
