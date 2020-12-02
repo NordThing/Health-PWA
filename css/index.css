@@ -114,6 +114,10 @@ button {
   outline: none;
 }
 
+ a {
+   color: inherit;
+   text-decoration: inherit;
+ }
 
 /* THIS IS FOR FLEXBOX LAYOUT 
   FLEXBOX USED FOR SIMPLE ONE DIMENSION LAYOUTS */
@@ -327,13 +331,14 @@ button {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
+/* Modal Content */ 
+/* NEEDS STYLING */
 .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 20%;
+    width: 200px; 
 }
 
 /* THIS IS USED WHEN THE APP IS LAUNCHED AS A STANDALONE APP AS PWA */
