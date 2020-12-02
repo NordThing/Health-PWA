@@ -114,6 +114,10 @@ button {
   outline: none;
 }
 
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+  outline: none;
+}
 
 /* THIS IS FOR FLEXBOX LAYOUT 
   FLEXBOX USED FOR SIMPLE ONE DIMENSION LAYOUTS */
@@ -234,6 +238,9 @@ button {
   font-size: 48px;
 
   color: var(--secondary-dark);
+}
+.time:focus {
+  outline: none !import;
 }
 
 .controls {

@@ -5,7 +5,7 @@ app.component('stopwatch', {
             offset: null,
             clock: null,
 		    interval: null,
-            stopWatchStarted: false
+            state: "",
 		}
 	},
   	mounted: function() {
@@ -18,123 +18,135 @@ app.component('stopwatch', {
 	},
 	computed: {
 		hours: function() {
-		    var lapsed = this.clock;
-		    var hrs = Math.floor((lapsed / 1000 / 60 / 60));
-		    return hrs >= 10 ? hrs : '0' + hrs;
+		    const lapsed = this.clock;
+		    return Math.floor((lapsed / 1000 / 60 / 60)).toString().padStart(2,'0');
 		},
 		minutes: function() {
-		    var lapsed = this.clock;
-		    var min = Math.floor((lapsed / 1000 / 60) % 60);
-		    return min >= 10 ? min : '0' + min;
+		    const lapsed = this.clock;
+		    return Math.floor((lapsed / 1000 / 60) % 60).toString().padStart(2,'0');
 		},
 		seconds: function() {
-		    var lapsed = this.clock;
-		    var sec = Math.ceil((lapsed / 1000) % 60);
-		    return sec >= 10 ? sec : '0' + sec;
+            const lapsed = this.clock;
+            return Math.floor((lapsed / 1000) % 60).toString().padStart(2,'0');
 		}
 	},
 	methods: {
         start: function() {
             if (!this.interval) {
                 if (this.isCountdownMode()) {
-                    var [hrVal, minVal, secVal] = this.getDisplayedTime();
-                    this.offset = this.getCountdownOffset(hrVal, minVal, secVal);
-                    this.interval = setInterval(this.countdownUpdate, 1);
+                    const [hrVal, minVal, secVal] = this.getDisplayedTime();
+                    if (this.isValidCountdownState(hrVal, minVal, secVal)) {
+                        this.offset = this.getCountdownOffset(hrVal, minVal, secVal);
+                        this.interval = setInterval(this.countdownUpdate, 1);
+                    } else {
+                        return;
+                    }
                 } else {
-                    this.stopWatchStarted = true;
                     this.offset = Date.now();
                     this.interval = setInterval(this.timerUpdate, 1);
                 }
-                if (playButtonCol) {
-                    playButtonCol.classList.add("single-button");
-                }
-                playButton.style.display = "none";
-                pauseButton.style.display = "unset";
-                resetButton.style.display ="none";
+                setPlayStyle();
+                this.state = "started";
             }
-        },
-        isCountdownMode: function() {
-            var [hrVal, minVal, secVal] = this.getDisplayedTime();
-            return !this.stopWatchStarted && (hrVal !== "00" || minVal !== "00" || secVal !== "00");
         },
         pause: function() {
             if (this.interval) {
                 clearInterval(this.interval);
                 this.interval = null;
-                if (playButtonCol) {
-                    playButtonCol.classList.remove("single-button");
-                }
-                playButton.style.display = "unset";
-                resetButton.style.display = "unset";
-                pauseButton.style.display = "none";
+                setPauseStyle();
+                this.state = "paused";
             }
         },
         reset: function() {
-            this.toggleSaveDataPopup(this.clock > 0);
+            if (this.clock) {
+                toggleSaveDataPopup(this.clock > 0);
+            }
             clearInterval(this.interval);
             this.interval = null;
-            if (playButtonCol) {
-                playButtonCol.classList.add("single-button");
-            }
-            playButton.style.display = "unset";
-            pauseButton.style.display = "none";
-            resetButton.style.display = "none";
+            setResetStyle();
             this.clock = 0;
-            this.stopWatchStarted = false;
-        },
-        toggleSaveDataPopup: function(show) {
-            if (show) {
-                var mainCont = document.getElementById("main");
-                var modal = document.getElementById("saveModal");
-                mainCont.classList.add("main-blur");
-                if (modal) {
-                    modal.style.display = "block";
-                }
-            } else {
-                modal.style.display = "none";
-                mainCont.classList.remove("main-blur");
-            }
+            this.state = "stopped";
         },
         timerUpdate: function() {
-            var now = Date.now();
-            var d = now - this.offset;
+            const now = Date.now();
+            const d = now - this.offset;
             this.offset = now;
             this.clock += d;
         },
         countdownUpdate: function() {
-            var now = new Date().getTime();
-            var diff = this.offset - now;
+            const now = new Date().getTime();
+            const diff = this.offset - now;
             if (diff > 0) {
                 this.clock = diff;
             } else {
                 this.reset();
-                this.toggleSaveDataPopup(true);
+                toggleSaveDataPopup(true);
             }
         },
         getCountdownOffset: function(hrs, min, sec) {
-            var now = new Date().getTime();
-            var h = parseInt(hrs, 10);
-            var m = parseInt(min, 10);
-            var s = parseInt(sec, 10);
-            var ms = ((h*60*60+m*60+s)*1000);
+            const now = new Date().getTime();
+            const h = parseInt(hrs, 10);
+            const m = parseInt(min, 10);
+            const s = parseInt(sec, 10);
+            const ms = ((h*60*60+m*60+s)*1000);
             return now + ms;
         },
         getDisplayedTime: function() {
-            var hrVal = hours.innerHTML;
-            var minVal = minutes.innerHTML;
-            var secVal = seconds.innerHTML;
+            const hrVal = hoursEl.innerHTML;
+            const minVal = minutesEl.innerHTML;
+            const secVal = secondsEl.innerHTML;
             return [hrVal, minVal, secVal];
         },
-	},
-  template: `
+        onEdit: function(evt) {
+            const text = evt.target.innerHTML;
+            if (!this.isNumeric(text)) {
+                evt.target.innerHTML = '00';
+            } else if (!this.hasStarted()) {
+                this.start();
+            }
+        },
+        isNumeric: function(str) {
+            if (typeof str != "string") return false
+            return (str.length < 3 && str.length > 0) && (!isNaN(str) && !isNaN(parseFloat(str)));
+        },
+        hasStarted: function() {
+            return this.state === "started";
+        },
+        isCountdownMode: function() {
+            const [hrVal, minVal, secVal] = this.getDisplayedTime();
+            return !this.hasStarted() && (hrVal !== "00" || minVal !== "00" || secVal !== "00");
+        },
+        isValidCountdownState: function(hrVal, minVal, secVal) {
+            let isValid = true;
+            if (!this.isNumeric(hrVal)) {
+                hoursEl.innerHTML = '00';
+                isValid = false;
+            }
+            if (!this.isNumeric(minVal)) {
+                minutesEl.innerHTML = '00';
+                isValid = false;
+            }
+            if (!this.isNumeric(secVal)) {
+                secondsEl.innerHTML = '00';
+                isValid = false;
+            }
+            return isValid;
+        },
+        getTimeContent: function(field) {
+            const value = this[field];
+            const editable = !this.hasStarted() ? 'true' : 'false';
+            return '<span id="'+field+'El" contenteditable="'+editable+'" class="time">'+value+'</span>';
+        }
+    },
+    template: `
             <div class="row">
                 <div class="column">
                     <div class="circle">
-                        <span contenteditable="true" id="hours" class="time">{{ hours }}</span>
+                        <div @keydown.enter="onEdit" v-html="getTimeContent('hours')"/>
                         <span class="time">:</span>
-                        <span contenteditable="true" id="minutes" class="time">{{ minutes }}</span>
+                        <div @keydown.enter="onEdit" v-html="getTimeContent('minutes')"/>
                         <span class="time">:</span>
-                        <span contenteditable="true" id="seconds" class="time">{{ seconds }}</span>
+                        <div @keydown.enter="onEdit" v-html="getTimeContent('seconds')"/>
                     </div>
                 </div>    
             </div>
@@ -156,5 +168,42 @@ app.component('stopwatch', {
    `,
 });
 
+const setPlayStyle = () => {
+    if (playButtonCol) {
+        playButtonCol.classList.add("single-button");
+    }
+    playButton.style.display = "none";
+    pauseButton.style.display = "unset";
+    resetButton.style.display ="none";
+}
+const setPauseStyle = () => {
+    if (playButtonCol) {
+        playButtonCol.classList.remove("single-button");
+    }
+    playButton.style.display = "unset";
+    resetButton.style.display = "unset";
+    pauseButton.style.display = "none";
+}
+const setResetStyle = () => {
+    if (playButtonCol) {
+        playButtonCol.classList.add("single-button");
+    }
+    playButton.style.display = "unset";
+    pauseButton.style.display = "none";
+    resetButton.style.display = "none";
+}
+const toggleSaveDataPopup = (show) => {
+    if (show) {
+        const mainCont = document.getElementById("main");
+        const modal = document.getElementById("saveModal");
+        mainCont.classList.add("main-blur");
+        if (modal) {
+            modal.style.display = "block";
+        }
+    } else {
+        modal.style.display = "none";
+        mainCont.classList.remove("main-blur");
+    }
+}
 app.mount('#main');
 
