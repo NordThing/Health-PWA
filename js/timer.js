@@ -1,12 +1,12 @@
 const timer = Vue.createApp({});
 timer.component('stopwatch', {
 	data: function () { 
-		return {
+        return {
             offset: null,
             clock: null,
-		    interval: null,
+            interval: null,
             state: "",
-		}
+        }
 	},
   	mounted: function() {
         if (playButtonCol) {
