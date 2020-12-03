@@ -1,21 +1,21 @@
 const timer = Vue.createApp({});
 timer.component('stopwatch', {
-	data: function () { 
+    data: function () { 
         return {
             offset: null,
             clock: null,
             interval: null,
             state: "",
         }
-	},
-  	mounted: function() {
+    },
+    mounted: function() {
         if (playButtonCol) {
             playButtonCol.classList.add("single-button");
         }
-	},
-	unmounted: function() {
-	    clearInterval(this.interval)
-	},
+    },
+    unmounted: function() {
+        clearInterval(this.interval)
+    },
     computed: {
         hours: function() {
             const lapsed = this.clock;
@@ -30,7 +30,7 @@ timer.component('stopwatch', {
             return Math.floor((lapsed / 1000) % 60).toString().padStart(2,'0');
         }
     },
-	methods: {
+    methods: {
         start: function() {
             if (!this.interval) {
                 if (this.isCountdownMode()) {
