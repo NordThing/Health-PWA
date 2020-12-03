@@ -1,5 +1,5 @@
-const app = Vue.createApp({});
-app.component('stopwatch', {
+const timer = Vue.createApp({});
+timer.component('stopwatch', {
 	data: function () { 
 		return {
             offset: null,
@@ -205,5 +205,5 @@ const toggleSaveDataPopup = (show) => {
         mainCont.classList.remove("main-blur");
     }
 }
-app.mount('#main');
+timer.mount('#stopwatch');
 
