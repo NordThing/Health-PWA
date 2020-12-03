@@ -16,20 +16,20 @@ timer.component('stopwatch', {
 	unmounted: function() {
 	    clearInterval(this.interval)
 	},
-	computed: {
-		hours: function() {
-		    const lapsed = this.clock;
-		    return Math.floor((lapsed / 1000 / 60 / 60)).toString().padStart(2,'0');
-		},
-		minutes: function() {
-		    const lapsed = this.clock;
-		    return Math.floor((lapsed / 1000 / 60) % 60).toString().padStart(2,'0');
-		},
+    computed: {
+        hours: function() {
+            const lapsed = this.clock;
+            return Math.floor((lapsed / 1000 / 60 / 60)).toString().padStart(2,'0');
+        },
+        minutes: function() {
+            const lapsed = this.clock;
+            return Math.floor((lapsed / 1000 / 60) % 60).toString().padStart(2,'0');
+        },
         seconds: function() {
             const lapsed = this.clock;
             return Math.floor((lapsed / 1000) % 60).toString().padStart(2,'0');
         }
-	},
+    },
 	methods: {
         start: function() {
             if (!this.interval) {
