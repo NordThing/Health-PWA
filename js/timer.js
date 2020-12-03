@@ -25,10 +25,10 @@ timer.component('stopwatch', {
 		    const lapsed = this.clock;
 		    return Math.floor((lapsed / 1000 / 60) % 60).toString().padStart(2,'0');
 		},
-		seconds: function() {
+        seconds: function() {
             const lapsed = this.clock;
             return Math.floor((lapsed / 1000) % 60).toString().padStart(2,'0');
-		}
+        }
 	},
 	methods: {
         start: function() {
