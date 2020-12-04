@@ -18,19 +18,20 @@ Comments are very warm welcomed also so it could be easy to follow along.
 # Screenshots
 Here we can put logo and demo screenshot when we have it!
 
-# Tech/framework used
+# Tech/framework used in this branch
 * HTML
 * CSS
 * JAVASCRIPT
+* PHP
 
 # Functional features
-* FREE
+* FREE and OPEN SOURCE
 * Stopwatch
 * Weekly goals
 * Weight tracker
 
 # Non-functional features
-* FREE
+* FREE and OPEN SOURCE
 * No installation
 * Available offline
 * Platform-independent
