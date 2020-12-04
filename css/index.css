@@ -165,7 +165,9 @@ button {
 
 .fab:hover {
  box-shadow: 0 6px 14px 0 #666;
+ /* REMOVED 
  transform: scale(1.05);
+ */
 }
 
 /* THE CONTAINER HAVE THE DISPLAY PROPERTY OF GRID SO A GRID LAYOUT CAN BE USED */
