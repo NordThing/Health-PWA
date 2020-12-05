@@ -4,10 +4,10 @@
 $t = date("H");
 
 if ($t < "20") {
-    echo "Have a good day!";
+    include 'main-content.html';
   } else {
-    echo "Have a good night!";
+    include 'stopwatch.html';
   }
   ?>
-  
+
 <?php include 'footer.html';?>
