@@ -35,12 +35,22 @@
                         <i class="material-icons">looks</i>
                     </div>
                 </div>
+                <!--
                 <div class="column" style="border:2px solid red">
                     <div class="header-darkmode">
                         <label class="theme-switch" for="checkbox">
                             <input type="checkbox" id="checkbox">
                             <div class="slider round"></div>
                         </label>
+                    </div>
+                </div>
+                -->
+                <div class="column" style="border:2px solid red">
+                    <div class="header-darkmode">
+                        <div class="wpnm-button">
+                            <div class="wpnm-button-inner-left"></div>
+                            <div class="wpnm-button-inner"></div>
+                        </div>
                     </div>
                 </div>
             </div>            
@@ -105,22 +115,22 @@
             <div class="row">
                 <div class="column">
                     <div class="footer-overview">
-                        <a href="#" onclick="changeFeature()"><i class="material-icons">dvr</i></a>
+                        <button onclick="changeFeature()"><i class="material-icons">dvr</i></button>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-calendar">
-                        <a href="calendar.php"><i class="material-icons">calendar_today</i></a>
+                        <button onclick="changeFeature(calendar)"><i class="material-icons">calendar_today</i></button>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-activity">
-                        <a href="stopwatch.php"><i class="material-icons">timer</i></a>
+                        <button onclick="changeFeature(stopwatch)"><i class="material-icons">timer</i></button>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-weight">
-                        <a href="weight-tracker.php"><i class="material-icons">addchart</i></a>
+                        <button onclick="changeFeature(weight-tracker)"><i class="material-icons">addchart</i></button>
                     </div>
                 </div>
             </div>
