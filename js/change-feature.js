@@ -6,6 +6,6 @@ function changeFeature() {
         document.getElementById("demo").innerHTML = this.responseText;
       }
     };
-    xhttp.open("GET", "test.txt", true);
+    xhttp.open("GET", "test.html", true);
     xhttp.send();
   }
