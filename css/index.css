@@ -222,6 +222,12 @@ button {
     filter: blur(2px);
 }
 
+.feature {
+  margin: 23px;
+  background-color: var(--testing);
+  color: var(--secondary-dark);
+}
+
 .circle {
   display: flex;
   align-items: center;
