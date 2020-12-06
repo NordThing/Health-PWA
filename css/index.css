@@ -224,7 +224,6 @@ button {
 
 .feature {
   margin: 23px;
-  background-color: var(--testing);
   color: var(--secondary-dark);
 }
 
