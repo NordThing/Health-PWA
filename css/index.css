@@ -335,7 +335,7 @@ input:checked + .slider {
   background-color: #66bb6a;
 }
 
-input:checked + .slider.before {
+input:checked + .slider:before {
   transform: translateX(26px);
 }
 
