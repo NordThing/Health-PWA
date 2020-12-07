@@ -361,14 +361,14 @@ input:checked + .slider:before {
 
 .sliderclass {
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
   display: flex;
   overflow-x: auto;
 }
 .slideclass {
   width: 100%;
   flex-shrink: 0;
-  height: 60vh;
+  height: 65vh;
 }
 
 .feature {
