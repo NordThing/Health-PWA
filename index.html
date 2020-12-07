@@ -59,44 +59,53 @@
     
     <!-- MAIN CONTENT -->
     <main id="main">
-        <div class="main">
-            <!-- HEADLINE FOR THE FEATURE -->
-            <div class="row">
-                <div class="column">
-                    <div class="feature">
-                        <h2 id="demo">STOPWATCH</h2>
-                    </div>
-                </div>   
-            </div>
-            <!-- CIRCLE FOR THE CLOCK - MAYBE HAVE THIS CONFIGURABLE TO MAKE IT CUSTOMISABLE -->
-            <div class="row">
-                <div class="column">
-                    <div class="circle">
-                        <span contenteditable="true" id="time" class="time"/>
-                    </div>
-                </div>    
-            </div>
-            <!-- THIS IS THE CONTROL FOR STOPWATCH FUNCTIONALITY -->
-            <div class="row">
-                <div class="controls">
-                    <div id="playButtonCol" class="column">
-                        <button class="buttonPlay">
-                            <i id="playButton" class="material-icons">play_circle_filled</i>
-                            <i id="pauseButton" class="material-icons">pause_circle_filled</i>
-                        </button>
-                    </div>
+        <!-- STARTING OF FEATURE PACKED IN A SLIDER-->
+        <div class="sliderclass">
+            <div class="slideclass" id="slide-1">1</div>
+            <div class="main">
+                <!-- HEADLINE FOR THE FEATURE -->
+                <div class="row">
                     <div class="column">
-                        <button class="buttonReset">
-                            <i id="resetButton" class="material-icons">stop_circle</i>
-                        </button>
-                    </div>
-                </div>    
+                        <div class="feature">
+                            <h2 id="demo">STOPWATCH</h2>
+                        </div>
+                    </div>   
+                </div>
+                <!-- CIRCLE FOR THE CLOCK - MAYBE HAVE THIS CONFIGURABLE TO MAKE IT CUSTOMISABLE -->
+                <div class="row">
+                    <div class="column">
+                        <div class="circle">
+                            <span contenteditable="true" id="time" class="time"/>
+                        </div>
+                    </div>    
+                </div>
+                <!-- THIS IS THE CONTROL FOR STOPWATCH FUNCTIONALITY -->
+                <div class="row">
+                    <div class="controls">
+                        <div id="playButtonCol" class="column">
+                            <button class="buttonPlay">
+                                <i id="playButton" class="material-icons">play_circle_filled</i>
+                                <i id="pauseButton" class="material-icons">pause_circle_filled</i>
+                            </button>
+                        </div>
+                        <div class="column">
+                            <button class="buttonReset">
+                                <i id="resetButton" class="material-icons">stop_circle</i>
+                            </button>
+                        </div>
+                    </div>    
+                </div>
+                <div>
+                    <!-- <object data="stopwatch.html"> -->
+                        <!-- Your browser doesn’t support the object tag. -->
+                    <!-- </object> -->
+                </div>
             </div>
-            <div>
-                <!-- <object data="stopwatch.html"> -->
-                    <!-- Your browser doesn’t support the object tag. -->
-                <!-- </object> -->
-            </div>
+            <div class="slideclass" id="slide-2">2</div>
+            <div class="slideclass" id="slide-3">3</div>
+            <div class="slideclass" id="slide-4">4</div>
+            <div class="slideclass" id="slide-5">5</div>
+        
         </div>
     </main>
     <!-- The Save Modal -->
@@ -115,22 +124,22 @@
             <div class="row">
                 <div class="column">
                     <div class="footer-overview">
-                        <button onclick="changeFeature()"><i class="material-icons">dvr</i></button>
+                        <a href=#slide-1><i class="material-icons">dvr</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-calendar">
-                        <button onclick="changeFeature(calendar)"><i class="material-icons">calendar_today</i></button>
+                        <a href=#slide-2><i class="material-icons">calendar_today</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-activity">
-                        <button onclick="changeFeature(stopwatch)"><i class="material-icons">timer</i></button>
+                        <a href=#slide-3><i class="material-icons">timer</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-weight">
-                        <button onclick="changeFeature(weight-tracker)"><i class="material-icons">addchart</i></button>
+                        <a href=#slide-4><i class="material-icons">addchart</i></a>
                     </div>
                 </div>
             </div>
