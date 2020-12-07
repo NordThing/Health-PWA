@@ -417,17 +417,6 @@ input:checked + .slider:before {
     display: none;
 }
 
-
-#playButton2 {
-  width: 36px;
-  display: none;
-}
-
-#pauseButton2 {
-  width: 36px;
-  display: none;
-}
-
 #playButton {
     width: 36px;
     color: var(--white);
