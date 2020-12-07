@@ -296,6 +296,7 @@ button {
   font-weight: bold 
 }
 
+
 /* TOOGLE FOR DARKMODE */
 
 .theme-switch {
@@ -348,6 +349,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/****************************/
 /* THIS IS THE MAIN CONTENT */
 .main {
   background-color: var(--background);
@@ -355,6 +357,18 @@ input:checked + .slider:before {
 
 .main-blur {
     filter: blur(2px);
+}
+
+.sliderclass {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  overflow-x: auto;
+}
+.slideclass {
+  width: 100%;
+  flex-shrink: 0;
+  height: 60vh;
 }
 
 .feature {
@@ -366,6 +380,8 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   
   border: 2px solid var(--secondary-dark);
   border-radius: 50%;
