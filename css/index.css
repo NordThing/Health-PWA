@@ -12,7 +12,9 @@
   --background: #a4dbe4;
   --error: #ba000d;
   --on-error: #ffffff;
-  --testing: #f44336;  
+  --testing: #f44336; 
+  --white: #ffffff;
+  --black:  #000000;
 }
 
 :root[data-theme="dark"] {
@@ -428,10 +430,12 @@ input:checked + .slider:before {
 
 #playButton {
     width: 36px;
+    color: var(--white);
 }
 
 #pauseButton {
     width: 36px;
+    color: var(--white);
     display: none;
 }
 
