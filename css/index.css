@@ -359,7 +359,7 @@ input:checked + .slider:before {
     filter: blur(2px);
 }
 
-.feature {
+.featurecontainer {
   width: 100vw;
   height: 65vh;
   display: flex;
