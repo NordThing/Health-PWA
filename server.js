@@ -29,8 +29,7 @@ app.post('/result', (req, res) => {
         location: req.body.location || null
     }
     db.createResult(newResult).then(id => {
-        res.redirect('/');
-        // res.sendFile(path.join(__dirname + '/index.html'));
+        res.send(id);
     });
 });
 

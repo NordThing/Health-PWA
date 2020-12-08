@@ -6,12 +6,12 @@ resultsView.component('results', {
         }
     },
     mounted: function() {
+        // Fetch results when rendering
         getResults().then(r => {
             this.$data.results = r;
         });
     },
     unmounted: function() {
-        console.log("unmounted");
     },
     computed: {
     },
@@ -33,8 +33,7 @@ async function getResults() {
     const url = "http://localhost:3001/results";
     let response = await fetch(url);
     if (response.ok) {
-        let json = await response.json();
-        return json;
+        return await response.json();
     } else {
         return [];
     }

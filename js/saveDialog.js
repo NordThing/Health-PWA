@@ -31,7 +31,6 @@ const close = () => {
     var modal = document.getElementById("saveModal");
     modal.style.display = "none";
     mainCont.classList.remove("main-blur");
-    window.location.reload(true);
 };
 
 
@@ -46,6 +45,7 @@ async function saveResult(result, comment) {
     });
     if (response.ok) {
         close();
+        window.location.reload(true);
     }
 }
 
