@@ -1,7 +1,8 @@
 const { MongoClient } = require('mongodb');
 const DB_NAME = 'health';
 const DB_COLLECTION_NAME = "trainings";
-const uri = "mongodb+srv://admin:Yc9uIMpei9Dalwop@healthpwacluster.j1te5.mongodb.net/health?retryWrites=true&w=majority";
+const DB_PASSWORD = '';
+const uri = "mongodb+srv://admin:"+DB_PASSWORD+"@healthpwacluster.j1te5.mongodb.net/health?retryWrites=true&w=majority";
 
 async function getDBClient(){
 
