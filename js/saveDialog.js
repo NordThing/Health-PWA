@@ -2,11 +2,13 @@ const saveDialog = Vue.createApp({});
 saveDialog.component('saveDialog', {
     methods: {
         save: function() {
-            console.log("saving data to DB");
-            close();
+            const modal = document.getElementById("saveModal");
+            if (modal) {
+                const result = modal.getAttribute("result");
+                saveResult(result, "Felt good");
+            }
         },
         cancel: function() {
-            console.log("do nothing");
             close();
         },
     },
@@ -29,5 +31,21 @@ const close = () => {
     var modal = document.getElementById("saveModal");
     modal.style.display = "none";
     mainCont.classList.remove("main-blur");
+    window.location.reload(true);
 };
+
+
+async function saveResult(result, comment) {
+    const url = "http://localhost:3001/result";
+    let response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({ result: result, comment: comment })
+    });
+    if (response.ok) {
+        close();
+    }
+}
 

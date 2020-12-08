@@ -58,8 +58,8 @@ timer.component('stopwatch', {
             }
         },
         reset: function() {
-            if (this.clock) {
-                toggleSaveDataPopup(this.clock > 0);
+            if (this.clock && this.clock > 0) {
+                showSaveDialog(this.getDisplayedTime());
             }
             clearInterval(this.interval);
             this.interval = null;
@@ -79,8 +79,8 @@ timer.component('stopwatch', {
             if (diff > 0) {
                 this.clock = diff;
             } else {
+                showSaveDialog(this.getDisplayedTime());
                 this.reset();
-                toggleSaveDataPopup(true);
             }
         },
         getCountdownOffset: function(hrs, min, sec) {
@@ -192,17 +192,13 @@ const setResetStyle = () => {
     pauseButton.style.display = "none";
     resetButton.style.display = "none";
 }
-const toggleSaveDataPopup = (show) => {
-    if (show) {
-        const mainCont = document.getElementById("main");
-        const modal = document.getElementById("saveModal");
-        mainCont.classList.add("main-blur");
-        if (modal) {
-            modal.style.display = "block";
-        }
-    } else {
-        modal.style.display = "none";
-        mainCont.classList.remove("main-blur");
+const showSaveDialog = (result) => {
+    const mainCont = document.getElementById("main");
+    const modal = document.getElementById("saveModal");
+    modal.setAttribute("result", result.join(':'));
+    mainCont.classList.add("main-blur");
+    if (modal) {
+        modal.style.display = "block";
     }
 }
 timer.mount('#stopwatch');
