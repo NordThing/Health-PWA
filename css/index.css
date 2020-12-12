@@ -137,6 +137,23 @@ button {
     flex: 1;
    }
 
+
+  .flexgrow-1 {
+     flex-grow: 1;
+    }
+
+  .flexgrow-2 {
+    flex-grow: 2;
+  }
+
+  .flexgrow-3 {
+    flex-grow: 3;
+  }
+
+  .flexgrow-4 {
+     flex-grow: 4;
+   }
+
 /* HERE STARTS THE REAL CONTENT AND STYLING FOR THE SITE */
 
 /* FLOATING ACTION BUTTON BEFORE ALL CONTENT */
@@ -384,6 +401,29 @@ input:checked + .slider:before {
 .feature {
   margin: 23px;
   color: var(--secondary-dark);
+}
+
+
+.feature-3 {
+  margin: 23px;
+  color: var(--secondary-dark);
+}
+
+.feature-3-circle {
+  flex-grow: 1;
+  text-align: center;
+  border: 2px solid var(--testing);
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.feature-3-cards {
+  flex-grow: 4;
+  text-align: center;
+  border: 2px solid var(--testing);
 }
 
 .circle {
