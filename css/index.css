@@ -240,7 +240,7 @@ button {
   color: var(--secondary-dark);
 }
 .time:focus {
-  outline: none !import;
+  outline: none !important;
 }
 
 .controls {

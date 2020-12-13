@@ -1,8 +1,7 @@
-const resultsView = Vue.createApp({});
-resultsView.component('results', {
+export const results = {
     data: function () { 
         return {
-            results: []
+            results: [],
         }
     },
     mounted: function() {
@@ -27,7 +26,7 @@ resultsView.component('results', {
           </li>
         </ul>
     `,
-});
+};
 
 async function getResults() {
     const url = "http://localhost:3001/results";
@@ -38,5 +37,3 @@ async function getResults() {
         return [];
     }
 }
-
-resultsView.mount('#results');

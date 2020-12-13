@@ -1,5 +1,4 @@
-const saveDialog = Vue.createApp({});
-saveDialog.component('saveDialog', {
+export const saveDialog = {
     methods: {
         save: function() {
             const modal = document.getElementById("saveModal");
@@ -23,8 +22,7 @@ saveDialog.component('saveDialog', {
                 </div>
             </div>
        `,
-});
-saveDialog.mount('#saveDialog');
+};
 
 const close = () => {
     var mainCont = document.getElementById("main");
@@ -32,7 +30,6 @@ const close = () => {
     modal.style.display = "none";
     mainCont.classList.remove("main-blur");
 };
-
 
 async function saveResult(result, comment) {
     const url = "http://localhost:3001/result";

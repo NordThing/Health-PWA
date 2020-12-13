@@ -1,11 +1,11 @@
-const timer = Vue.createApp({});
-timer.component('stopwatch', {
+export const timer = {
     data: function () { 
         return {
             offset: null,
             clock: null,
             interval: null,
             state: "",
+            countdownTime: ''
         }
     },
     mounted: function() {
@@ -35,6 +35,7 @@ timer.component('stopwatch', {
             if (!this.interval) {
                 if (this.isCountdownMode()) {
                     const [hrVal, minVal, secVal] = this.getDisplayedTime();
+                    this.countdownTime = [hrVal, minVal, secVal];
                     if (this.isValidCountdownState(hrVal, minVal, secVal)) {
                         this.offset = this.getCountdownOffset(hrVal, minVal, secVal);
                         this.interval = setInterval(this.countdownUpdate, 1);
@@ -58,9 +59,7 @@ timer.component('stopwatch', {
             }
         },
         reset: function() {
-            if (this.clock && this.clock > 0) {
-                showSaveDialog(this.getDisplayedTime());
-            }
+            showSaveDialog(this.getDisplayedTime());
             clearInterval(this.interval);
             this.interval = null;
             setResetStyle();
@@ -79,7 +78,7 @@ timer.component('stopwatch', {
             if (diff > 0) {
                 this.clock = diff;
             } else {
-                showSaveDialog(this.getDisplayedTime());
+                showSaveDialog(this.countdownTime);
                 this.reset();
             }
         },
@@ -166,7 +165,7 @@ timer.component('stopwatch', {
                 </div>    
             </div>
    `,
-});
+};
 
 const setPlayStyle = () => {
     if (playButtonCol) {
@@ -193,13 +192,14 @@ const setResetStyle = () => {
     resetButton.style.display = "none";
 }
 const showSaveDialog = (result) => {
-    const mainCont = document.getElementById("main");
-    const modal = document.getElementById("saveModal");
-    modal.setAttribute("result", result.join(':'));
-    mainCont.classList.add("main-blur");
-    if (modal) {
-        modal.style.display = "block";
+    const timeToSave = result.join(':');
+    if (timeToSave !== '00:00:00') {
+        const mainCont = document.getElementById("main");
+        const modal = document.getElementById("saveModal");
+        modal.setAttribute("result", timeToSave);
+        mainCont.classList.add("main-blur");
+        if (modal) {
+            modal.style.display = "block";
+        }
     }
 }
-timer.mount('#stopwatch');
-

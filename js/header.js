@@ -1,29 +1,27 @@
-const header = Vue.createApp({});
-header.component('topbar', {
+export const header = {
     template: `
-    <!-- HEADER -->
-    <header>
-        <div class="header">
-            <div class="row">
-                <div class="column">
-                    <div class="header-profile-picture">
-                        <i class="material-icons">add_a_photo</i>
+        <!-- HEADER -->
+        <header>
+            <div class="header">
+                <div class="row">
+                    <div class="column">
+                        <div class="header-profile-picture">
+                            <i class="material-icons">add_a_photo</i>
+                        </div>
                     </div>
-                </div>
-                <div class="column">
-                    <div class="header-app-icon">
-                        <i class="material-icons">looks</i>
+                    <div class="column">
+                        <div class="header-app-icon">
+                            <i class="material-icons">looks</i>
+                        </div>
                     </div>
-                </div>
-                <div class="column">
-                    <div class="header-settings">
-                        <i class="material-icons">brightness_medium</i>
+                    <div class="column">
+                        <div class="header-settings">
+                            <i class="material-icons">brightness_medium</i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
    `,
-});
-header.mount('#header');
+};
 
