@@ -56,6 +56,7 @@ var Stopwatch = function(options) {
             playButton.style.display = "none";
             pauseButton.style.display = "unset";
             resetButton.style.display ="none";
+            fab2.style.display = "none";
         }
     }
     
@@ -73,6 +74,7 @@ var Stopwatch = function(options) {
             playButton.style.display = "unset";
             resetButton.style.display = "unset";
             pauseButton.style.display = "none";
+            fab2.style.display = "unset";
         }
     }
 
@@ -87,6 +89,7 @@ var Stopwatch = function(options) {
         playButton.style.display = "unset";
         pauseButton.style.display = "none";
         resetButton.style.display = "none";
+        fab2.style.display ="none";
         clock = 0;
         render();
     }

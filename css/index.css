@@ -177,6 +177,47 @@ button {
   z-index: 4;
 }
 
+.fab1 {
+  width: 46px;
+  height: 46px;
+  background-color: var(--secondary-dark);
+  color: var(--primary-dark);
+  border-radius: 50%;
+  transition: all 0.1s ease-in-out;
+
+  color: var(--primary-dark);
+  text-align: center;
+  line-height: 70px;
+
+  position: fixed;
+  left: 50%;
+  bottom: 51px;
+  transform: translate(-50%);
+
+  z-index: 4;
+}
+
+.fab2 {
+  display: none;
+  width: 46px;
+  height: 46px;
+  background-color: var(--secondary-dark);
+  color: var(--primary-dark);
+  border-radius: 50%;
+  transition: all 0.1s ease-in-out;
+
+  color: var(--primary-dark);
+  text-align: center;
+  line-height: 70px;
+
+  position: fixed;
+  left: 50%;
+  bottom: 70px;
+  transform: translate(-50%);
+
+  z-index: 4;
+}
+
 .fab a {
  text-decoration: none;
  color: white;
@@ -479,6 +520,7 @@ input:checked + .slider:before {
 
 #resetButton {
   width: 36px;
+  color: var(--white);
   display: none;
 }
 
