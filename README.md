@@ -53,7 +53,7 @@ No TEST defined
 
 # How to use? 
 This project is live and hosted on 
-www.life24.com  
+www.life24.app
 Here you create a user and track your progress.
 
 # Contribute
