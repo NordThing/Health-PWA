@@ -349,3 +349,9 @@ button {
         background-color: yellow;
     }
 }
+
+.map {
+    top: 60px;
+    position: relative;
+    /* left: 118px; */
+}

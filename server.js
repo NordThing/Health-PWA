@@ -20,8 +20,10 @@ app.post('/result', (req, res) => {
         date: new Date(),
         result: req.body.result,
         comment: req.body.comment || '',
-        location: req.body.location || '-'
+        location: req.body.location || []
     }
+    console.log('saving new result:');
+    console.log(newResult);
     db.createResult(newResult).then(id => {
         res.send(id);
     });

@@ -4,7 +4,7 @@ export const saveDialog = {
             const modal = document.getElementById("saveModal");
             if (modal) {
                 const result = modal.getAttribute("result");
-                saveResult(result, "Felt good");
+                saveResult(result, "");
             }
         },
         cancel: function() {
@@ -29,16 +29,23 @@ const close = () => {
     var modal = document.getElementById("saveModal");
     modal.style.display = "none";
     mainCont.classList.remove("main-blur");
+    sessionStorage.removeItem('location');
 };
 
 async function saveResult(result, comment) {
+    let location = sessionStorage.getItem('location');
+    if (location) {
+        location = JSON.parse(location);
+    } else {
+        location = [];
+    }
     const url = "http://localhost:3001/result";
     let response = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({ result: result, comment: comment })
+        body: JSON.stringify({ result: result, comment: comment, location: location })
     });
     if (response.ok) {
         close();

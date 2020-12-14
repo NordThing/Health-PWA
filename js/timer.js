@@ -5,7 +5,8 @@ export const timer = {
             clock: null,
             interval: null,
             state: "",
-            countdownTime: ''
+            countdownTime: '',
+            watchId: null
         }
     },
     mounted: function() {
@@ -47,6 +48,7 @@ export const timer = {
                     this.interval = setInterval(this.timerUpdate, 1);
                 }
                 setPlayStyle();
+                this.watchId = startLocationRecording();
                 this.state = "started";
             }
         },
@@ -64,6 +66,9 @@ export const timer = {
             this.interval = null;
             setResetStyle();
             this.clock = 0;
+            if (this.watchId !== null) {
+                navigator.geolocation.clearWatch(this.watchId);
+            }
             this.state = "stopped";
         },
         timerUpdate: function() {
@@ -166,6 +171,40 @@ export const timer = {
             </div>
    `,
 };
+
+const startLocationRecording = () => {
+    let watchId = null;
+    if(navigator.geolocation) {
+        const options = {
+            maximumAge: 1000,
+            timeout: 5000,
+            enableHighAccuracy : true,
+        };
+        const onSuccess = (position) => {
+            let locationData = sessionStorage.getItem('location');
+            if (locationData) {
+                locationData = JSON.parse(locationData);
+            } else {
+                locationData = [];
+            }
+            locationData.push([position.coords.latitude, position.coords.longitude]);
+            sessionStorage.setItem('location', JSON.stringify(locationData)); 
+        };
+        const onError = (error) => {
+            console.log(`Location error occured due to error code: ${error.code}`);
+        }
+        watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
+    }
+    return watchId;
+}
+
+const getPositionObj = (position) => {
+    const location = {
+        longitude: position.coords.longitude,
+        latitude: position.coords.latitude
+    }
+    return location;
+}
 
 const setPlayStyle = () => {
     if (playButtonCol) {

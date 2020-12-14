@@ -22,8 +22,10 @@
   "homepage": "https://github.com/NordThing/Health-PWA#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mapbox": "^1.0.0-beta10",
     "mongodb": "^3.6.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "urlencode": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
