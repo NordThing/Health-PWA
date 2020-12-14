@@ -1,7 +1,7 @@
 const MAP_BOX_API_KEY = 'pk.eyJ1Ijoic3BsdXNrIiwiYSI6ImNraW5wNGw1bDEzaXEzMnA5aXAxdDBoejkifQ.cOQX7RDu3T8QNLf8TapXCA';
 const PATH_COLOR = '3CB371';
 
-export const locationTraker = {
+const locationTracker = {
     data: function () { 
         return {
             currentPosition: null,
@@ -29,17 +29,21 @@ export const locationTraker = {
                 this.$data.currentPosition = pos;
                 this.$data.startLocation = pos;
                 const coords = getLocalCords(pos);
-                const firstCoord = coords[0];
-                const lastCoord = coords[coords.length - 1];
-                const startMarker = `pin-s-a+${PATH_COLOR}(${firstCoord[1]},${firstCoord[0]})`;
-                const endMarker = `pin-s-b+${PATH_COLOR}(${lastCoord[1]},${lastCoord[0]})`;
-                const pathWithGradient = makePath(coords) + ',' + startMarker + ',' + endMarker;
-                this.$data.img_url = `https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${encodeURIComponent(pathWithGradient)}/auto/200x200@2x?access_token=${MAP_BOX_API_KEY}`;
+                this.$data.img_url = getImagePath(coords);
             });
         }
     },
     template: `<img v-bind:src='img_url' >`,
 };
+
+function getImagePath(coords) {
+    const firstCoord = coords[0];
+    const lastCoord = coords[coords.length - 1];
+    const startMarker = `pin-s-a+${PATH_COLOR}(${firstCoord[1]},${firstCoord[0]})`;
+    const endMarker = `pin-s-b+${PATH_COLOR}(${lastCoord[1]},${lastCoord[0]})`;
+    const pathWithGradient = makePath(coords) + ',' + startMarker + ',' + endMarker;
+    return `https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${encodeURIComponent(pathWithGradient)}/auto/200x200@2x?access_token=${MAP_BOX_API_KEY}`;
+}
 
 const getPositionObj = (position) => {
     const location = {
@@ -80,3 +84,7 @@ const getLocalCords = (startPosition) => {
 
     return c;
 }
+
+// export {
+    // locationTracker
+// }
