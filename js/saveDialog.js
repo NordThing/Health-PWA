@@ -26,6 +26,7 @@ function closeSaveDialog() {
     modal.style.display = "none";
     mainCont.classList.remove("main-blur");
     sessionStorage.removeItem('location');
+    sessionStorage.removeItem('distance');
 };
 
 async function saveResult() {
@@ -33,6 +34,7 @@ async function saveResult() {
     if (modal) {
         const result = modal.getAttribute("result");
         let location = sessionStorage.getItem('location');
+        const distance = sessionStorage.getItem('distance');
         if (location) {
             location = JSON.parse(location);
         } else {
@@ -44,7 +46,7 @@ async function saveResult() {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify({ result: result, comment: '', location: location })
+            body: JSON.stringify({ result: result, comment: '', location: location, distance: distance })
         });
         if (response.ok) {
             closeSaveDialog();

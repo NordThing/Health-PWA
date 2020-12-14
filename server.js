@@ -20,7 +20,8 @@ app.post('/result', (req, res) => {
         date: new Date(),
         result: req.body.result,
         comment: req.body.comment || '',
-        location: req.body.location || []
+        location: req.body.location || [],
+        distance: req.body.distance || ""
     }
     console.log('saving new result:');
     console.log(newResult);
