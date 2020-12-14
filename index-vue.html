@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://cdn.jsdelivr.net/npm/@mapbox/polyline@1.1.1/src/polyline.min.js"></script>
+    <title>Health-PWA</title>
+    <!-- PUT JAVASCRIPT AT THE BOTTOM BEFORE THE BODY TAG -->
+</head>
+<body>
+
+<!-- FLOATING ACTION BUTTON - QUICKNAVIGATION TO ACTIVITY WINDOW-->
+<div class="fab"> 
+    <i class="material-icons">play_arrow</i> 
+</div>
+
+<!-- CONTAINER FOR ALL CONTENT -->
+<div id="container" class="container">
+    
+    <!-- HEADER -->
+    <div id="header">
+        <top-bar></top-bar>
+    </div>
+    <!-- MAIN CONTENT -->
+    <main id="main">
+        <div id="stopwatch" class="main">
+            <timer></timer>
+        </div>
+        <div id="locationTraker" class="map">
+            <location-tracker></location-traker>
+        </div>
+        <!-- <div id="results" class="main"> -->
+            <!-- <results></results> -->
+        <!-- </div> -->
+    </main>
+    <div id="saveDialog">
+        <save-dialog></save-dialog>
+    </div>
+    <!-- FOOTER -->
+    <div id="footer">
+        <bottom-bar></bottom-bar>
+    </div>
+
+</div>
+<script src="js/custom.js"></script>
+<script type="module" src="app.js"></script>
+<script type="module" src="js/header.js"></script>
+<script type="module" src="js/timer.js"></script>
+<script type="module" src="js/results.js"></script>
+<script type="module" src="js/location.js"></script>
+<script type="module" src="js/footer.js"></script>
+<script type="module" src="js/saveDialog.js"></script>
+</body>
+</html>

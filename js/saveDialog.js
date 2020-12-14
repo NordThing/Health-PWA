@@ -1,11 +1,7 @@
-export const saveDialog = {
+const saveDialog = {
     methods: {
         save: function() {
-            const modal = document.getElementById("saveModal");
-            if (modal) {
-                const result = modal.getAttribute("result");
-                saveResult(result, "");
-            }
+            saveResult();
         },
         cancel: function() {
             close();
@@ -24,7 +20,7 @@ export const saveDialog = {
        `,
 };
 
-const close = () => {
+function closeSaveDialog() {
     var mainCont = document.getElementById("main");
     var modal = document.getElementById("saveModal");
     modal.style.display = "none";
@@ -32,24 +28,32 @@ const close = () => {
     sessionStorage.removeItem('location');
 };
 
-async function saveResult(result, comment) {
-    let location = sessionStorage.getItem('location');
-    if (location) {
-        location = JSON.parse(location);
-    } else {
-        location = [];
-    }
-    const url = "http://localhost:3001/result";
-    let response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({ result: result, comment: comment, location: location })
-    });
-    if (response.ok) {
-        close();
-        window.location.reload(true);
+async function saveResult() {
+    const modal = document.getElementById("saveModal");
+    if (modal) {
+        const result = modal.getAttribute("result");
+        let location = sessionStorage.getItem('location');
+        if (location) {
+            location = JSON.parse(location);
+        } else {
+            location = [];
+        }
+        const url = "http://localhost:3001/result";
+        let response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({ result: result, comment: '', location: location })
+        });
+        if (response.ok) {
+            closeSaveDialog();
+            window.location.reload(true);
+        }
     }
 }
-
+// export {
+    // closeSaveDialog,
+    // saveResult,
+    // saveDialog
+// };

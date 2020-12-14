@@ -1,4 +1,4 @@
-export const timer = {
+const timer = {
     data: function () { 
         return {
             offset: null,
@@ -172,7 +172,7 @@ export const timer = {
    `,
 };
 
-const startLocationRecording = () => {
+function startLocationRecording() {
     let watchId = null;
     if(navigator.geolocation) {
         const options = {
@@ -196,14 +196,6 @@ const startLocationRecording = () => {
         watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
     }
     return watchId;
-}
-
-const getPositionObj = (position) => {
-    const location = {
-        longitude: position.coords.longitude,
-        latitude: position.coords.latitude
-    }
-    return location;
 }
 
 const setPlayStyle = () => {
@@ -242,3 +234,6 @@ const showSaveDialog = (result) => {
         }
     }
 }
+// export {
+    // timer
+// }

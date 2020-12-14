@@ -11,6 +11,7 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://cdn.jsdelivr.net/npm/@mapbox/polyline@1.1.1/src/polyline.min.js"></script>
+    <script src="js/saveDialog.js"></script>
     <title>Health-PWA</title>
     <!-- PUT JAVASCRIPT AT THE BOTTOM BEFORE THE BODY TAG -->
 </head>
@@ -106,11 +107,6 @@
                             </div>
                         </div>    
                     </div>
-                    <div>
-                        <!-- <object data="stopwatch.html"> -->
-                            <!-- Your browser doesn’t support the object tag. -->
-                        <!-- </object> -->
-                    </div>
                 </div>
             </div>
             <!-- ********* -->
@@ -168,15 +164,18 @@
                 </div>
             </div>            
         </div>
-        <div id="locationTraker" class="map">
-            <location-tracker></location-traker>
-        </div>
-        <!-- <div id="results" class="main"> -->
-            <!-- <results></results> -->
+        <!-- <div id="locationTraker" class="map"> -->
+            <!-- <location-tracker></location-traker> -->
         <!-- </div> -->
     </main>
-    <div id="saveDialog">
-        <save-dialog></save-dialog>
+    <!-- The Save Modal -->
+    <div id="saveModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Do you want to save this session?</p>
+            <button onclick="saveResult()">YES</button>
+            <button onclick="closeSaveDialog()">NO</button>
+        </div>
     </div>
     <!-- FOOTER -->
     <footer>
@@ -209,5 +208,8 @@
 <script src="js/custom.js"></script>
 <script src="js/stopwatch.js"></script>
 <script src="js/darkmode.js"></script>
+<script src="js/timer.js"></script>
+<!-- <script type="module" src="app.js"></script> -->
+<!-- <script type="module" src="js/location.js"></script> -->
 </body>
 </html>

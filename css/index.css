@@ -594,7 +594,7 @@ input:checked + .slider:before {
 }
 
 .map {
-    top: 60px;
-    position: relative;
-    /* left: 118px; */
+    top: 460px;
+    position: absolute;
+    left: 750px;
 }

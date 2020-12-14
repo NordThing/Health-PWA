@@ -1,6 +1,6 @@
 var Stopwatch = function(options) {
 
-    var offset, clock, interval, stopWatchStarted;
+    var offset, clock, interval, stopWatchStarted, watchId;
     var timer = getTimerEl("time");
     var playButtonCol = document.getElementById("playButtonCol");
     var mainCont = document.getElementById("main");
@@ -51,6 +51,7 @@ var Stopwatch = function(options) {
                 stopWatchStarted = true;
                 offset   = Date.now();
                 interval = setInterval(timerUpdate, options.delay);
+                watchId = startLocationRecording();
             }
             if (playButtonCol) {
                 playButtonCol.classList.add("single-button");
@@ -93,14 +94,24 @@ var Stopwatch = function(options) {
         resetButton.style.display = "none";
         fab2.style.display ="none";
         clock = 0;
+        if (watchId !== null) {
+            navigator.geolocation.clearWatch(watchId);
+        }
+
         render();
     }
 
     function toggleSaveDataPopup(show) {
         if (mainCont && show) {
-            mainCont.classList.add("main-blur");
-            if (modal) {
-                modal.style.display = "block";
+            const timeToSave = msToHMS(clock);
+            if (timeToSave !== '00:00:00') {
+                const mainCont = document.getElementById("main");
+                const modal = document.getElementById("saveModal");
+                modal.setAttribute("result", timeToSave);
+                mainCont.classList.add("main-blur");
+                if (modal) {
+                    modal.style.display = "block";
+                }
             }
         } else {
             modal.style.display = "none";
