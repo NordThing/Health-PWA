@@ -189,6 +189,7 @@ const startLocationRecording = () => {
             }
             locationData.push([position.coords.latitude, position.coords.longitude]);
             sessionStorage.setItem('location', JSON.stringify(locationData)); 
+            sessionStorage.setItem('distance', getDistanceFromCoords(locationData)); 
         };
         const onError = (error) => {
             console.log(`Location error occured due to error code: ${error.code}`);
@@ -196,6 +197,21 @@ const startLocationRecording = () => {
         watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
     }
     return watchId;
+}
+
+const getDistanceFromCoords = (coords) => {
+    let distance = "";
+    if (coords.length > 1) {
+        const options = { units: 'kilometers' };
+        let d = 0;
+        const nrOfCoords = coords.length;
+        for(let i = 0; i < nrOfCoords - 1; i++) {
+            d += turf.distance(coords[i], coords[i+1], options);
+        }
+        distance = `${d}km`;
+        console.log("You travelled: " + distance);
+    }
+    return distance;
 }
 
 const getPositionObj = (position) => {

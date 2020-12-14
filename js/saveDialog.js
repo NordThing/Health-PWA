@@ -30,10 +30,12 @@ const close = () => {
     modal.style.display = "none";
     mainCont.classList.remove("main-blur");
     sessionStorage.removeItem('location');
+    sessionStorage.removeItem('distance');
 };
 
 async function saveResult(result, comment) {
     let location = sessionStorage.getItem('location');
+    const distance = sessionStorage.getItem('distance');
     if (location) {
         location = JSON.parse(location);
     } else {
@@ -45,7 +47,7 @@ async function saveResult(result, comment) {
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({ result: result, comment: comment, location: location })
+        body: JSON.stringify({ result: result, comment: comment, location: location, distance: distance })
     });
     if (response.ok) {
         close();
