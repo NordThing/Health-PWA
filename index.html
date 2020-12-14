@@ -17,21 +17,156 @@
 <body>
 
 <!-- FLOATING ACTION BUTTON - QUICKNAVIGATION TO ACTIVITY WINDOW-->
-<div class="fab"> 
-    <i class="material-icons">play_arrow</i> 
-</div>
 
+<!-- FOR LATER USE WITH PAUSE BUTTON 
+<div class="fab1"></div>
+                                --> 
+<div class="fab"> 
+    <button class="buttonPlay">
+        <i id="playButton" class="material-icons">play_arrow</i>
+        <i id="pauseButton" class="material-icons">pause</i>
+    </button> 
+</div>
+<div class="fab2" id="fab2">
+    <button class="buttonReset">
+        <i id="resetButton" class="material-icons">stop</i>
+    </button>
+</div>
 <!-- CONTAINER FOR ALL CONTENT -->
 <div id="container" class="container">
     
     <!-- HEADER -->
-    <div id="header">
-        <top-bar></top-bar>
-    </div>
+    <header>
+        <div class="header">
+            <div class="row">
+                <div class="column">
+                    <div class="header-profile-picture">
+                        <i class="material-icons">add_a_photo</i>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="header-app-icon">
+                        <i class="material-icons">looks</i>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="header-darkmode">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </div>
+                <!-- FOR LATER TO STYLE THE SLIDER FOR DARKMODE 
+                <div class="column" style="border:2px solid red">
+                    <div class="header-darkmode">
+                        <div class="wpnm-button">
+                            <div class="wpnm-button-inner-left"></div>
+                            <div class="wpnm-button-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>            
+        </div>
+    </header>
+    
     <!-- MAIN CONTENT -->
     <main id="main">
-        <div id="stopwatch" class="main">
-            <timer></timer>
+        <!-- STARTING OF FEATURE PACKED IN A SLIDER-->
+        <div class="featurecontainer">
+            <div class="slideclass" id="slide-1">
+                <div class="main">
+                    <!-- HEADLINE FOR THE FEATURE -->
+                    <div class="row">
+                        <div class="column">
+                            <div class="feature">
+                                <h2 id="demo">STOPWATCH</h2>
+                            </div>
+                        </div>   
+                    </div>
+                    <!-- CIRCLE FOR THE CLOCK - MAYBE HAVE THIS CONFIGURABLE TO MAKE IT CUSTOMISABLE -->
+                    <div class="row">
+                        <div class="column">
+                            <div class="circle">
+                                <span contenteditable="true" id="time" class="time"/>
+                            </div>
+                        </div>    
+                    </div>
+                    <!-- THIS IS THE CONTROL FOR STOPWATCH FUNCTIONALITY -->
+                    <div class="row">
+                        <div class="controls">
+                            <div id="playButtonCol" class="column">
+                                <button class="buttonPlay">
+                                </button>
+                            </div>
+                            <div class="column">
+                                <button class="buttonReset">
+                                </button>
+                            </div>
+                        </div>    
+                    </div>
+                    <div>
+                        <!-- <object data="stopwatch.html"> -->
+                            <!-- Your browser doesn’t support the object tag. -->
+                        <!-- </object> -->
+                    </div>
+                </div>
+            </div>
+            <!-- ********* -->
+            <!-- FEATURE 2 -->
+            <div class="slideclass" id="slide-2">
+                <div class="main">
+                    <!-- HEADLINE FOR THE FEATURE -->
+                    <div class="row">
+                        <div class="column">
+                            <div class="feature">
+                                <h2 id="demo">FEATURE 2</h2>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <!-- ********* -->
+            <!-- FEATURE 3 -->
+            <div class="slideclass" id="slide-3">
+                <div class="main">
+                    <!-- HEADLINE FOR THE FEATURE -->
+                    <div class="row">
+                        <div class="column">
+                            <div class="feature-3">
+                                <h2 id="demo">HISTORY</h2>
+                    <div class="row">
+                        <div class="column flexgrow-1">
+                            <div class="feature-3-circle">
+                                Circle
+                            </div>
+                        </div>
+                        <div class="column flexgrow-4"> 
+                            <div class="feature-3-cards">
+                                <p>CARDS FOR SUMMARIZE TRAINING FOR MONTH</p>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <!-- ********* -->
+            <!-- FEATURE 4 -->
+            <div class="slideclass" id="slide-4">
+                <div class="main">
+                    <!-- HEADLINE FOR THE FEATURE -->
+                    <div class="row">
+                        <div class="column">
+                            <div class="feature">
+                                <h2 id="demo">WEIGHT TRACKER</h2>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>            
         </div>
         <div id="locationTraker" class="map">
             <location-tracker></location-traker>
@@ -44,18 +179,35 @@
         <save-dialog></save-dialog>
     </div>
     <!-- FOOTER -->
-    <div id="footer">
-        <bottom-bar></bottom-bar>
-    </div>
-
+    <footer>
+        <div class="footer">    
+            <div class="row">
+                <div class="column">
+                    <div class="footer-overview">
+                        <a href=#slide-1><i class="material-icons">timer</i></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-calendar">
+                        <a href=#slide-2><i class="material-icons">calendar_today</i></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-activity">
+                        <a href=#slide-3><i class="material-icons">dvr</i></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-weight">
+                        <a href=#slide-4><i class="material-icons">addchart</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </footer>
 </div>
 <script src="js/custom.js"></script>
-<script type="module" src="app.js"></script>
-<script type="module" src="js/header.js"></script>
-<script type="module" src="js/timer.js"></script>
-<script type="module" src="js/results.js"></script>
-<script type="module" src="js/location.js"></script>
-<script type="module" src="js/footer.js"></script>
-<script type="module" src="js/saveDialog.js"></script>
+<script src="js/stopwatch.js"></script>
+<script src="js/darkmode.js"></script>
 </body>
 </html>

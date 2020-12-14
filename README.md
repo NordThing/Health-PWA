@@ -1,6 +1,6 @@
-# Health-PWA
+# LIFE 24 
 Daily Activity Tracker. 
-It can track your activity and your weight.
+It can track your daily activity and your weight.
 
 # Motivation
 This project will hopefully ALWAYS be FREE but we are very glad for sponsors.  
@@ -18,19 +18,25 @@ Comments are very warm welcomed also so it could be easy to follow along.
 # Screenshots
 Here we can put logo and demo screenshot when we have it!
 
-# Tech/framework used
+# Tech/framework used in this branch
 * HTML
 * CSS
 * JAVASCRIPT
+~~* PHP - this needs a php server running backend. Not good architecture for a PWA.~~
+* Node.JS
+
 
 # Functional features
-* FREE
+* FREE and OPEN SOURCE
 * Stopwatch
+* GPS-tracking
+* Audiocoach - minutes and length
 * Weekly goals
+* Profiles
 * Weight tracker
 
 # Non-functional features
-* FREE
+* FREE and OPEN SOURCE
 * No installation
 * Available offline
 * Platform-independent
@@ -46,17 +52,12 @@ No APIs
 No TEST defined
 
 # How to use? 
-This project is live and hosted on www.WeAreTryingToFindSomeThingReallyGoodForThis.com Here you create a user and track your progress.
+This project is live and hosted on 
+www.life24.app
+Here you create a user and track your progress.
 
 # Contribute
 Look in the Contribute.MD if you want to contribute to this project
 
 # License
 In short, when you submit code changes, your submissions are understood to be under the same [GNU 3.0 License] that covers the project. Feel free to contact the maintainers if that's a concern.
-
-# Name-suggestion
-Maximotracker.com
-Hiddenworkout.com
-LevelWorkout.com
-TrackerSnap.com
-MinimalTracker.com
