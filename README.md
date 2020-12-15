@@ -22,9 +22,8 @@ Here we can put logo and demo screenshot when we have it!
 * HTML
 * CSS
 * JAVASCRIPT
-~~* PHP - this needs a php server running backend. Not good architecture for a PWA.~~
 * Node.JS
-
+* ~~* PHP - this needs a php server running backend. Not good architecture for a PWA.~~
 
 # Functional features
 * FREE and OPEN SOURCE
