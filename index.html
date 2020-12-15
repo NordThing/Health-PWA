@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@mapbox/polyline@1.1.1/src/polyline.min.js"></script>
     <script src="https://npmcdn.com/@turf/turf@5.1.6/turf.min.js"></script>
     <script src="js/saveDialog.js"></script>
+    <script src="js/darkmode.js"></script>
     <title>Health-PWA</title>
     <!-- PUT JAVASCRIPT AT THE BOTTOM BEFORE THE BODY TAG -->
 </head>
@@ -54,7 +55,7 @@
                 <div class="column">
                     <div class="header-darkmode">
                         <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox">
+                            <input type="checkbox" id="checkbox" ontoggle="changeTheme()">
                             <div class="slider round"></div>
                         </label>
                     </div>
@@ -88,25 +89,8 @@
                         </div>   
                     </div>
                     <!-- CIRCLE FOR THE CLOCK - MAYBE HAVE THIS CONFIGURABLE TO MAKE IT CUSTOMISABLE -->
-                    <div class="row">
-                        <div class="column">
-                            <div class="circle">
-                                <span contenteditable="true" id="time" class="time"/>
-                            </div>
-                        </div>    
-                    </div>
-                    <!-- THIS IS THE CONTROL FOR STOPWATCH FUNCTIONALITY -->
-                    <div class="row">
-                        <div class="controls">
-                            <div id="playButtonCol" class="column">
-                                <button class="buttonPlay">
-                                </button>
-                            </div>
-                            <div class="column">
-                                <button class="buttonReset">
-                                </button>
-                            </div>
-                        </div>    
+                    <div id="stopwatch" class="main">
+                        <timer></timer>
                     </div>
                 </div>
             </div>
@@ -165,16 +149,17 @@
                 </div>
             </div>            
         </div>
-        <!-- <div id="locationTraker" class="map"> -->
+        <div id="locationTraker" class="map">
             <!-- <location-tracker></location-traker> -->
-        <!-- </div> -->
+            <img src="images/running.gif" onload="this.onload=null; this.src=getImagePath(null);" />
+        </div>
     </main>
     <!-- The Save Modal -->
     <div id="saveModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
             <p>Do you want to save this session?</p>
-            <button onclick="saveResult()">YES</button>
+            <button onclick="saveResult()">YES &nbsp;</button>
             <button onclick="closeSaveDialog()">NO</button>
         </div>
     </div>
@@ -207,9 +192,8 @@
     </footer>
 </div>
 <script src="js/custom.js"></script>
-<script src="js/stopwatch.js"></script>
-<script src="js/darkmode.js"></script>
-<script src="js/timer.js"></script>
 <script src="js/location.js"></script>
+<script type="module" src="js/timer.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>

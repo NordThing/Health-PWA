@@ -13,8 +13,8 @@ const saveDialog = {
                 <!-- Modal content -->
                 <div class="modal-content">
                     <p>Do you want to save this session?</p>
-                    <button @click="save">YES &nbsp;</button>
-                    <button @click="cancel">NO</button>
+                    <button @click="saveResult()">YES &nbsp;</button>
+                    <button @click="closeSaveDialog()">NO</button>
                 </div>
             </div>
        `,

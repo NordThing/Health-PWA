@@ -18,17 +18,13 @@ const locationTracker = {
             console.log("Geo Location not supported by browser");
         }
     },
-    unmounted: function() {
-    },
-    computed: {
-    },
     methods: {
         getPath: function() {
             navigator.geolocation.getCurrentPosition((position) => {
                 const pos = getPositionObj(position);
                 this.$data.currentPosition = pos;
                 this.$data.startLocation = pos;
-                const coords = getLocalCords(pos);
+                const coords = getTestCoords(pos);
                 this.$data.img_url = getImagePath(coords);
             });
         }
@@ -36,7 +32,8 @@ const locationTracker = {
     template: `<img v-bind:src='img_url' >`,
 };
 
-function getImagePath(coords) {
+function getImagePath(coordsArgs) {
+    const coords = coordsArgs ? coords : getTestCoords();
     const firstCoord = coords[0];
     const lastCoord = coords[coords.length - 1];
     const startMarker = `pin-s-a+${PATH_COLOR}(${firstCoord[1]},${firstCoord[0]})`;
@@ -65,22 +62,24 @@ const makePath = (coords) => {
     return pathStrings.join(',');
 }
 
-const getLocalCords = (startPosition) => {
+const getTestCoords = (startLocation) => {
     const c = [];
-    c.push([startPosition.latitude, startPosition.longitude]);
-    c.push([startPosition.latitude, startPosition.longitude]);
-    // c.push([60.62009563905444, 15.62344285776121]);
-    // c.push([60.61991464203454, 15.623037757870916]);
-    // c.push([60.61975493793828, 15.622639891907232]);
-    // c.push([60.619055, 15.623339]);
-    // c.push([60.61876284451728, 15.623607219690602]);
-    // c.push([60.61879969084829, 15.623878122784708]);
-    // c.push([60.61894444388411, 15.624248267606355]);
-    // c.push([60.619034485186845, 15.624455607486949]);
-    // c.push([60.619062877718065, 15.62440497000066]);
-    // c.push([60.619137407993584, 15.624267525395025]);
-    // c.push([60.61925452665013, 15.624072209376491]);
-    // c.push([60.619339703587784, 15.623941998697468]);
+    if (startLocation) {
+        c.push(startLocation.longitude, startLocation.latitude);
+    }
+    c.push([ 60.61938149999999, 15.623557300000002]);
+    c.push([60.62009563905444, 15.62344285776121]);
+    c.push([60.61991464203454, 15.623037757870916]);
+    c.push([60.61975493793828, 15.622639891907232]);
+    c.push([60.619055, 15.623339]);
+    c.push([60.61876284451728, 15.623607219690602]);
+    c.push([60.61879969084829, 15.623878122784708]);
+    c.push([60.61894444388411, 15.624248267606355]);
+    c.push([60.619034485186845, 15.624455607486949]);
+    c.push([60.619062877718065, 15.62440497000066]);
+    c.push([60.619137407993584, 15.624267525395025]);
+    c.push([60.61925452665013, 15.624072209376491]);
+    c.push([60.619339703587784, 15.623941998697468]);
 
     return c;
 }

@@ -10,9 +10,9 @@ const timer = {
         }
     },
     mounted: function() {
-        if (playButtonCol) {
-            playButtonCol.classList.add("single-button");
-        }
+        initButton('playButton', this.start);
+        initButton('pauseButton', this.pause);
+        initButton('resetButton', this.reset);
     },
     unmounted: function() {
         clearInterval(this.interval)
@@ -154,21 +154,6 @@ const timer = {
                     </div>
                 </div>    
             </div>
-            <div class="row">
-                <div class="controls">
-                    <div id="playButtonCol" class="column">
-                        <button class="buttonPlay">
-                            <i v-on:click="start" id="playButton" class="material-icons">play_circle_filled</i>
-                            <i v-on:click="pause" id="pauseButton" class="material-icons">pause_circle_filled</i>
-                        </button>
-                    </div>
-                    <div class="column">
-                        <button class="buttonReset">
-                            <i v-on:click="reset" id="resetButton" class="material-icons">stop_circle</i>
-                        </button>
-                    </div>
-                </div>    
-            </div>
    `,
 };
 
@@ -199,6 +184,15 @@ function startLocationRecording() {
     return watchId;
 }
 
+const initButton = (id, handler) => {
+    var el = document.getElementById(id);
+    if (el) {
+        el.addEventListener("click", function(event) {
+            handler();
+            event.preventDefault();
+        });
+    }
+};
 const getDistanceFromCoords = (coords) => {
     let distance = "";
     if (coords.length > 1) {
@@ -213,30 +207,23 @@ const getDistanceFromCoords = (coords) => {
     }
     return distance;
 }
-
 const setPlayStyle = () => {
-    if (playButtonCol) {
-        playButtonCol.classList.add("single-button");
-    }
     playButton.style.display = "none";
     pauseButton.style.display = "unset";
     resetButton.style.display ="none";
+    fab2.style.display = "none";
 }
 const setPauseStyle = () => {
-    if (playButtonCol) {
-        playButtonCol.classList.remove("single-button");
-    }
     playButton.style.display = "unset";
     resetButton.style.display = "unset";
     pauseButton.style.display = "none";
+    fab2.style.display = "unset";
 }
 const setResetStyle = () => {
-    if (playButtonCol) {
-        playButtonCol.classList.add("single-button");
-    }
     playButton.style.display = "unset";
     pauseButton.style.display = "none";
     resetButton.style.display = "none";
+    fab2.style.display ="none";
 }
 const showSaveDialog = (result) => {
     const timeToSave = result.join(':');
@@ -250,6 +237,7 @@ const showSaveDialog = (result) => {
         }
     }
 }
-// export {
-    // timer
-// }
+
+export {
+    timer
+}
