@@ -1,4 +1,4 @@
-const MAP_BOX_API_KEY = 'pk.eyJ1Ijoic3BsdXNrIiwiYSI6ImNraW5wNGw1bDEzaXEzMnA5aXAxdDBoejkifQ.cOQX7RDu3T8QNLf8TapXCA';
+const MAP_BOX_API_KEY = '';
 const PATH_COLOR = '3CB371';
 
 const locationTracker = {
