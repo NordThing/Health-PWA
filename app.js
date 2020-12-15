@@ -16,3 +16,5 @@ app.component('timer', timer);
 
 app.mount('#container');
 
+// All the stuff after the mount or else anything done before will be reset
+setTheme();
