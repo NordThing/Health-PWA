@@ -1,5 +1,5 @@
 # LIFE 24 
-Daily Activity Tracker. 
+Lifestyle tracker.
 It can track your daily activity and your weight.
 
 # Motivation
