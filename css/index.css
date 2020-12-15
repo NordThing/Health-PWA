@@ -446,6 +446,9 @@ input:checked + .slider:before {
   color: var(--secondary-dark);
 }
 
+.cards {
+  border: 2px solid var(--black);
+}
 
 .feature-3 {
   margin: 23px;
