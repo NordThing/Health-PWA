@@ -4,7 +4,8 @@
   "description": "a personal health app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start-server": "npx forever start server.js",
+    "stop-server": "npx forever stop server.js",
     "dev": "nodemon server.js"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "urlencode": "^1.1.0"
   },
   "devDependencies": {
+    "forever": "^3.0.4",
     "nodemon": "^2.0.6"
   }
 }
