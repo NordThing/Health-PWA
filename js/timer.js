@@ -114,11 +114,12 @@ const timer = {
             return (str.length < 3 && str.length > 0) && (!isNaN(str) && !isNaN(parseFloat(str)));
         },
         hasStarted: function() {
-            return this.state === "started";
+            return this.state === "started" || this.state === "paused";
         },
         isCountdownMode: function() {
             const [hrVal, minVal, secVal] = this.getDisplayedTime();
-            return !this.hasStarted() && (hrVal !== "00" || minVal !== "00" || secVal !== "00");
+            return (!this.hasStarted() || this.countdownTime.length > 0)
+                && (hrVal !== "00" || minVal !== "00" || secVal !== "00");
         },
         isValidCountdownState: function(hrVal, minVal, secVal) {
             let isValid = true;
