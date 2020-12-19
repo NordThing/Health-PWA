@@ -1,4 +1,4 @@
-var cacheName = "Health-PWA";
+var cacheName = "Life24";
 var filesToCache = [
     '/',
     '/index.html',
