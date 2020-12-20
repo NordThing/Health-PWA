@@ -1,3 +1,4 @@
+/* THIS FILES NEEDS TO BE IN THE ROOT */
 var cacheName = "Health-PWA";
 var filesToCache = [
     '/',

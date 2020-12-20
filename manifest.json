@@ -1,14 +1,15 @@
 {
-  "name": "Health PWA",
-  "short_name": "Health-PWA",
-  "icons": [{
-      "src": "/../images/splash-screen.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }],
+  "name": "Life24",
+  "short_name": "Life24",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "white",
-  "theme_color": "white"
+  "background_c olor": "#764ABC",
+  "theme_color": "#764ABC",
+  "icons": [
+    {
+      "src": "images/splash-screen.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
 }
