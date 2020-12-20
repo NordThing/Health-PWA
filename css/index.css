@@ -421,6 +421,19 @@ input:checked + .slider:before {
     filter: blur(2px);
 }
 
+#activity {
+  position: relative;
+  font-family: Montserrat; 
+  background-color: var(--secondary-dark);
+  color: var(--white);
+  width: 200px;
+  -webkit-appearance: none;
+}
+
+#activity select {
+  display: none;
+}
+
 .featurecontainer {
   width: 100vw;
   height: 65vh;
