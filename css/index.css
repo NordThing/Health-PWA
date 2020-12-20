@@ -593,8 +593,9 @@ input:checked + .slider:before {
     }
 }
 
+/* Remove values for this to fix other things - Is this for maps? */
 .map {
-    top: 460px;
+    top: 0px;
     position: absolute;
-    left: 750px;
+    left: 0px;
 }
