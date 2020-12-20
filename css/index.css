@@ -593,8 +593,9 @@ input:checked + .slider:before {
     }
 }
 
+/* WHAT IS THIS CLASS FOR? */
 .map {
-    top: 460px;
+    top: 0px;
     position: absolute;
-    left: 750px;
+    left: 0px;
 }
