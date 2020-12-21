@@ -593,7 +593,11 @@ input:checked + .slider:before {
     }
 }
 
+<<<<<<< HEAD
 /* Remove values for this to fix other things - Is this for maps? */
+=======
+/* WHAT IS THIS CLASS FOR? */
+>>>>>>> d757b706fc989aeaa5afff971cbcf8a951083604
 .map {
     top: 0px;
     position: absolute;
