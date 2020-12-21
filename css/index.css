@@ -448,7 +448,7 @@ input:checked + .slider:before {
 
 /* Remove values for this to fix other things - Is this for maps? */
 .map {
-  height: 25vh;
+  height: 50vh;
   width: 100%;
   margin: 23px;
   margin-right: auto;
@@ -597,6 +597,6 @@ input:checked + .slider:before {
 /* THIS IS USED WHEN THE APP IS LAUNCHED AS A STANDALONE APP AS PWA */
 @media all and (display-mode: standalone) {
     body {
-        background-color: yellow;
+        background-color: var(--primary);
     }
 }
