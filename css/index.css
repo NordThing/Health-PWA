@@ -447,6 +447,13 @@ input:checked + .slider:before {
 }
 
 
+/* Styling for the map */
+.map {
+    top: 0px;
+    position: absolute;
+    left: 0px;
+}
+
 .feature-3 {
   margin: 23px;
   color: var(--secondary-dark);
@@ -589,17 +596,6 @@ input:checked + .slider:before {
 /* THIS IS USED WHEN THE APP IS LAUNCHED AS A STANDALONE APP AS PWA */
 @media all and (display-mode: standalone) {
     body {
-        background-color: yellow;
+        background-color: var(--primary-color);
     }
-}
-
-<<<<<<< HEAD
-/* Remove values for this to fix other things - Is this for maps? */
-=======
-/* WHAT IS THIS CLASS FOR? */
->>>>>>> d757b706fc989aeaa5afff971cbcf8a951083604
-.map {
-    top: 0px;
-    position: absolute;
-    left: 0px;
 }
