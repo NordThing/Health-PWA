@@ -161,9 +161,12 @@
     <div id="saveModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
+            <h6>Save activity?</h6>
             <p>Do you want to save this session?</p>
-            <button onclick="saveResult()">YES &nbsp;</button>
-            <button onclick="closeSaveDialog()">NO</button>
+            <div class="modal-saveButtons">
+                <button onclick="closeSaveDialog()">NO</button>
+                <button onclick="saveResult()">YES</button>
+            </div>
         </div>
     </div>
     <!-- FOOTER -->

@@ -573,7 +573,7 @@ input:checked + .slider:before {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 50%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -586,16 +586,58 @@ input:checked + .slider:before {
 /* Modal Content */ 
 /* NEEDS STYLING */
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--white);
+    color: var(--black);
     margin: auto;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #888;
-    width: 200px; 
+    width: 280px; 
 }
+
+.modal-content h6 {
+  font-size: 20px;
+  font-family: "Montserrat";
+  font-weight: bold;
+
+  text-align: left;
+  line-height: 37px;
+
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content p{
+  font-size: 16px;
+  font-family: "Montserrat";
+  font-weight: medium;
+
+  text-align: left;
+
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content button{
+  font-size: 14px;
+  font-family: "Montserrat";
+  font-weight: medium;
+
+  text-align: right;
+  line-height: 14px;
+
+  padding: 0;
+  margin: 8px;
+  margin-right: 8px;
+}
+
+.modal-saveButtons {
+  text-align: right;
+}
+
 
 /* THIS IS USED WHEN THE APP IS LAUNCHED AS A STANDALONE APP AS PWA */
 @media all and (display-mode: standalone) {
     body {
-        background-color: var(--primary-color);
+        background-color: var(--primary);
     }
 }
