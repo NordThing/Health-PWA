@@ -620,7 +620,7 @@ input:checked + .slider:before {
 .modal-content button{
   font-size: 14px;
   font-family: "Montserrat";
-  font-weight: 500;
+  font-weight: 600;
 
   text-align: right;
   line-height: 14px;
