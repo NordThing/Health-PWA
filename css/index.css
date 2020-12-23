@@ -423,7 +423,7 @@ input:checked + .slider:before {
 
 .featurecontainer {
   width: 100vw;
-  height: 80vh;
+  height: 65vh;
   display: flex;
   overflow-x: auto;
   overflow: hidden;
@@ -446,16 +446,6 @@ input:checked + .slider:before {
   color: var(--secondary-dark);
 }
 
-/* Remove values for this to fix other things - Is this for maps? */
-.map {
-  height: 50vh;
-  width: 100%;
-  margin: 23px;
-  margin-right: auto;
-  margin-left: auto;
-  border: 2px solid var(--testing);
-  z-index: 4;
-}
 
 /* Styling for the map */
 .map {
@@ -485,7 +475,7 @@ input:checked + .slider:before {
   border: 2px solid var(--testing);
 }
 
-.clock {
+.circle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -493,7 +483,9 @@ input:checked + .slider:before {
   margin-right: auto;
   
   border: 2px solid var(--secondary-dark);
+  border-radius: 50%;
   
+  height: 270px;
   width: 270px;
 }
 
@@ -650,3 +642,4 @@ input:checked + .slider:before {
     body {
         background-color: var(--primary);
     }
+}
