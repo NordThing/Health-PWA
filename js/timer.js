@@ -146,7 +146,7 @@ const timer = {
     template: `
             <div class="row">
                 <div class="column">
-                    <div class="circle">
+                    <div class="clock">
                         <div @keydown.enter="onEdit" v-html="getTimeContent('hours')"/>
                         <span class="time">:</span>
                         <div @keydown.enter="onEdit" v-html="getTimeContent('minutes')"/>
