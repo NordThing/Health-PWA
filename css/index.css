@@ -182,6 +182,8 @@ button {
 .optional-header {
   min-height: 40px;
   padding: 16px;
+  top: 8px;
+  position: relative;
   }
 
   .thumbnail {
@@ -289,7 +291,7 @@ button {
         }
 
         .media {
-          position: absolute;
+          position: relative;
           }
           .media .action-icon {
           color: #fff;
