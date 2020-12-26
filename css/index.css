@@ -185,62 +185,63 @@ button {
   position: relative;
   }
 
-.thumbnail {
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-      border-radius: 50%;
-      float: left;
-      height: 40px;
-      position: relative;
-      width: 40px;
-      }
+  .thumbnail {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    height: 40px;
+    position: relative;
+    width: 40px;
+    }
+    .thumbnail img {
+    background-color: #fff;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    }
+    .thumbnail--24x24 img {
+    height: 24px;
+    width: 24px;
+    }
+    .thumbnail--28x28 {
+    margin-right: 4px;
+    }
+    .thumbnail--28x28 img {
+    height: 28px;
+    width: 28px;
+    }
+    .thumbnail--32x32 {
+    margin-right: 8px;
+    }
+    .thumbnail--32x32 img {
+    height: 32px;
+    width: 32px;
+    }
+    .thumbnail--36x36 {
+    margin-right: 12px;
+    }
+    .thumbnail--36x36 img {
+    height: 36px;
+    width: 36px;
+    }
+    .thumbnail--40x40 {
+    margin-right: 16px;
+    }
+    .thumbnail--40x40 img {
+    height: 40px;
+    width: 40px;
+    }
 
-.thumbnail img {
-      background-color: #fff;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      -moz-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-      -o-transform: translate(0, -50%);
-      -webkit-transform: translate(0, -50%);
-      transform: translate(0, -50%);
-      }
 
-.thumbnail--24x24 img {
-      height: 24px;
-      width: 24px;
-      }
-.thumbnail--28x28 {
-      margin-right: 4px;
-      }
-.thumbnail--28x28 img {
-      height: 28px;
-      width: 28px;
-      }
-      .thumbnail--32x32 {
-      margin-right: 8px;
-      }
-      .thumbnail--32x32 img {
-      height: 32px;
-      width: 32px;
-      }
-      .thumbnail--36x36 {
-      margin-right: 12px;
-      }
-      .thumbnail--36x36 img {
-      height: 36px;
-      width: 36px;
-      }
-      .thumbnail--40x40 {
-      margin-right: 16px;
-      }
-      .thumbnail--40x40 img {
-      height: 40px;
-      width: 40px;
-      }
+
         .optional-header .action-icons {
         float: right;
         position: relative;
