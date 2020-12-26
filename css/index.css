@@ -454,6 +454,19 @@ input:checked + .slider:before {
     left: 0px;
 }
 
+.feature-2 {
+  margin: 23px;
+  color: var(--secondary-dark);
+}
+
+.feature-2-headings {
+  margin: 8px;
+}
+
+.feature-2-map {
+  margin: 8px;
+}
+
 .feature-3 {
   margin: 23px;
   color: var(--secondary-dark);
