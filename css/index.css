@@ -461,10 +461,13 @@ input:checked + .slider:before {
 
 .feature-2-headings {
   margin: 8px;
+  height: 48px;
+  color: var(--secondary-dark);
 }
 
 .feature-2-map {
   margin: 8px;
+  color: var(--secondary-dark);
 }
 
 .feature-3 {
