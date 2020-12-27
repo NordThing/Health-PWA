@@ -757,6 +757,18 @@ input:checked + .slider:before {
   color: var(--secondary-dark);
 }
 
+#activity {
+  position: relative;
+  font-family: Montserrat; 
+  background-color: var(--secondary-dark);
+  color: var(--white);
+  width: 200px;
+  -webkit-appearance: none;
+}
+
+#activity select {
+  display: none;
+}
 
 /* Styling for the map */
 .map {
