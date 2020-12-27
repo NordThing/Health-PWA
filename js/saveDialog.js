@@ -35,6 +35,8 @@ async function saveResult() {
     const modal = document.getElementById("saveModal");
     if (modal) {
         const result = modal.getAttribute("result");
+        var x = document.getElementById("activity").selectedIndex;
+        const activity = document.getElementsByTagName("option")[x].value;
         let location = sessionStorage.getItem('location');
         const distance = sessionStorage.getItem('distance');
         if (location) {
@@ -48,7 +50,7 @@ async function saveResult() {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify({ result: result, comment: '', location: location, distance: distance })
+            body: JSON.stringify({ result: result, activity: activity, comment: '', location: location, distance: distance })
         });
         if (response.ok) {
             closeSaveDialog();
