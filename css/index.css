@@ -1,3 +1,6 @@
+/* IMPORTING cards.css AS THIS GROWED TO A BIG CHUNK IN THIS FILE */
+@import "cards.css";
+
 /* Color variables that could be used */
 :root {
   --primary: #fa990e;
@@ -154,8 +157,7 @@ button {
      flex-grow: 4;
    }
 
-/* HERE STARTS THE REAL CONTENT AND STYLING FOR THE SITE */
-
+          
 /* FLOATING ACTION BUTTON BEFORE ALL CONTENT */
 .fab {
   width: 56px;
@@ -446,12 +448,40 @@ input:checked + .slider:before {
   color: var(--secondary-dark);
 }
 
+#activity {
+  position: relative;
+  font-family: Montserrat; 
+  background-color: var(--secondary-dark);
+  color: var(--white);
+  width: 200px;
+  -webkit-appearance: none;
+}
+
+#activity select {
+  display: none;
+}
 
 /* Styling for the map */
 .map {
     top: 0px;
     position: absolute;
     left: 0px;
+}
+
+.feature-2 {
+  margin: 23px;
+  color: var(--secondary-dark);
+}
+
+.feature-2-headings {
+  margin: 8px;
+  height: 48px;
+  color: var(--secondary-dark);
+}
+
+.feature-2-map {
+  margin: 8px;
+  color: var(--secondary-dark);
 }
 
 .feature-3 {
@@ -487,6 +517,15 @@ input:checked + .slider:before {
   
   height: 270px;
   width: 270px;
+}
+
+.activity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 23px;
 }
 
 .time {

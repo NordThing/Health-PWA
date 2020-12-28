@@ -14,9 +14,10 @@ const saveDialog = {
                 <div class="modal-content">
                     <h6>Save activity?</h6>
                     <p>Do you want to save this session?</p>
-                    <button @click="closeSaveDialog()">NO</button>
-                    <button @click="saveResult()">YES</button>
-                </div>
+                    <div class="modal-saveButtons">
+                        <button onclick="closeSaveDialog()">NO</button>
+                        <button onclick="saveResult()">YES</button>
+                    </div>
             </div>
        `,
 };
@@ -34,6 +35,8 @@ async function saveResult() {
     const modal = document.getElementById("saveModal");
     if (modal) {
         const result = modal.getAttribute("result");
+        var x = document.getElementById("activity").selectedIndex;
+        const activity = document.getElementsByTagName("option")[x].value;
         let location = sessionStorage.getItem('location');
         const distance = sessionStorage.getItem('distance');
         if (location) {
@@ -47,7 +50,7 @@ async function saveResult() {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify({ result: result, comment: '', location: location, distance: distance })
+            body: JSON.stringify({ result: result, activity: activity, comment: '', location: location, distance: distance })
         });
         if (response.ok) {
             closeSaveDialog();

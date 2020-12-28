@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="column">
                     <div class="header-profile-picture">
-                        <i class="material-icons">add_a_photo</i>
+                        <i class="material-icons">person_add</i>
                     </div>
                 </div>
                 <div class="column">
@@ -96,6 +96,17 @@
                     <div id="stopwatch" class="main">
                         <timer></timer>
                     </div>
+                    <div class="row">
+                        <div class="column">
+                            <div class="activity">
+                                <label for="activity"></label>
+                                <select name="activity" id="activity">
+                                    <option value="Running">Running</option>
+                                    <option value="Walking">Walking</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- ********* -->
@@ -106,11 +117,36 @@
                     <div class="row">
                         <div class="column">
                             <div class="feature">
-                                <h2 id="demo">FEATURE 2</h2>
+                                <h2 id="demo">LATEST ACTIVITY</h2>
                             </div>
                             <div>
                                 <results></results>
                         </div>   
+                    </div>
+                    <!-- THIS IS THE CARD THAT COULD BE MODIFIED IN WHATEVER YOU LIKE -->
+                    <div class="card">
+                        <div class="optional-header">
+                            <div class="thumbnail thumbnail--40x40">
+                                <img src="images/Portrait_Placeholder.png">
+                            </div>
+                            <div class="primary-title">
+                                <div class="title">Title</div>
+                                <div class="subhead">Subhead</div>
+                            </div>
+                        </div>
+                        <div class="media media-16-9">
+                            <img src="images/aurora-1280.webp">
+                        </div>
+                        <div class="primary-title"></div>
+                        <div class="supporting-text">
+                            Supporting text.
+                        </div>
+                        <div class="actions">
+                            <div class="action-buttons">
+                                <button class="cardbutton" type="button">Action 1</button>
+                                <button class="cardbutton" type="button">Action 2</button>
+                              </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,20 +159,8 @@
                         <div class="column">
                             <div class="feature-3">
                                 <h2 id="demo">HISTORY</h2>
-                    <div class="row">
-                        <div class="column flexgrow-1">
-                            <div class="feature-3-circle">
-                                Circle
-                            </div>
-                        </div>
-                        <div class="column flexgrow-4"> 
-                            <div class="feature-3-cards">
-                                <p>CARDS FOR SUMMARIZE TRAINING FOR MONTH</p>
-                            </div>
-                        </div>
-                    </div>
-                            </div>
-                        </div>   
+                            </div>  
+                         </div>
                     </div>
                 </div>
             </div>
@@ -148,7 +172,7 @@
                     <div class="row">
                         <div class="column">
                             <div class="feature">
-                                <h2 id="demo">WEIGHT TRACKER</h2>
+                                <h2 id="demo">WEIGHT</h2>
                             </div>
                         </div>   
                     </div>
