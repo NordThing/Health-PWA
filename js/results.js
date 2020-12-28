@@ -28,7 +28,7 @@ export const results = {
             this.currentPage = page;
         },
         hasMap: function(data) {
-            if (data.length > 0) {
+            if (data && data.length > 0) {
                 return 'Map';
             }
             return '';
