@@ -683,18 +683,19 @@ input:checked + .slider:before {
     }
 }
 
-table {
-  border-collapse: collapse;
-}
-td, th {
-  border: 1px solid #999;
-  padding: 0.5rem;
-  text-align: left;
-}
 .results-table {
     position: relative;
     left: 765px;
+    padding-top: 50px;
     padding-bottom: 250px
+}
+.results-table table {
+  border-collapse: collapse;
+}
+.results-table td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
 }
 .pagination {
   font-family: 'Open Sans', sans-serif;
