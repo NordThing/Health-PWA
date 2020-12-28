@@ -362,3 +362,7 @@
     position: relative;
     z-index: 1;
     }
+
+.float-right {
+    float: right!important;
+    }
