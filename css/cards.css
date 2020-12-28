@@ -9,6 +9,7 @@
     color: rgba(0,0,0,.87);
     margin: 8px;
     min-width: 290px;
+    max-width: 388px;
     overflow: hidden;
     position: relative;
     }
@@ -254,4 +255,110 @@
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
     width: auto;
+    }
+
+.primary-title + .supporting-text, .optional-header + .supporting-text {
+    padding-top: 0;
+    }
+            
+.supporting-text {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 16px;
+    }
+
+.cardbutton {
+    background-color: transparent;
+    border: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+    line-height: 36px;
+    min-width: 64px;
+    padding: 0 8px;
+    text-align: center;
+    text-transform: uppercase;
+    }
+
+.cardbutton, .action-icon {
+    -webkit-transition: box-shadow .4s cubic-bezier(.25, .8, .25, 1), background-color .4s cubic-bezier(.25, .8, .25, 1);
+    transition: box-shadow .4s cubic-bezier(.25, .8, .25, 1), background-color .4s cubic-bezier(.25, .8, .25, 1);
+    }
+
+.cardbutton--raised {
+    -moz-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    -o-transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition: 0 .28s cubic-bezier(.4, 0, .2, 1);
+    transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1), 0 .28s cubic-bezier(.4, 0, .2, 1);
+    }
+
+.cardbutton--raised:focus, .cardbutton--raised:hover {
+    -moz-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    }
+
+.cardbutton--purple {
+    background-color: #6200EE;
+    color: #fff;
+    }
+
+.cardbutton:hover, .action-icon:hover {
+    background-color: rgba(158,158,158,0.2);
+    }
+
+.cardbutton:active, .action-icon:active {
+    background-color: rgba(158,158,158,0.4);
+    }
+
+.cardbutton:focus:not(:active), .action-icon:focus:not(:active) {
+    background-color: rgba(0,0,0,.12);
+    }
+
+.cardbutton[disabled] {
+    color: rgba(0,0,0,.26);
+    cursor: default;
+    }
+
+.cardbutton[disabled]:hover {
+    background: none;
+    }
+
+.action-buttons, .action-icons {
+    display: inline-block;
+    vertical-align: middle;
+    }
+
+.action-icon {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0 2px;
+    outline: none;
+    padding: 6px;
+    }
+
+.action-icons {
+    color: rgba(0,0,0,0.54);
+    }
+
+.actions {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 52px;
+    padding: 8px;
+    position: relative;
+    z-index: 1;
     }
