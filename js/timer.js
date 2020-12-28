@@ -203,7 +203,7 @@ const getDistanceFromCoords = (coords) => {
         for(let i = 0; i < nrOfCoords - 1; i++) {
             d += turf.distance(coords[i], coords[i+1], options);
         }
-        distance = `${d}km`;
+        distance = `${d} km`;
         console.log("You travelled: " + distance);
     }
     return distance;

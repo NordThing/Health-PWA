@@ -17,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@mapbox/polyline@1.1.1/src/polyline.min.js"></script>
     <script src="https://npmcdn.com/@turf/turf@5.1.6/turf.min.js"></script>
     <script src="js/saveDialog.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" integrity="sha512-ZRv40llEogRmoWgZwnsqke3HNzJ0kiI0+pcMgiz2bxO6Ew1DVBtWjVn0qjrXdT3+u+pSN36gLgmJiiQ3cQtyzA==" crossorigin="anonymous" /> -->
     <title>Life24</title>
     <!-- PUT JAVASCRIPT AT THE BOTTOM BEFORE THE BODY TAG -->
 </head>
@@ -107,6 +108,8 @@
                             <div class="feature">
                                 <h2 id="demo">FEATURE 2</h2>
                             </div>
+                            <div>
+                                <results></results>
                         </div>   
                     </div>
                 </div>
@@ -152,10 +155,6 @@
                 </div>
             </div>            
         </div>
-        <div id="locationTraker" class="map">
-            <!-- <location-tracker></location-traker> -->
-            <img src="images/running.gif" onload="this.onload=null; this.src=getImagePath(null);" />
-        </div>
     </main>
     <!-- The Save Modal -->
     <div id="saveModal" class="modal">
@@ -198,7 +197,6 @@
     </footer>
 </div>
 <script type="module" src="app.js"></script>
-<script type="module" src="js/timer.js"></script>
 <script src="js/darkmode.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/location.js"></script>

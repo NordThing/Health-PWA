@@ -1,45 +1,23 @@
-const MAP_BOX_API_KEY = '';
+let MAP_BOX_API_KEY = ''; //
 const PATH_COLOR = '3CB371';
 
-const locationTracker = {
-    data: function () { 
-        return {
-            currentPosition: null,
-            startLocation: null,
-            endLocation: null,
-            recordedPositions: [],
-            img_url: ""
-        };
-    },
-    mounted: function() {
-        if(navigator.geolocation) {
-            this.getPath();
-        } else {
-            console.log("Geo Location not supported by browser");
+async function getImagePath(coordsArgs) {
+        const url = "http://localhost:3001/keys";
+        let response = await fetch(url, {
+            method: 'GET',
+        });
+        if (response.ok) {
+            const result = await response.json();
+            MAP_BOX_API_KEY = result.mapKey;
+            const coords = coordsArgs ? coordsArgs : getTestCoords();
+            const firstCoord = coords[0];
+            const lastCoord = coords[coords.length - 1];
+            const startMarker = `pin-s-a+${PATH_COLOR}(${firstCoord[1]},${firstCoord[0]})`;
+            const endMarker = `pin-s-b+${PATH_COLOR}(${lastCoord[1]},${lastCoord[0]})`;
+            const pathWithGradient = makePath(coords) + ',' + startMarker + ',' + endMarker;
+            const imageURL = `https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${encodeURIComponent(pathWithGradient)}/auto/200x200@2x?access_token=${MAP_BOX_API_KEY}`;
+            return imageURL;
         }
-    },
-    methods: {
-        getPath: function() {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const pos = getPositionObj(position);
-                this.$data.currentPosition = pos;
-                this.$data.startLocation = pos;
-                const coords = getTestCoords(pos);
-                this.$data.img_url = getImagePath(coords);
-            });
-        }
-    },
-    template: `<img v-bind:src='img_url' >`,
-};
-
-function getImagePath(coordsArgs) {
-    const coords = coordsArgs ? coords : getTestCoords();
-    const firstCoord = coords[0];
-    const lastCoord = coords[coords.length - 1];
-    const startMarker = `pin-s-a+${PATH_COLOR}(${firstCoord[1]},${firstCoord[0]})`;
-    const endMarker = `pin-s-b+${PATH_COLOR}(${lastCoord[1]},${lastCoord[0]})`;
-    const pathWithGradient = makePath(coords) + ',' + startMarker + ',' + endMarker;
-    return `https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${encodeURIComponent(pathWithGradient)}/auto/200x200@2x?access_token=${MAP_BOX_API_KEY}`;
 }
 
 const getPositionObj = (position) => {
@@ -80,7 +58,6 @@ const getTestCoords = (startLocation) => {
     c.push([60.619137407993584, 15.624267525395025]);
     c.push([60.61925452665013, 15.624072209376491]);
     c.push([60.619339703587784, 15.623941998697468]);
-
     return c;
 }
 

@@ -1,12 +1,14 @@
 const express = require('express');
 const db = require('./js/db-connection');
 const path = require('path');
+const env = require('./.env.json');
 const app = express();
 const port = 3001;
 
 app.use('/', express.static(__dirname));
 app.use(express.json());
 
+// GET
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
@@ -15,6 +17,10 @@ app.get('/results', (req, res) => {
         res.send(results);
     });
 });
+app.get('/keys', (req, res) => {
+    res.send(env);
+});
+// POST
 app.post('/result', (req, res) => {
     const newResult = {
         date: new Date(),
