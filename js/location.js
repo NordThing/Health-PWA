@@ -2,7 +2,7 @@ let MAP_BOX_API_KEY = ''; //
 const PATH_COLOR = '3CB371';
 
 async function getImagePath(coordsArgs) {
-        const url = "http://localhost:3001/keys";
+        const url = `${window.LifeApp.serverAddr}/keys`;
         let response = await fetch(url, {
             method: 'GET',
         });

@@ -90,7 +90,7 @@ export const results = {
 };
 
 async function getResults() {
-    const url = "http://localhost:3001/results";
+    const url = `${window.LifeApp.serverAddr}/results`;
     let response = await fetch(url);
     if (response.ok) {
         const r = await response.json();

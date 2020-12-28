@@ -44,7 +44,7 @@ async function saveResult() {
         } else {
             location = [];
         }
-        const url = "http://localhost:3001/result";
+        const url = `${window.LifeApp.serverAddr}/result`;
         let response = await fetch(url, {
             method: 'POST',
             headers: {
