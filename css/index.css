@@ -644,11 +644,6 @@ input:checked + .slider:before {
     }
 }
 
-.map {
-    position: relative;
-    left: 520px;
-}
-
 table {
   border-collapse: collapse;
 }
