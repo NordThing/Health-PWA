@@ -3,7 +3,7 @@ export const results = {
         return {
             results: [],
             currentPage: 1,
-            elementsPerPage: 10
+            elementsPerPage: 5
         }
     },
     mounted: function() {
@@ -78,7 +78,8 @@ export const results = {
                 <div class="number"
                      v-for="i in numPages()"
                      v-bind:class="[i == currentPage ? 'active' : '']"
-                     v-on:click="changePage(i)">{{i}}</div>
+                     v-on:click="changePage(i)">{{i}}
+                </div>
               </div>
             </div>
             <div id="myModal" class="map-modal">
