@@ -7,14 +7,16 @@ const https = require('https');
 const Stream = require('stream').Transform;
 const app = express();
 const port = env.serverPort
-const PATH_COLOR = '3CB371';
+const RUNNING_PATH_COLOR = '3CB371';
+const WALKING_PATH_COLOR = 'b33c7e';
+let PATH_COLOR = RUNNING_PATH_COLOR;
 
 app.use('/', express.static(__dirname));
 app.use(express.json());
 
 // GET
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/index.html'));
+res.sendFile(path.join(__dirname + '/index.html'));
 });
 app.get('/results', (req, res) => {
     db.getResults().then((results) => {
@@ -27,6 +29,7 @@ app.post('/result', (req, res) => {
     const newResult = {
         date: new Date(),
         result: req.body.result,
+        activity: req.body.activity,
         comment: req.body.comment || '',
         location: req.body.location || [],
         distance: req.body.distance || ""
@@ -38,7 +41,7 @@ app.post('/result', (req, res) => {
     });
 });
 app.post("/locationMap", (req, res) => {
-    const url = getImagePath(req.body.coords);
+    const url = getImagePath(req.body.coords, req.body.activity);
     if (url !== null) {
         https.get(url, thisRes => {
             const data = new Stream();
@@ -59,19 +62,22 @@ app.post("/locationMap", (req, res) => {
     }
 });
 
-const getImagePath = (coords) => {
+const getImagePath = (coords, activity) => {
     if (coords && coords.length > 0) {
+        if (activity && activity === 'walking') {
+            PATH_COLOR = WALKING_PATH_COLOR;
+        }
         const firstCoord = coords[0];
         const lastCoord = coords[coords.length - 1];
         const startMarker = `pin-s-a+${PATH_COLOR}(${firstCoord[1]},${firstCoord[0]})`;
         const endMarker = `pin-s-b+${PATH_COLOR}(${lastCoord[1]},${lastCoord[0]})`;
-        const pathWithGradient = makePath(coords) + ',' + startMarker + ',' + endMarker;
+        const pathWithGradient = makePath(coords, activity) + ',' + startMarker + ',' + endMarker;
         const encodedPathWithGradient = encodeURIComponent(pathWithGradient);
         return `https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${encodedPathWithGradient}/auto/200x200@2x?access_token=${env.mapKey}`;
     }
     return null;
 }
-const makePath = (coords) => {
+const makePath = (coords, activity) => {
     const pathStrings = [];
     const strokeWidth = 4;
 

@@ -40,14 +40,14 @@ function stopLocationRecording() {
 
 }
 
-async function getImagePath(coords) {
+async function getImagePath(coords, activity) {
     const url = `${window.LifeApp.serverAddr}/locationMap`;
     let response = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({ coords: coords })
+        body: JSON.stringify({ coords: coords, activity: activity })
     });
     if (response.ok) {
         const result = await response.blob();

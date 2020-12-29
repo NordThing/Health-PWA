@@ -28,17 +28,17 @@ export const results = {
             this.currentPage = page;
         },
         hasMap: function(data) {
-            if (data && data.length > 0) {
+            if (hasLocationData(data)) {
                 return 'Map';
             }
             return '';
         },
-        showMap: function(data) {
-            if (data && data.length > 0) {
+        showMap: function(data, activity) {
+            if (hasLocationData(data)) {
                 const modal = document.getElementById("myModal");
                 const modalImg = document.getElementById("img01");
                 const span = document.getElementsByClassName("close")[0];
-                getImagePath(data).then((url) => {
+                getImagePath(data, activity).then((url) => {
                     modal.style.display = "block";
                     modalImg.src = url;
                     span.onclick = function() {
@@ -56,6 +56,7 @@ export const results = {
                    <tr>
                      <th>Date</th>
                      <th>Result</th>
+                     <th>Activity</th>
                      <th>Distance</th>
                      <th>Location</th>
                    </tr>
@@ -64,9 +65,10 @@ export const results = {
                    <tr v-for="row in getPagedResults()">
                      <td>{{$filters.formatDate(row.date)}}</td>
                      <td>{{row.result}}</td>
+                     <td>{{row.activity}}</td>
                      <td>{{$filters.formatDistance(row.distance)}}</td>
                      <td>
-                        <div style="height:100%;width:100%" @click="showMap(row.location)">
+                        <div style="height:100%;width:100%" @click="showMap(row.location, row.activity)">
                             <img id="mapImg" src="" alt="result" style="width:100%;max-width:300px;display:none">
                             {{ hasMap(row.location) }}
                         </div>
@@ -89,6 +91,10 @@ export const results = {
         </div>
     `,
 };
+
+const hasLocationData = (data) => {
+    return data && data.length > 1;
+}
 
 async function getResults() {
     const url = `${window.LifeApp.serverAddr}/results`;
