@@ -5,8 +5,7 @@ const timer = {
             clock: null,
             interval: null,
             state: "",
-            countdownTime: '',
-            watchId: null
+            countdownTime: ''
         }
     },
     mounted: function() {
@@ -48,7 +47,7 @@ const timer = {
                     this.interval = setInterval(this.timerUpdate, 1);
                 }
                 setPlayStyle();
-                this.watchId = startLocationRecording();
+                startLocationRecording();
                 this.state = "started";
             }
         },
@@ -66,9 +65,7 @@ const timer = {
             this.interval = null;
             setResetStyle();
             this.clock = 0;
-            if (this.watchId !== null) {
-                navigator.geolocation.clearWatch(this.watchId);
-            }
+            stopLocationRecording();
             this.state = "stopped";
         },
         timerUpdate: function() {
@@ -158,33 +155,6 @@ const timer = {
    `,
 };
 
-function startLocationRecording() {
-    let watchId = null;
-    if(navigator.geolocation) {
-        const options = {
-            maximumAge: 1000,
-            timeout: 5000,
-            enableHighAccuracy : true,
-        };
-        const onSuccess = (position) => {
-            let locationData = sessionStorage.getItem('location');
-            if (locationData) {
-                locationData = JSON.parse(locationData);
-            } else {
-                locationData = [];
-            }
-            locationData.push([position.coords.latitude, position.coords.longitude]);
-            sessionStorage.setItem('location', JSON.stringify(locationData));
-            sessionStorage.setItem('distance', getDistanceFromCoords(locationData));
-        };
-        const onError = (error) => {
-            console.log(`Location error occured due to error code: ${error.code}`);
-        }
-        watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
-    }
-    return watchId;
-}
-
 const initButton = (id, handler) => {
     var el = document.getElementById(id);
     if (el) {
@@ -194,20 +164,6 @@ const initButton = (id, handler) => {
         });
     }
 };
-const getDistanceFromCoords = (coords) => {
-    let distance = "";
-    if (coords.length > 1) {
-        const options = { units: 'kilometers' };
-        let d = 0;
-        const nrOfCoords = coords.length;
-        for(let i = 0; i < nrOfCoords - 1; i++) {
-            d += turf.distance(coords[i], coords[i+1], options);
-        }
-        distance = `${d} km`;
-        console.log("You travelled: " + distance);
-    }
-    return distance;
-}
 const setPlayStyle = () => {
     playButton.style.display = "none";
     pauseButton.style.display = "unset";
