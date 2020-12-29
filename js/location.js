@@ -1,6 +1,7 @@
 let wakeLock = null;
 let watchId = null;
 
+// Public
 function startLocationRecording() {
     if(navigator.geolocation) {
         const options = {
@@ -39,21 +40,6 @@ function stopLocationRecording() {
 
 }
 
-const getDistanceFromCoords = (coords) => {
-    let distance = "";
-    if (coords.length > 1) {
-        const options = { units: 'kilometers' };
-        let d = 0;
-        const nrOfCoords = coords.length;
-        for(let i = 0; i < nrOfCoords - 1; i++) {
-            d += turf.distance(coords[i], coords[i+1], options);
-        }
-        distance = `${d} km`;
-        console.log("You travelled: " + distance);
-    }
-    return distance;
-}
-
 async function getImagePath(coords) {
     const url = `${window.LifeApp.serverAddr}/locationMap`;
     let response = await fetch(url, {
@@ -68,6 +54,22 @@ async function getImagePath(coords) {
         return URL.createObjectURL(result);
     }
     return '';
+}
+
+// Private
+const getDistanceFromCoords = (coords) => {
+    let distance = "";
+    if (coords.length > 1) {
+        const options = { units: 'kilometers' };
+        let d = 0;
+        const nrOfCoords = coords.length;
+        for(let i = 0; i < nrOfCoords - 1; i++) {
+            d += turf.distance(coords[i], coords[i+1], options);
+        }
+        distance = `${d} km`;
+        console.log("You travelled: " + distance);
+    }
+    return distance;
 }
 
 const requestWakeLock = async () => {

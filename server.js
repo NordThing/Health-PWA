@@ -54,6 +54,7 @@ app.post("/locationMap", (req, res) => {
             res.sendStatus(500);
         });
     } else {
+        console.log('path to image was null');
         res.sendStatus(500);
     }
 });
