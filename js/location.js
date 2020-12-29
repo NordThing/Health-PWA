@@ -64,8 +64,8 @@ async function getImagePath(coords) {
         body: JSON.stringify({ coords: coords })
     });
     if (response.ok) {
-        const result = await response.json();
-        return result.url;
+        const result = await response.blob();
+        return URL.createObjectURL(result);
     }
     return '';
 }
