@@ -28,6 +28,7 @@
 .optional-header {
     min-height: 40px;
     padding: 16px;
+    margin-top: 8px;
     position: relative;
     }
 
@@ -47,7 +48,7 @@
     -webkit-border-radius: 50%;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
+    top: 8px;
     -moz-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     -o-transform: translate(0, -50%);
@@ -94,12 +95,6 @@
 .thumbnail--40x40 img {
     height: 40px;
     width: 40px;
-    }
-
-.optional-header {
-    min-height: 40px;
-    padding: 16px;
-    position: relative;
     }
 
 .optional-header .action-icons {
