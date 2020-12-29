@@ -4,7 +4,14 @@ var filesToCache = [
     '/',
     '/index.html',
     '/css/index.css',
-    '/js/custom.js'
+    '/js/custom.js',
+    '/js/darkmode.js',
+    '/js/db-connection.js',
+    '/js/location.js',
+    '/js/results.js',
+    '/js/saveDialog.js',
+    '/js/settings.js',
+    '/js/timer.js'
 ];
 
 /* Start the service worker and cache all op the app's content */
