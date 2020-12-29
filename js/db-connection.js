@@ -1,11 +1,10 @@
 const { MongoClient } = require('mongodb');
+const env = require('../.env.json');
 const DB_NAME = 'health';
 const TRAININGS_COLL_NAME = "trainings";
-const DB_PASSWORD = 'qgJ3hgFSX7xK7Xh8';
-const uri = "mongodb+srv://admin:"+DB_PASSWORD+"@healthpwacluster.j1te5.mongodb.net/health?retryWrites=true&w=majority&poolSize=20";
+const uri = "mongodb+srv://admin:"+env.mongoDB_PWD+"@healthpwacluster.j1te5.mongodb.net/health?retryWrites=true&w=majority&poolSize=20";
 
 async function getDBClient(){
-    // const client = new MongoClient(uri);
     const client = new MongoClient(uri, { useUnifiedTopology: true });
     try {
         await client.connect();
