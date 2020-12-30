@@ -103,6 +103,14 @@
     top: 2px;
     }
 
+.primary-title {
+    padding: 24px 16px 16px;
+}
+
+.primary-text {
+    font-size: 24px;
+}
+
 .optional-header .primary-title {
     bottom: auto;
     display: inline-block;
@@ -132,6 +140,7 @@
 .subhead, .secondary-text {
     color: var(--on-surface-medium);
     font-size: 14px;
+    margin-top: calc(24px/2/2);
     }
 
 .title {
@@ -260,6 +269,7 @@
 .supporting-text {
     font-size: 14px;
     line-height: 1.5;
+    padding: 16px;
     }
 
 .cardbutton {
