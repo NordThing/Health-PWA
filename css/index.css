@@ -10,7 +10,9 @@
   --on-primary: #000000;
   --on-secondary: #000000;
   --on-background: #000000;
-  --on-surface: #000000;
+  --on-surface-high: #000000de;
+  --on-surface-medium: #00000099;
+  --on-surface-disabled: #00000061;
   --surface: #ffffff;
   --background: #a4dbe4;
   --error: #ba000d;
@@ -28,7 +30,9 @@
   --on-primary: #000000;
   --on-secondary: #000000;
   --on-background: #ffffff;
-  --on-surface: #ffffffde;
+  --on-surface-high: #ffffffde;
+  --on-surface-medium: #ffffff99;
+  --on-surface-disabled: #ffffff61;
   --surface: #121212;
   --background: #272727;
   --error: #f44336;
