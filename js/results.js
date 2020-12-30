@@ -61,8 +61,8 @@ export const results = {
                     <div class="card" v-for="row in getPagedResults()">
                         <div class="optional-header">
                             <div class="thumbnail thumbnail--40x40">
-                                <img src="images/Portrait_Placeholder.png">
-                            </div>
+                                <i class="material-icons">{{ row.activity }}</i>
+                           </div>
                             <div class="title">
                                 {{$filters.formatDate(row.date)}}
                             </div>
