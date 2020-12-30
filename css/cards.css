@@ -8,6 +8,8 @@
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
     color: rgba(0,0,0,.87);
     margin: 8px;
+    margin-right: auto;
+    margin-left: auto;
     min-width: 290px;
     max-width: 388px;
     overflow: hidden;
@@ -26,6 +28,7 @@
 .optional-header {
     min-height: 40px;
     padding: 16px;
+    margin-top: 8px;
     position: relative;
     }
 
@@ -45,7 +48,7 @@
     -webkit-border-radius: 50%;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
+    top: 8px;
     -moz-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     -o-transform: translate(0, -50%);
@@ -92,12 +95,6 @@
 .thumbnail--40x40 img {
     height: 40px;
     width: 40px;
-    }
-
-.optional-header {
-    min-height: 40px;
-    padding: 16px;
-    position: relative;
     }
 
 .optional-header .action-icons {
@@ -361,4 +358,8 @@
     padding: 8px;
     position: relative;
     z-index: 1;
+    }
+
+.float-right {
+    float: right!important;
     }
