@@ -16,6 +16,12 @@ export const results = {
     computed: {
     },
     methods: {
+        getResult: function(result) {
+            if (result) {
+                return result;
+            }
+            return '00:00:00';
+        },
         numPages: function() {
             return Math.ceil(this.results.length / this.elementsPerPage);
         },
@@ -58,7 +64,7 @@ export const results = {
                                 {{$filters.formatDate(row.date)}}
                             </div>
                             <div class="subhead">
-                                {{$filters.formatDistance(row.distance)}} at {{row.result}}
+                                {{$filters.formatDistance(row.distance)}} at {{getResult(row.result)}}
                                 <div style="height:100%;width:100%;padding-top:5px" @click="showMap(row.location, row.activity)">
                                     <img id="mapImg" src="" alt="result" style="width:100%;max-width:300px;display:none">
                                     {{ hasMap(row.location) }}
