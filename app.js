@@ -40,7 +40,7 @@ app.config.globalProperties.$filters = {
 
             }
         }
-        return '';
+        return '0 km';
 
     }
 };

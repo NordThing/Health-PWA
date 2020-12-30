@@ -683,6 +683,11 @@ input:checked + .slider:before {
     }
 }
 
+.results-view {
+    overflow: auto;
+    position: relative;
+    height: 65vh;
+}
 .results-table {
     position: relative;
     padding-left: 22px;
@@ -755,3 +760,4 @@ input:checked + .slider:before {
   width: 80%;
   max-width: 700px;
 }
+

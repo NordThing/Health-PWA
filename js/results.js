@@ -3,7 +3,7 @@ export const results = {
         return {
             results: [],
             currentPage: 1,
-            elementsPerPage: 5
+            elementsPerPage: 100
         }
     },
     mounted: function() {
@@ -29,7 +29,7 @@ export const results = {
         },
         hasMap: function(data) {
             if (hasLocationData(data)) {
-                return 'Map';
+                return 'Show Map';
             }
             return '';
         },
@@ -49,44 +49,28 @@ export const results = {
         }
     },
     template: `
-        <div>
-            <div id="resultsTable" class="results-table">
-               <table>
-                 <thead>
-                   <tr>
-                     <th>Date</th>
-                     <th>Result</th>
-                     <th>Activity</th>
-                     <th>Distance</th>
-                     <th>Location</th>
-                   </tr>
-                 </thead>
-                 <tbody>
-                   <tr v-for="row in getPagedResults()">
-                     <td>{{$filters.formatDate(row.date)}}</td>
-                     <td>{{row.result}}</td>
-                     <td>{{row.activity}}</td>
-                     <td>{{$filters.formatDistance(row.distance)}}</td>
-                     <td>
-                        <div style="height:100%;width:100%" @click="showMap(row.location, row.activity)">
-                            <img id="mapImg" src="" alt="result" style="width:100%;max-width:300px;display:none">
-                            {{ hasMap(row.location) }}
+        <div class="results-view">
+           <div class="row">
+                <div class="column">
+                    <div class="card" v-for="row in getPagedResults()">
+                        <div class="optional-header">
+                            <div class="title">
+                                {{$filters.formatDate(row.date)}}
+                            </div>
+                            <div class="subhead">
+                                {{$filters.formatDistance(row.distance)}} at {{row.result}}
+                                <div style="height:100%;width:100%;padding-top:5px" @click="showMap(row.location, row.activity)">
+                                    <img id="mapImg" src="" alt="result" style="width:100%;max-width:300px;display:none">
+                                    {{ hasMap(row.location) }}
+                                </div>
+                            </div>
                         </div>
-                      </td>
-                   </tr>
-                 </tbody>
-              </table>
-              <div class="pagination">
-                <div class="number"
-                     v-for="i in numPages()"
-                     v-bind:class="[i == currentPage ? 'active' : '']"
-                     v-on:click="changePage(i)">{{i}}
+                    </div>
                 </div>
-              </div>
             </div>
             <div id="myModal" class="map-modal">
-              <span class="close">&times;</span>
-              <img class="map-modal-content" id="img01">
+                <span class="close">&times;</span>
+                <img class="map-modal-content" id="img01">
             </div>
         </div>
     `,
