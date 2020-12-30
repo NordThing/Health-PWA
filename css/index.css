@@ -21,10 +21,10 @@
 }
 
 :root[data-theme="dark"] {
-  --primary: #cf778e;
-  --primary-dark: #9c4961;
-  --secondary: #77cfb7;
-  --secondary-dark: #459e88;
+  --primary: #0f4c75;
+  --primary-dark: #1b262c;
+  --secondary: #bbe1fa;
+  --secondary-dark: #3282b8;
   --on-primary: #000000;
   --on-secondary: #000000;
   --on-background: #ffffff;
