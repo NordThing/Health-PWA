@@ -60,6 +60,9 @@ export const results = {
                 <div class="column">
                     <div class="card" v-for="row in getPagedResults()">
                         <div class="optional-header">
+                            <div class="thumbnail thumbnail--40x40">
+                                <img src="images/Portrait_Placeholder.png">
+                            </div>
                             <div class="title">
                                 {{$filters.formatDate(row.date)}}
                             </div>
