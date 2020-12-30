@@ -629,8 +629,8 @@ input:checked + .slider:before {
 /* Modal Content */ 
 /* NEEDS STYLING */
 .modal-content {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--surface);
+    color: var(--on-surface-high);
     margin: auto;
     padding: 10px;
     border: 1px solid #888;
