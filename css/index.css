@@ -367,9 +367,9 @@ button {
 
 .theme-switch {
   display: inline-block;
-  height: 16px;
+  height: 17px;
   position: relative;
-  width: 28px;
+  width: 30px;
 }
 
 /* HIDING THE CHECKBOX */
@@ -393,10 +393,10 @@ button {
 
 .slider:before {
   background-color: #fff;
-  bottom: 0px;
+  bottom: 1px;
   content: "";
   height: 12px;
-  left: 0px;
+  left: 1px;
   position: absolute;
   transition: .4s;
   width: 12px;
@@ -412,7 +412,7 @@ input:checked + .slider {
 input:checked + .slider:before {
   background: #FFB200;
   box-shadow: 0 0 0.625em white;
-  transform: translateX(11px);
+  transform: translateX(12px);
 }
 
 .slider.round {
