@@ -400,10 +400,14 @@ button {
 }
 
 input:checked + .slider {
-  background-color: #66bb6a;
+  background-color: rgba(255, 255, 255, 0.15);
+  /* border: 0.125em solid #FFB200; */
+
 }
 
 input:checked + .slider:before {
+  background: #FFB200;
+  box-shadow: 0 0 0.625em white;
   transform: translateX(12px);
 }
 
