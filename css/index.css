@@ -386,29 +386,33 @@ button {
   right: 0;
   top: 0;
   transition: .4s;
+  font-size: 0.875em;
+  border: 0.125em solid var(--surface); 
+
 }
 
 .slider:before {
   background-color: #fff;
-  bottom: 2px;
+  bottom: 0px;
   content: "";
   height: 12px;
-  left: 2px;
+  left: 0px;
   position: absolute;
   transition: .4s;
   width: 12px;
 }
 
+/* THIS IS THE BUTTON CHECKED FOR DARK MODE*/
 input:checked + .slider {
   background-color: rgba(255, 255, 255, 0.15);
-  /* border: 0.125em solid #FFB200; */
-
+  font-size: 0.875em;
+  border: 0.125em solid #FFB200; 
 }
 
 input:checked + .slider:before {
   background: #FFB200;
   box-shadow: 0 0 0.625em white;
-  transform: translateX(12px);
+  transform: translateX(11px);
 }
 
 .slider.round {
