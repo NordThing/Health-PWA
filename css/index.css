@@ -453,6 +453,23 @@ input:checked + .slider:before {
   padding-right: 16px;
   color: var(--secondary-dark);
   border-bottom: 2px solid var(--secondary-dark);
+  text-align: center;
+}
+
+.tab1-day {
+
+}
+
+.tab2-week {
+
+}
+
+.tab3-month {
+
+}
+
+.tab4-year {
+  
 }
 
 .featurecontainer {

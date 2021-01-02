@@ -1,4 +1,6 @@
+/* ------------------------------ */
 /* THIS IS AUDIO COACH JAVASCRIPT */
+/* ------------------------------ */
 
 function audioCoaching() {
     myTimer();

@@ -60,9 +60,6 @@
                             <input type="checkbox" id="checkbox" onchange="changeTheme(); audioCoaching(); ">
                             <div id="checkboxSlider" class="slider round"></div>
                         </label>
-                        <button id="doSpeak" onclick="test();">
-                            Speak
-                            </button>
                     </div>
                 </div>
                 <!-- DARK MODE 
@@ -178,16 +175,24 @@
                     <!-- TABS FOR CHOOSING DAY WEEK MONTH YEAR -->
                     <div class="tabs">
                         <div class="tabs-title">
-                            DAY
+                            <a id="tab1-day" href="#tab1">
+                                DAY
+                            </a>
                         </div>
                         <div class="tabs-title">
-                            WEEK
+                            <a id="tab2-week" href="#tab2">
+                                WEEK
+                            </a>
                         </div>
                         <div class="tabs-title">
-                            MONTH
+                            <a id="tab3-month" href="#tab3">
+                                MONTH
+                            </a>
                         </div>
                         <div class="tabs-title">
-                            YEAR
+                            <a id="tab4-year" href="#tab4">
+                                YEAR
+                            </a>
                         </div>
                     </div>
                         <!-- HEADLINE FOR THE FEATURE -->
@@ -301,6 +306,5 @@
 <script src="js/custom.js"></script>
 <script src="js/location.js"></script>
 <script src="js/coach.js"></script>
-<script src="js/webspeech.js"></script>
 </body>
 </html>
