@@ -57,9 +57,12 @@
                 <div class="column">
                     <div class="header-darkmode">
                         <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox" onchange="changeTheme()">
+                            <input type="checkbox" id="checkbox" onchange="changeTheme();audioCoach();">
                             <div id="checkboxSlider" class="slider round"></div>
                         </label>
+                        <button id="doSpeak" onclick="test();">
+                            Speak
+                            </button>
                     </div>
                 </div>
                 <!-- DARK MODE 
@@ -172,15 +175,19 @@
             <!-- FEATURE 3 -->
             <div class="slideclass" id="slide-3">
                 <div class="main">
-                    <!-- HEADLINE FOR THE FEATURE -->
-                    <div class="row">
-                        <div class="column">
-                            <div class="feature-3">
-                                <h2 id="demo">HISTORY</h2>
-                            </div>  
-                            <results></results>
-                         </div>
+                    <!-- TABS FOR CHOOSING DAY WEEK MONTH YEAR -->
+                    <div class="tabs">
+                        DAY WEEK MONTH YEAR
                     </div>
+                        <!-- HEADLINE FOR THE FEATURE -->
+                        <div class="row">
+                            <div class="column">
+                                <div class="feature-3">
+                                    <h2 id="demo">HISTORY</h2>
+                                </div>  
+                                <results></results>
+                            </div>
+                        </div>
                 </div>
             </div>
             <!-- ********* -->
@@ -282,5 +289,7 @@
 <script src="js/darkmode.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/location.js"></script>
+<script src="js/coach.js"></script>
+<script src="js/webspeech.js"></script>
 </body>
 </html>

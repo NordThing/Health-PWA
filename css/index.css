@@ -435,6 +435,13 @@ input:checked + .slider:before {
     filter: blur(2px);
 }
 
+.tabs {
+  height: 48px;
+  margin: 23px;
+  z-index: 4;
+  background-color: var(--testing);
+}
+
 .featurecontainer {
   width: 100vw;
   height: 65vh;
