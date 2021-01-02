@@ -1,6 +1,6 @@
 /* THIS IS AUDIO COACH JAVASCRIPT */
 
-function audioCoach() {
+function audioCoaching() {
     myTimer();
     stopTimer();
 }
@@ -14,6 +14,7 @@ var myVar = setInterval(myTimer, audioCoach);
 function myTimer() {
   var d = new Date();
   document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+  test();
 }
 
 
@@ -32,9 +33,9 @@ var synth = window.speechSynthesis;
 
 var voices  = synth.getVoices();
 
-var t = "You have runned for 5 minutes";
+var coach = "You have runned for 5 minutes";
 
-var u = new SpeechSynthesisUtterance(t);
+var u = new SpeechSynthesisUtterance(coach);
 
 function test(){
 document.getElementById('doSpeak').onclick = function() {
