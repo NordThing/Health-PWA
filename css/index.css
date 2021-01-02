@@ -441,16 +441,18 @@ input:checked + .slider:before {
   justify-content: space-between;
   height: 48px;
   z-index: 4;
-  background-color: var(--testing);
+  background-color: var(--white);
 }
 
 .tabs-title {
-  display: relative;
   height: 48px;
+  min-width: 90px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 16px;
   padding-right: 16px;
+  color: var(--secondary-dark);
+  border-bottom: 2px solid var(--secondary-dark);
 }
 
 .featurecontainer {
