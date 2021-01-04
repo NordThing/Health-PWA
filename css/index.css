@@ -634,7 +634,7 @@ input:checked + .slider:before {
   justify-content: center;
 
   background-color: var(--primary);
-  color: var(--on-primary);
+  color: var(--on-surface-medium);
 
   height: 50px;
   width: 100vw;
