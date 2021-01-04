@@ -660,6 +660,14 @@ input:checked + .slider:before {
   text-align: right;
  }
 
+ .footer-active  {
+   color: var(--on-surface-high);
+ }
+
+ .footer-inactive {
+   color: var(--on-surface-medium)
+ }
+
 /** Modal **/
 .modal {
     display: none; /* Hidden by default */
