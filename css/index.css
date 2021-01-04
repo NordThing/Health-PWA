@@ -442,6 +442,7 @@ input:checked + .slider:before {
   height: 48px;
   z-index: 4;
   background-color: var(--white);
+  border-bottom: 1px solid var(--secondary-dark);
 }
 
 .tabs-title {
@@ -452,8 +453,11 @@ input:checked + .slider:before {
   padding-left: 16px;
   padding-right: 16px;
   color: var(--secondary-dark);
-  border-bottom: 2px solid var(--secondary-dark);
   text-align: center;
+}
+
+.tabs-active {
+ 
 }
 
 .tab1-day {
