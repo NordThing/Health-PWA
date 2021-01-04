@@ -660,7 +660,7 @@ input:checked + .slider:before {
   text-align: right;
  }
 
- .footer-active  {
+ .active  {
    color: var(--on-surface-high);
  }
 
