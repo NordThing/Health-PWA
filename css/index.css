@@ -460,7 +460,9 @@ input:checked + .slider:before {
 }
 
 .tabs-active {
- 
+  max-width: 360px;
+  min-width: 90px;
+  border-bottom: 2px solid var(--secondary-dark);
 }
 
 .tab1-day {
