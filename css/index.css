@@ -257,7 +257,7 @@ button {
   align-items: center;
 
   background-color: var(--primary);
-  color: var(--on-primary);
+  color: var(--on-surface-high);
   box-shadow: 0 3px 3px -3px rgba(0,0,0,.5);
   
   height: 50px;
