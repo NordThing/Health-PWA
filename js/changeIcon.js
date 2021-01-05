@@ -1,3 +1,5 @@
+window.addEventListener('load', (event) => {
+
 // Get the container element
 var btnContainer = document.getElementById("footer-menu");
 
@@ -12,3 +14,5 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+console.log('page is fully loaded');
+});
