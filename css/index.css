@@ -440,19 +440,23 @@ input:checked + .slider:before {
   justify-content: space-between;
   height: 48px;
   z-index: 4;
-  background-color: var(--white);
+  background-color: var(--surface);
   border-bottom: 1px solid var(--secondary-dark);
 }
 
 .tabs-title {
   height: 48px;
   min-width: 90px;
-  padding-top: 12px;
+  padding-top: 16px;
   padding-bottom: 12px;
   padding-left: 16px;
   padding-right: 16px;
-  color: var(--secondary-dark);
+  color: var(--on-surface-medium);
   text-align: center;
+  text-transform: uppercase;
+
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .tabs-active {
