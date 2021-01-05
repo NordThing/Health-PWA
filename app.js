@@ -49,3 +49,4 @@ app.mount('#container');
 
 setTheme();
 addButtonThemeListener();
+tabChange();
