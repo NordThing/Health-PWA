@@ -48,3 +48,4 @@ app.config.globalProperties.$filters = {
 app.mount('#container');
 
 setTheme();
+addButtonThemeListener();
