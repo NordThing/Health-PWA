@@ -51,7 +51,7 @@
                 </div>
                 <div class="column">
                     <div class="header-app-icon">
-                        <i class="material-icons">looks</i>
+                        <img src="images/Logo.png">
                     </div>
                 </div>
                 <div class="column">
@@ -62,7 +62,7 @@
                         </label>
                     </div>
                 </div>
-                <!-- FOR LATER TO STYLE THE SLIDER FOR DARKMODE 
+                <!-- DARK MODE 
                 <div class="column" style="border:2px solid red">
                     <div class="header-darkmode">
                         <div class="wpnm-button">
@@ -90,6 +90,20 @@
                             </div>
                         </div>   
                     </div>
+                    <!-- ICONS FOR  CHIPS WHEN IMPLEMENTED 
+                    <div class="row">
+                        <div class="column">
+                            <div class="settings">
+                                <i class="material-icons">record_voice_over</i>
+                                <i class="material-icons">voice_over_off</i>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <i class="material-icons">gps_fixed</i>
+                            <i class="material-icons">gps_off</i>
+                        </div>
+                    </div>
+                    -->
                     <!-- CIRCLE FOR THE CLOCK - MAYBE HAVE THIS CONFIGURABLE TO MAKE IT CUSTOMISABLE -->
                     <div id="stopwatch" class="main">
                         <timer></timer>
@@ -99,8 +113,8 @@
                             <div class="activity">
                                 <label for="activity"></label>
                                 <select name="activity" id="activity">
-                                    <option value="Running">Running</option>
-                                    <option value="Walking">Walking</option>
+                                    <option value="directions_run">Running</option>
+                                    <option value="directions_walk">Walking</option>
                                 </select>
                             </div>
                         </div>
@@ -109,15 +123,11 @@
             </div>
             <!-- ********* -->
             <!-- FEATURE 2 -->
+            <!-- ********* -->
             <div class="slideclass" id="slide-2">
                 <div class="main">
                     <!-- HEADLINE FOR THE FEATURE -->
                     <div class="row">
-                        <div class="column">
-                            <div class="feature">
-                                <h2 id="demo">LATEST ACTIVITY</h2>
-                            </div>
-                    </div>
                     <div class="row">
                         <div class="column">
                         <!-- THIS IS THE CARD THAT COULD BE MODIFIED IN WHATEVER YOU LIKE -->
@@ -135,8 +145,8 @@
                                 <img src="images/aurora-1280.webp" width="344" height="126">
                             </div>
                             <div class="primary-title">
-                                <div class="title">Title</div>
-                                <div class="subhead">Subhead</div>
+                                <div class="primary-text">Title</div>
+                                <div class="secondary-text">Secondary text</div>
                             </div>
                             <div class="supporting-text">
                                 Supporting text.
@@ -150,8 +160,9 @@
                                     <i class="material-icons action-icon" role="button" title="Share">share</i><i class="material-icons action-icon" role="button" title="More options">more_vert</i>
                                 </div>                        
                             </div>
+                            </div>
+                            </div><!-- END OF ROW-->
                         </div>
-                        </div><!-- END OF ROW-->
                     </div>
                 </div>
             </div>
@@ -159,29 +170,35 @@
             <!-- FEATURE 3 -->
             <div class="slideclass" id="slide-3">
                 <div class="main">
-                    <!-- HEADLINE FOR THE FEATURE -->
-                    <div class="row">
-                        <div class="column">
-                            <div class="feature-3">
-                                <h2 id="demo">HISTORY</h2>
-                            </div>  
-                            <results></results>
-                         </div>
+                    <!-- TABS FOR CHOOSING DAY WEEK MONTH YEAR -->
+                    <div id="material-tabs" class="tabs">
+                        <div class="tabs-title tabs-active">
+                            <a id="tab1-day" href="#tab1"><span class="fas fa-home"></span>Day</a>
+                        </div>
+                        <div class="tabs-title">
+                            <a id="tab2-week" href="#tab2">WEEK</a>
+                        </div>
+                        <div class="tabs-title">
+                            <a id="tab3-month" href="#tab3">MONTH</a>
+                        </div>
+                        <div class="tabs-title">
+                            <a id="tab4-year" href="#tab4">YEAR</a>
+                        </div>
                     </div>
+                        <!-- HEADLINE FOR THE FEATURE -->
+                        <div class="row">
+                            <div class="column">
+                                <div class="feature-3">
+                                </div>  
+                                <results></results>
+                            </div>
+                        </div>
                 </div>
             </div>
             <!-- ********* -->
             <!-- FEATURE 4 -->
             <div class="slideclass" id="slide-4">
                 <div class="main">
-                    <!-- HEADLINE FOR THE FEATURE -->
-                    <div class="row">
-                        <div class="column">
-                            <div class="feature">
-                                <h2 id="demo">WEIGHT</h2>
-                            </div>
-                        </div>   
-                    </div>
                     <div class="row">
                         <div class="column">
                             <div class="card">
@@ -230,26 +247,26 @@
     </div>
     <!-- FOOTER -->
     <footer>
-        <div class="footer">    
+        <div id="footer-menu" class="footer">    
             <div class="row">
                 <div class="column">
                     <div class="footer-overview">
-                        <a href=#slide-1><i class="material-icons">timer</i></a>
+                        <a href=#slide-1 class="btn active" onclick="addButtonThemeListener();changeTitle0();"><i class="material-icons">timer</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-calendar">
-                        <a href=#slide-2><i class="material-icons">calendar_today</i></a>
+                        <a href=#slide-2 class="btn" onclick="changeTitle1()"><i class="material-icons">calendar_today</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-activity">
-                        <a href=#slide-3><i class="material-icons">dvr</i></a>
+                        <a href=#slide-3 class="btn" onclick="changeTitle2()"><i class="material-icons">dvr</i></a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-weight">
-                        <a href=#slide-4><i class="material-icons">addchart</i></a>
+                        <a href=#slide-4 class="btn" onclick="changeTitle3()"><i class="material-icons">addchart</i></a>
                     </div>
                 </div>
             </div>
@@ -260,5 +277,8 @@
 <script src="js/darkmode.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/location.js"></script>
+<script src="js/changeIcon.js"></script>
+<script src="js/changeTitle.js"></script>
+<script src="js/tabs.js"></script>
 </body>
 </html>

@@ -10,8 +10,10 @@
   --on-primary: #000000;
   --on-secondary: #000000;
   --on-background: #000000;
-  --on-surface: #000000;
-  --surface: #a4dbe4;
+  --on-surface-high: #000000de;
+  --on-surface-medium: #00000099;
+  --on-surface-disabled: #00000061;
+  --surface: #ffffff;
   --background: #a4dbe4;
   --error: #ba000d;
   --on-error: #ffffff;
@@ -21,14 +23,16 @@
 }
 
 :root[data-theme="dark"] {
-  --primary: #cf778e;
-  --primary-dark: #9c4961;
-  --secondary: #77cfb7;
-  --secondary-dark: #459e88;
+  --primary: #0f4c75;
+  --primary-dark: #1b262c;
+  --secondary: #bbe1fa;
+  --secondary-dark: #3282b8;
   --on-primary: #000000;
   --on-secondary: #000000;
   --on-background: #ffffff;
-  --on-surface: #ffffff;
+  --on-surface-high: #ffffffde;
+  --on-surface-medium: #ffffff99;
+  --on-surface-disabled: #ffffff61;
   --surface: #121212;
   --background: #272727;
   --error: #f44336;
@@ -102,6 +106,18 @@ h4 {
   font-size: 13px;
   font-family: "Montserrat";
   font-weight: 200;
+
+  text-align: center;
+  line-height: 26px;
+
+  padding: 0;
+  margin: 0;
+}
+
+h6 {
+  font-size: 20px;
+  font-family: "Montserrat";
+  font-weight: Medium;
 
   text-align: center;
   line-height: 26px;
@@ -237,8 +253,8 @@ button {
   display: grid;
   justify-items: center;
   
-  grid-row-gap: 23px;
   grid-template-rows: auto 1fr auto;
+  grid-row-gap: 23px;
   
   width: 100%;
   height: 100vh;
@@ -250,10 +266,10 @@ button {
 .header {  
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
 
   background-color: var(--primary);
-  color: var(--on-primary);
+  color: var(--on-surface-high);
   box-shadow: 0 3px 3px -3px rgba(0,0,0,.5);
   
   height: 50px;
@@ -266,8 +282,16 @@ button {
 }
 
 .header-app-icon {
-  margin:10px;
+  margin: 10px;
   text-align: center;
+  width: 50vw;
+}
+
+.header-app-icon img{
+  color: var(--on-surface-medium);
+  text-align: center;
+  filter: grayscale(10);
+  margin-top: -7px;
 }
 
 .header-darkmode {
@@ -363,9 +387,9 @@ button {
 
 .theme-switch {
   display: inline-block;
-  height: 16px;
+  height: 17px;
   position: relative;
-  width: 28px;
+  width: 30px;
 }
 
 /* HIDING THE CHECKBOX */
@@ -382,24 +406,32 @@ button {
   right: 0;
   top: 0;
   transition: .4s;
+  font-size: 0.875em;
+  border: 0.125em solid var(--surface); 
+
 }
 
 .slider:before {
   background-color: #fff;
-  bottom: 2px;
+  bottom: 1px;
   content: "";
   height: 12px;
-  left: 2px;
+  left: 1px;
   position: absolute;
   transition: .4s;
   width: 12px;
 }
 
+/* THIS IS THE BUTTON CHECKED FOR DARK MODE*/
 input:checked + .slider {
-  background-color: #66bb6a;
+  background-color: rgba(255, 255, 255, 0.15);
+  font-size: 0.875em;
+  border: 0.125em solid #FFB200; 
 }
 
 input:checked + .slider:before {
+  background: #FFB200;
+  box-shadow: 0 0 0.625em white;
   transform: translateX(12px);
 }
 
@@ -421,6 +453,54 @@ input:checked + .slider:before {
 
 .main-blur {
     filter: blur(2px);
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 48px;
+  z-index: 4;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--on-surface-disabled);
+}
+
+.tabs-title {
+  height: 48px;
+  min-width: 90px;
+  padding-top: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: var(--on-surface-medium);
+  text-align: center;
+  text-transform: uppercase;
+
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.tabs-active {
+  max-width: 360px;
+  min-width: 90px;
+  border-bottom: 2px solid var(--secondary-dark);
+  color: var(--on-surface-high);
+}
+
+.tab1-day {
+
+}
+
+.tab2-week {
+
+}
+
+.tab3-month {
+
+}
+
+.tab4-year {
+  
 }
 
 .featurecontainer {
@@ -581,7 +661,7 @@ input:checked + .slider:before {
   justify-content: center;
 
   background-color: var(--primary);
-  color: var(--on-primary);
+  color: var(--on-surface-medium);
 
   height: 50px;
   width: 100vw;
@@ -607,6 +687,14 @@ input:checked + .slider:before {
   text-align: right;
  }
 
+ .active  {
+   color: var(--on-surface-high);
+ }
+
+ .footer-inactive {
+   color: var(--on-surface-medium)
+ }
+
 /** Modal **/
 .modal {
     display: none; /* Hidden by default */
@@ -625,8 +713,8 @@ input:checked + .slider:before {
 /* Modal Content */ 
 /* NEEDS STYLING */
 .modal-content {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--surface);
+    color: var(--on-surface-high);
     margin: auto;
     padding: 10px;
     border: 1px solid #888;
@@ -747,7 +835,7 @@ input:checked + .slider:before {
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: 100%; /* Full height */ :
+  height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
