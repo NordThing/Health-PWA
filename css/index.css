@@ -455,7 +455,7 @@ input:checked + .slider:before {
   height: 48px;
   z-index: 4;
   background-color: var(--surface);
-  border-bottom: 1px solid var(--secondary-dark);
+  border-bottom: 1px solid var(--on-surface-disabled);
 }
 
 .tabs-title {
