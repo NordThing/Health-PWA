@@ -2,7 +2,7 @@ var myClasses = document.getElementsByClassName("header-app-icon");
 
 function changeTitle0() {
     for (var i = 0; i < myClasses.length; i++) {
-        myClasses[i].innerHTML = "";
+        myClasses[i].innerHTML = '<img src="images/Logo.png">';
         }
 }
 

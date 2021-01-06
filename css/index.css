@@ -266,7 +266,7 @@ button {
 .header {  
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
 
   background-color: var(--primary);
   color: var(--on-surface-high);
@@ -282,9 +282,16 @@ button {
 }
 
 .header-app-icon {
-  margin:10px;
+  margin: 10px;
   text-align: center;
   width: 50vw;
+}
+
+.header-app-icon img{
+  color: var(--on-surface-medium);
+  text-align: center;
+  filter: grayscale(10);
+  margin-top: -7px;
 }
 
 .header-darkmode {
