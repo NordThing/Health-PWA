@@ -254,6 +254,7 @@ button {
   justify-items: center;
   
   grid-template-rows: auto 1fr auto;
+  grid-row-gap: 23px;
   
   width: 100%;
   height: 100vh;
