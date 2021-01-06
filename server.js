@@ -5,6 +5,7 @@ const env = require('./.env.json');
 const polyline = require('@mapbox/polyline');
 const https = require('https');
 const Stream = require('stream').Transform;
+const cors = require('cors');
 const app = express();
 const port = env.serverPort
 const RUNNING_PATH_COLOR = '3CB371';
@@ -14,11 +15,23 @@ let PATH_COLOR = RUNNING_PATH_COLOR;
 app.use('/', express.static(__dirname));
 app.use(express.json());
 
+// cors
+const allowlist = ['https://life24.app/', 'https://www.life24.app/']
+const corsOptionsDelegate = function (req, callback) {
+  var corsOptions;
+  if (allowlist.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false } // disable CORS for this request
+  }
+  callback(null, corsOptions) // callback expects two parameters: error and options
+}
+
 // GET
 app.get('/', (req, res) => {
 res.sendFile(path.join(__dirname + '/index.html'));
 });
-app.get('/results', (req, res) => {
+app.get('/results', cors(corsOptionsDelegate), (req, res) => {
     db.getResults().then((results) => {
         res.send(results);
     });

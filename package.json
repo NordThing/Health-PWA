@@ -23,6 +23,7 @@
   "homepage": "https://github.com/NordThing/Health-PWA#readme",
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mapbox": "^1.0.0-beta10",
     "mongodb": "^3.6.3",
