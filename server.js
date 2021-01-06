@@ -18,7 +18,7 @@ app.use(express.json());
 // cors
 const allowlist = ['https://life24.app/', 'https://www.life24.app/']
 const corsOptionsDelegate = function (req, callback) {
-  var corsOptions;
+  const corsOptions;
   if (allowlist.indexOf(req.header('Origin')) !== -1) {
     corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
   } else {
