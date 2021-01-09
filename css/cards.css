@@ -160,6 +160,11 @@
     position: relative;
     }
 
+.card-map {
+    display: none;
+}
+
+
 .media .action-icon {
     color: #fff;
     text-shadow: 0 2px 2px rgba(0,0,0,0.54);
