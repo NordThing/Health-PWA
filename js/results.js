@@ -35,7 +35,8 @@ export const results = {
         },
         hasMap: function(data) {
             if (hasLocationData(data)) {
-                return 'Show Map';
+                return '<i class="material-icons action-icon" role="button" title="Expand more">expand_more </i>';
+                // return 'Show Map';
             }
             return '';
         },
@@ -68,11 +69,11 @@ export const results = {
                             </div>
                             <div class="subhead">
                                 {{$filters.formatDistance(row.distance)}} at {{getResult(row.result)}}
-                                <div style="height:100%;width:100%;padding-top:5px" @click="showMap(row.location, row.activity)">
-                                    <img id="mapImg" src="" alt="result" style="width:100%;max-width:300px;display:none">
-                                    {{ hasMap(row.location) }}
-                                </div>
                             </div>
+                            <div style="height:100%;width:100%;padding-top:5px" @click="showMap(row.location, row.activity)">
+                                <img id="mapImg" src="" alt="result" style="width:100%;max-width:300px;display:none">
+                                {{ hasMap(row.location) }}
+                            </div>                            
                         </div>
                     </div>
                 </div>
