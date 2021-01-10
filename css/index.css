@@ -456,7 +456,7 @@ input:checked + .slider:before {
 }
 
 .tabs {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
   height: 48px;
