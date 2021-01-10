@@ -63,16 +63,20 @@ export const results = {
                         <div class="optional-header">
                             <div class="thumbnail thumbnail--40x40">
                                 <i class="material-icons">{{ row.activity }}</i>
-                           </div>
-                            <div class="title">
-                                {{$filters.formatDate(row.date)}}
                             </div>
-                            <div class="subhead">
-                                {{$filters.formatDistance(row.distance)}} at {{getResult(row.result)}}
+                            <div class="primary-title>
+                                <div class="title">
+                                    {{$filters.formatDate(row.date)}}
+                                </div>
+                                <div class="subhead">
+                                    {{$filters.formatDistance(row.distance)}} at {{getResult(row.result)}}
+                                </div>
                             </div>
-                            <div style="height:100%;width:100%;padding-top:5px" @click="showMap(row.location, row.activity)">
-                                <img id="mapImg" src="" alt="result" style="width:100%;max-width:300px;display:none">
-                                {{ hasMap(row.location) }}
+                            <div class="action-icons float-right">
+                                <div style="height:100%;width:100%;padding-top:5px" @click="showMap(row.location, row.activity)">
+                                    <img id="mapImg" src="" alt="result" style="width:100%;max-width:300px;display:none">
+                                    {{ hasMap(row.location) }}
+                                </div>
                             </div>                            
                         </div>
                     </div>
