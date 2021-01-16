@@ -10,6 +10,13 @@ FREE.
 # Build status
 We are still in an early-stage of development. 
 
+# Folders
+Root - here are the index.html and manifest files for the Progressive Web apps feature
+-- fonts - the fonts we use
+-- images - the images we use
+-- js - the javascript we use
+-- design-guidelines - the guidelines for designing new feature and new UI-elements
+
 # Code style
 We like nice looking code so please we are trying to following the HTML Style Guide from https://google.github.io/styleguide/htmlcssguide.html
 
