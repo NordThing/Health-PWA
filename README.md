@@ -45,6 +45,16 @@ Here we can put logo and demo screenshot when we have it!
 # Installation
 If you would like to try out this on your local computer you can clone this repo and put it on your own setup webserver.
 
+Important files to modify if you install it on your own servers
+../js/settings.js
+LifeApp.serverAddr =
+
+.env.json 
+Here you need to add the keys for the different places
+serverPort
+mapKey
+mongoDB_PWD
+
 # API Reference
 No APIs
 
