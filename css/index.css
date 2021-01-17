@@ -1,6 +1,7 @@
 /* IMPORTING cards.css and input.css AS THIS GROWED TO A BIG CHUNK IN THIS FILE */
 @import "cards.css";
-@import "input.css";
+/* This ONE BREAKS THE DARKMODE - BE AWARE AND FIX BEFORE PUSH */
+/* @import "input.css"; */
 
 /* Color variables that could be used */
 :root {
@@ -660,6 +661,21 @@ input:checked + .slider:before {
   margin-left:auto; 
   margin-right: auto;
 }
+
+.saveButton{
+  font-size: 14px;
+  font-family: "Montserrat";
+  font-weight: 600;
+
+  text-align: right;
+  line-height: 14px;
+
+  padding: 0;
+  margin-right: 8px;
+
+  color: var(--primary);
+}
+
 
 /* THIS IS THE FOOTER */
 .footer {
