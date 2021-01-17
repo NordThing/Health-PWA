@@ -653,6 +653,10 @@ input:checked + .slider:before {
   display: none;
 }
 
+.weight-feature {
+  margin-left:auto; 
+  margin-right: auto;
+}
 
 /* THIS IS THE FOOTER */
 .footer {
