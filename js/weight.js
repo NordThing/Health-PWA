@@ -3,9 +3,7 @@ var index; //To store the index of the array
 var weightData; //To store the collected date,weight Pair
 
 //To get the current date 
-var today = new Date();
-var date = String(today.getDate()).padStart(1);
-    date = parseInt(date); //Converting to Integer
+var date = new Date();
 
 //Parsing Last Saved-Data into the local storage 
 weightData = JSON.parse(window.localStorage.getItem("weights"));
@@ -33,7 +31,7 @@ console.log("index : " + index);
 
 //Registers the new data to the next index 
 function register(){
-    alert("Weight Added for Today !!");
+    alert("Weight saved for " + date);
 
     if(index > 0) 
         {index = parseInt(window.localStorage.getItem("index"));

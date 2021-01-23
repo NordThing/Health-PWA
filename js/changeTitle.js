@@ -1,6 +1,8 @@
+/* This script is for changing the tabs and make it marked */
 var myClasses = document.getElementsByClassName("header-app-icon");
 var tabs = document.getElementsByClassName("tabs");
 
+/* Tab 1 - Day */
 function changeTitle0() {
     for (var i = 0; i < myClasses.length; i++) {
         myClasses[i].innerHTML = '<img src="images/Logo.png">';
@@ -8,6 +10,7 @@ function changeTitle0() {
         }
 }
 
+/* Tab 2 - Week */
 function changeTitle1() {
     for (var i = 0; i < myClasses.length; i++) {
         myClasses[i].innerHTML = "<h6>Latest Activity</h6>";
@@ -15,6 +18,7 @@ function changeTitle1() {
         }
 }
 
+/* Tab 3 - Month */
 function changeTitle2() {
     for (var i = 0; i < myClasses.length; i++) {
         myClasses[i].innerHTML = "<h6>History</h6>";
@@ -22,6 +26,7 @@ function changeTitle2() {
         }
 }
 
+/* Tab 4 - Year */
 function changeTitle3() {
     for (var i = 0; i < myClasses.length; i++) {
         myClasses[i].innerHTML = "<h6>Weight</h6>";

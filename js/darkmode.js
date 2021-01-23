@@ -1,3 +1,5 @@
+/* Script for toggle dark-mode */
+
 function setTheme() {
     const sw = document.querySelector('#checkbox');
     const current_scheme = localStorage.getItem('theme');
