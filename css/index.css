@@ -1,46 +1,10 @@
 /* IMPORTING cards.css and input.css AS THIS GROWED TO A BIG CHUNK IN THIS FILE */
 @import "cards.css";
+/* IMPORTING colors.css with all Colors */
+@import "colors.css";
 /* This ONE BREAKS THE DARKMODE - BE AWARE AND FIX BEFORE PUSH */
 /* @import "input.css"; */
 
-/* Color variables that could be used */
-:root {
-  --primary: #fa990e;
-  --primary-dark: #fecc47;
-  --secondary: #5b8d27;
-  --secondary-dark: #114b0b;
-  --on-primary: #000000;
-  --on-secondary: #000000;
-  --on-background: #000000;
-  --on-surface-high: #000000de;
-  --on-surface-medium: #00000099;
-  --on-surface-disabled: #00000061;
-  --surface: #ffffff;
-  --background: #a4dbe4;
-  --error: #ba000d;
-  --on-error: #ffffff;
-  --testing: #f44336; 
-  --white: #ffffff;
-  --black:  #000000;
-}
-
-:root[data-theme="dark"] {
-  --primary: #0f4c75;
-  --primary-dark: #1b262c;
-  --secondary: #bbe1fa;
-  --secondary-dark: #3282b8;
-  --on-primary: #000000;
-  --on-secondary: #000000;
-  --on-background: #ffffff;
-  --on-surface-high: #ffffffde;
-  --on-surface-medium: #ffffff99;
-  --on-surface-disabled: #ffffff61;
-  --surface: #121212;
-  --background: #272727;
-  --error: #f44336;
-  --on-error: #000000;
-  --testing: #f44336;
-}
 
 /* Ensure proper sizing */
 * {
@@ -63,10 +27,7 @@ body {
   min-height:100%;
   margin: auto;
   overflow: hidden; /* Hide scrollbars */
-  
-  background-color: var(--background);
-  color: var(--primary);
-}
+  }
 
 h1 {
   font-size: 48px;
@@ -194,9 +155,11 @@ button {
   text-align: center;
   line-height: 70px;
 
+
+/* Added 34px to bottom 28+34px=62px to pix to fit iPHONE11 and iPHONE12 */
   position: fixed;
   left: 50%;
-  bottom: 22px;
+  bottom: 62px;
   transform: translate(-50%);
 
   z-index: 4;
@@ -214,9 +177,10 @@ button {
   text-align: center;
   line-height: 70px;
 
+  /* Added 34px to bottom 51+34=85px to pix to fit iPHONE11 and iPHONE12 */
   position: fixed;
   left: 50%;
-  bottom: 51px;
+  bottom: 85px;
   transform: translate(-50%);
 
   z-index: 4;
@@ -235,9 +199,10 @@ button {
   text-align: center;
   line-height: 57px;
 
+  /* Added 34px to bottom 70+34=104px to pix to fit iPHONE11 and iPHONE12 */
   position: fixed;
   left: 50%;
-  bottom: 70px;
+  bottom: 104px;
   transform: translate(-50%);
 
   z-index: 4;
@@ -686,33 +651,38 @@ input:checked + .slider:before {
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* Removed justify content */
+  /* justify-content: center; */
 
   background-color: var(--primary);
   color: var(--on-surface-medium);
 
-  height: 50px;
+  /* Added 34px to height 56+34=90 fit iPHONE 11 and iPHONE12 */
+  height: 90px;
   width: 100vw;
+
+  font-size:small;
  }
 
+ 
  .footer-overview {
-   margin: 10px;
-   text-align: left;
+   margin-top: 12px;
+   text-align: center;
  }
 
  .footer-calendar {
-  margin: 10px;
-  text-align: left;
+  margin-top: 12px;
+  text-align: center;
  }
 
  .footer-activity {
-  margin: 10px;
-  text-align: right;
+  margin-top: 12px;
+  text-align: center;
  }
 
  .footer-weight {
-  margin: 10px;
-  text-align: right;
+  margin-top: 12px;
+  text-align: center;
  }
 
  .active  {
@@ -722,6 +692,7 @@ input:checked + .slider:before {
  .footer-inactive {
    color: var(--on-surface-medium)
  }
+
 
 /** Modal **/
 .modal {

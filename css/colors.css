@@ -1,0 +1,39 @@
+/* Color variables that could be used */
+:root {
+    --primary: #fa990e;
+    --primary-dark: #fecc47;
+    --secondary: #5b8d27;
+    --secondary-dark: #114b0b;
+    --on-primary: #000000;
+    --on-secondary: #000000;
+    --on-background: #000000;
+    --on-surface-high: #000000de;
+    --on-surface-medium: #00000070;
+    --on-surface-disabled: #00000061;
+    --surface: #ffffff;
+    --background: #a4dbe4;
+    --error: #ba000d;
+    --on-error: #ffffff;
+    --testing: #f44336; 
+    --white: #ffffff;
+    --black:  #000000;
+  }
+  
+  :root[data-theme="dark"] {
+    --primary: #0f4c75;
+    --primary-dark: #1b262c;
+    --secondary: #bbe1fa;
+    --secondary-dark: #3282b8;
+    --on-primary: #000000;
+    --on-secondary: #000000;
+    --on-background: #ffffff;
+    --on-surface-high: #ffffffde;
+    --on-surface-medium: #ffffff99;
+    --on-surface-disabled: #ffffff61;
+    --surface: #121212;
+    --background: #272727;
+    --error: #f44336;
+    --on-error: #000000;
+    --testing: #f44336;
+  }
+  

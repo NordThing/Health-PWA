@@ -31,11 +31,17 @@ console.log("index : " + index);
 
 //Registers the new data to the next index 
 function register(){
+    if(weight ==""){
+        alert("Weight must be filled in to be able to save");
+        return false;
+    }
     alert("Weight saved for " + date);
 
     if(index > 0) 
         {index = parseInt(window.localStorage.getItem("index"));
         }
+
+
 
     weight = parseInt(document.getElementById("weight").value);
     weightData[index + 1] = [date,weight]; 
