@@ -1,6 +1,6 @@
 # LIFE 24 
 Lifestyle tracker.
-It can track your daily activity and your weight.
+It can track your daily activity.
 
 # Motivation
 This project will hopefully ALWAYS be FREE but we are very glad for sponsors.  
