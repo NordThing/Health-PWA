@@ -4,7 +4,7 @@
     <v-btn @click="start">Start</v-btn>
     <v-btn @click="stop">Stop</v-btn>
     <v-btn @click="reset">Reset</v-btn>
-    <activity-list></activity-list>
+    <activity-list class="px-12 mt-12"></activity-list>
   </div>
 </template>
 
