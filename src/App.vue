@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <app-header />
+    <v-main>
+      <floating-action-button />
+      <router-view />
+    </v-main>
+    <app-footer />
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from '@/components/AppHeader.vue';
+import FloatingActionButton from '@/components/FloatingActionButton.vue';
+import AppFooter from '@/components/AppFooter.vue';
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    AppHeader,
+    AppFooter,
+    FloatingActionButton,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
