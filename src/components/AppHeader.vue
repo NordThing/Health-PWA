@@ -10,7 +10,8 @@
         :to="{path: '/login' }"
         >
             <v-icon>mdi-account-plus</v-icon>
-        </v-btn>     
+        </v-btn>
+        <v-spacer></v-spacer>     
       <v-avatar>
         <v-img src="..//assets/images/Life24Logo.png" />
       </v-avatar>
