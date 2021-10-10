@@ -4,6 +4,12 @@
     <v-btn @click="start">Start</v-btn>
     <v-btn @click="stop">Stop</v-btn>
     <v-btn @click="reset">Reset</v-btn>
+    <v-select
+      :items="items"
+      label="Activity"
+      outlined
+    >
+    </v-select>
   </div>
 </template>
 
