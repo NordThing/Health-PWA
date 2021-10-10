@@ -4,18 +4,20 @@
     <v-btn @click="start">Start</v-btn>
     <v-btn @click="stop">Stop</v-btn>
     <v-btn @click="reset">Reset</v-btn>
-    <v-select
-      :items="items"
-      label="Activity"
-      outlined
-    >
-    </v-select>
+    <activity-list></activity-list>
   </div>
 </template>
 
 <script>
+import ActivityList from '@/components/ActivityList.vue';
+
+
+
 export default {
   name: "StopWatch",
+  components: {
+    ActivityList,
+  },
   data() {
     return {
       elapsedTime: 0,
