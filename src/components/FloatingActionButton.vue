@@ -1,33 +1,43 @@
 <template>
-        <v-btn
-          v-model="fab"
-          color="blue darken-2"
-          dark
+    <v-speed-dial
+      v-model="fab"
+      bottom
+      absolute
+      direction="top"
+      :open-on-hover="false"
+      transition="slide-y-reverse-transition"
+      style="bottom:32px; left:50%; transform: translate(-50%);"
+    >
+      <template v-slot:activator>
+          <v-btn 
+          v-model="fab" 
+          color="blue 
+          darken-2" 
+          dark 
           fab
-          elevation="5"
           fixed
           absolute
-          right
-          style="z-index:5; bottom:32px; left:50%; transform: translate(-50%); "
-          @click="fab"
-        >
-          <v-icon v-if="start">
-            mdi-pause
-          </v-icon>
-          <v-icon v-else>
-            mdi-play 
-          </v-icon>
-        </v-btn>
-
+          style="left:50%; transform: translate(-50%); "
+          >
+            <v-icon v-if="fab">mdi-pause</v-icon>
+            <v-icon v-else>mdi-play</v-icon>
+          </v-btn>
+      </template>
+          <v-btn 
+          fab 
+          dark 
+          small 
+          color="indigo">
+            <v-icon>mdi-stop</v-icon>
+          </v-btn>
+    </v-speed-dial>
 </template>
 
 <script>
 export default {
-  name: 'Test',
-  methods: {
-    fab() {
-      console.log('This one will switch icon')
-    },
-  },
-}
+  name: "FloatingActionButton",
+  data: () => ({
+    fab: false,
+  }),
+};
 </script>

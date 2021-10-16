@@ -1,7 +1,7 @@
 <template>
 <div>
 <stop-watch></stop-watch>
-<activity-list></activity-list>
+<activity-list class="px-12 mt-12"></activity-list>
 </div>
 </template>
 
