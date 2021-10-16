@@ -6,7 +6,7 @@
       direction="top"
       :open-on-hover="false"
       transition="slide-y-reverse-transition"
-      style="bottom:32px; left:50%; transform: translate(-50%);"
+      style="z-index:10; bottom:32px; left:50%; transform: translate(-50%);"
     >
       <template v-slot:activator>
           <v-btn 
