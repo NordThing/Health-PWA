@@ -9,13 +9,13 @@
           absolute
           right
           style="z-index:5; bottom:32px; left:50%; transform: translate(-50%); "
-          @click="handleSubmit"
+          @click="fab"
         >
-          <v-icon v-if="fab">
+          <v-icon v-if="start">
             mdi-pause
           </v-icon>
           <v-icon v-else>
-            mdi-play
+            mdi-play 
           </v-icon>
         </v-btn>
 
@@ -25,9 +25,6 @@
 export default {
   name: 'Test',
   methods: {
-    handleSubmit() {
-      console.log('Testing handleSubmit')
-    },
     fab() {
       console.log('This one will switch icon')
     },
