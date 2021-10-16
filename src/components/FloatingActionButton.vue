@@ -3,10 +3,11 @@
       v-model="fab"
       bottom
       absolute
+      fixed
       direction="top"
       :open-on-hover="false"
       transition="slide-y-reverse-transition"
-      style="z-index:10; bottom:32px; left:50%; transform: translate(-50%);"
+      style="z-index:10; bottom:86px;left:50%; transform: translate(-50%);"
     >
       <template v-slot:activator>
           <v-btn 
