@@ -4,6 +4,7 @@
       bottom
       absolute
       fixed
+      origin
       direction="top"
       :open-on-hover="false"
       transition="slide-y-reverse-transition"
