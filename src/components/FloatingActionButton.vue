@@ -4,7 +4,6 @@
       bottom
       absolute
       fixed
-      origin
       direction="top"
       :open-on-hover="false"
       transition="slide-y-reverse-transition"
@@ -19,7 +18,8 @@
           fab
           fixed
           absolute
-          style="left:50%; transform: translate(-50%); "
+          style="left:50%; transform: translate(-50%);"
+          @click="fireStart"
           >
             <v-icon v-if="fab">mdi-pause</v-icon>
             <v-icon v-else>mdi-play</v-icon>
@@ -29,17 +29,28 @@
           fab 
           dark 
           small 
-          color="indigo">
-            <v-icon>mdi-stop</v-icon>
+          color="indigo"
+          @click="fireStop">
+          <v-icon>mdi-stop</v-icon>
           </v-btn>
     </v-speed-dial>
 </template>
 
 <script>
+import {eventBus} from "../main";
+
 export default {
   name: "FloatingActionButton",
   data: () => ({
     fab: false,
   }),
+  methods: {
+    fireStart() {
+      eventBus.$emit('fireStart')
+    },
+    fireStop() {
+      eventBus.$emit("fireStop")
+    }
+  },
 };
 </script>

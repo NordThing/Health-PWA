@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { eventBus } from '@/main';
 export default {
   name: "StopWatch",
   data() {
@@ -31,11 +32,21 @@ export default {
       }, 1000);
     },
     stop() {
+      //eventBus.$emit('sistersaid','Do it')
+      //clearInterval(this.timer);
       clearInterval(this.timer);
     },
     reset() {
       this.elapsedTime = 0;
     },
-  }
+  },
+  created() {
+    eventBus.$on('fireStart', () => {
+      this.start();
+    })
+    eventBus.$on('fireStop', () => {
+      this.stop();
+    })    
+  },
 };
 </script>
