@@ -32,8 +32,6 @@ export default {
       }, 1000);
     },
     stop() {
-      //eventBus.$emit('sistersaid','Do it')
-      //clearInterval(this.timer);
       clearInterval(this.timer);
     },
     reset() {
@@ -45,7 +43,7 @@ export default {
       this.start();
     })
     eventBus.$on('fireStop', () => {
-      this.stop();
+      this.reset();
     })    
   },
 };

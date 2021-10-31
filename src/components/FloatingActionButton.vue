@@ -31,7 +31,7 @@
           small 
           color="indigo"
           @click="fireStop">
-          <v-icon>mdi-stop</v-icon>
+          <v-icon>mdi-flag-checkered</v-icon>
           </v-btn>
     </v-speed-dial>
 </template>

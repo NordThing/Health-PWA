@@ -1,7 +1,17 @@
 <template>
-<div>
-<stop-watch></stop-watch>
-<activity-list class="px-12 mt-12"></activity-list>
+<div class="stopwatch">
+  <div class="text-middle-circle mt-8">
+    <v-progress-circular
+      :rotate="-90"
+      :size="250"
+      :width="15"
+      :value="value"
+      color="primary"
+    >
+      <stop-watch></stop-watch>
+    </v-progress-circular>
+    <activity-list class="px-12 mt-12"></activity-list>
+  </div>
 </div>
 </template>
 
