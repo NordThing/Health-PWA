@@ -1,0 +1,11 @@
+<template>
+  <v-tabs
+  fixed-tabs
+  left
+  >
+    <v-tab>Day</v-tab>
+    <v-tab>Week</v-tab>
+    <v-tab>Month</v-tab>
+    <v-tab>Year</v-tab>
+  </v-tabs>
+</template>
