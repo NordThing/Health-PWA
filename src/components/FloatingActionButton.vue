@@ -30,7 +30,7 @@
           dark 
           small 
           color="indigo"
-          @click="fireStop">
+          @click="fireReset">
           <v-icon>mdi-flag-checkered</v-icon>
           </v-btn>
     </v-speed-dial>
@@ -50,6 +50,9 @@ export default {
     },
     fireStop() {
       eventBus.$emit("fireStop")
+    },
+    fireReset() {
+      eventBus.$emit("fireReset")
     }
   },
 };

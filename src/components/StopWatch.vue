@@ -43,8 +43,11 @@ export default {
       this.start();
     })
     eventBus.$on('fireStop', () => {
+      this.stop();
+    })
+    eventBus.$on('fireReset', () => {
       this.reset();
-    })    
+    })        
   },
 };
 </script>
