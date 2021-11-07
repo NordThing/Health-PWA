@@ -19,7 +19,7 @@
 <script>
 import StopWatch from '@/components/StopWatch.vue';
 import ActivityList from '@/components/ActivityList.vue'; 
-import AppTabTimer from '@/components/AppTabTimer.vue'; 
+import AppTabTimer from '@/components/AppTabTimer.vue';
 
 export default {
   name: "Home",
