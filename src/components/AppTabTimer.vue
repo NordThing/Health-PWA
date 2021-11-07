@@ -1,0 +1,9 @@
+<template>
+  <v-tabs
+  fixed-tabs
+  left
+  >
+    <v-tab>StopWatch</v-tab>
+    <v-tab>Timer</v-tab>
+  </v-tabs>
+</template>

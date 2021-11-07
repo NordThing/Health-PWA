@@ -1,5 +1,6 @@
 <template>
 <div class="stopwatch">
+  <app-tab-timer></app-tab-timer>
   <div class="text-middle-circle mt-8">
     <v-progress-circular
       :rotate="-90"
@@ -18,12 +19,14 @@
 <script>
 import StopWatch from '@/components/StopWatch.vue';
 import ActivityList from '@/components/ActivityList.vue'; 
+import AppTabTimer from '@/components/AppTabTimer.vue'; 
 
 export default {
   name: "Home",
   components: {
     StopWatch,
     ActivityList,
+    AppTabTimer,
   },
 };
 </script>
